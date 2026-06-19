@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediGlobe — Privacy Policy</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #07080f;
+      color: #c5cae9;
+      line-height: 1.7;
+      padding: 24px 16px 60px;
+    }
+    .container { max-width: 720px; margin: 0 auto; }
+    header { text-align: center; padding: 40px 0 32px; border-bottom: 1px solid #1e2336; margin-bottom: 36px; }
+    .logo { font-size: 28px; font-weight: 900; color: #edf0ff; letter-spacing: -0.5px; }
+    .logo span { color: #00e5a0; }
+    .tagline { font-size: 13px; color: #7b86aa; margin-top: 6px; }
+    .badge {
+      display: inline-block; margin-top: 14px;
+      background: rgba(0,229,160,0.1); border: 1px solid rgba(0,229,160,0.3);
+      color: #00e5a0; font-size: 11px; font-weight: 700;
+      padding: 4px 12px; border-radius: 100px; letter-spacing: 0.5px;
+    }
+    h1 { font-size: 22px; font-weight: 800; color: #edf0ff; margin-bottom: 6px; }
+    .updated { font-size: 12px; color: #7b86aa; margin-bottom: 32px; }
+    h2 {
+      font-size: 15px; font-weight: 800; color: #edf0ff;
+      text-transform: uppercase; letter-spacing: 0.6px;
+      margin: 36px 0 12px; padding-left: 12px;
+      border-left: 3px solid #00e5a0;
+    }
+    p { font-size: 14px; color: #c5cae9; margin-bottom: 12px; }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    li { font-size: 14px; color: #c5cae9; margin-bottom: 6px; }
+    .card {
+      background: #0e1019; border: 1px solid #1e2336; border-radius: 14px;
+      padding: 18px 20px; margin: 20px 0;
+    }
+    .card p { margin-bottom: 0; }
+    .highlight { color: #00e5a0; font-weight: 700; }
+    .warn { color: #ffc107; }
+    a { color: #4d8aff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+    th, td { font-size: 13px; padding: 10px 12px; text-align: left; border-bottom: 1px solid #1e2336; }
+    th { font-weight: 700; color: #7b86aa; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+    td { color: #c5cae9; }
+    footer { text-align: center; padding-top: 40px; border-top: 1px solid #1e2336; font-size: 12px; color: #7b86aa; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="logo">Medi<span>Globe</span></div>
+    <div class="tagline">Global Drug Catalog for Travelers</div>
+    <div class="badge">PRIVACY POLICY</div>
+  </header>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: May 29, 2026 &nbsp;·&nbsp; Effective: May 29, 2026</p>
+
+  <div class="card">
+    <p>MediGlobe is an <span class="highlight">offline-first</span> reference catalog for travelers.
+    We collect <span class="highlight">no personal accounts</span>, sell <span class="highlight">no data</span>,
+    and store sensitive health data exclusively <span class="highlight">on your device</span>.</p>
+  </div>
+
+  <!-- 1. Who we are -->
+  <h2>1. Who We Are</h2>
+  <p>MediGlobe is an independent mobile application developed by David Pikalov
+  (<a href="mailto:mediglobe@gmail.com">mediglobe@gmail.com</a>).
+  The app is published on Google Play and available as a standalone Android APK.</p>
+
+  <!-- 2. Data we do NOT collect -->
+  <h2>2. Data We Do NOT Collect</h2>
+  <p>We do <strong>not</strong> collect, store or transmit:</p>
+  <ul>
+    <li>Your name, email address, or any account information</li>
+    <li>Your location or GPS coordinates (the map feature uses device location <em>only on your device</em> to center the map; no location data is sent to us)</li>
+    <li>Your medical profile (blood type, chronic conditions, allergies, emergency contact)</li>
+    <li>Your browsing history within the app</li>
+    <li>Any usage analytics or crash reports</li>
+    <li>Payment information (handled entirely by Google Play / RevenueCat)</li>
+  </ul>
+
+  <!-- 3. Data stored on your device -->
+  <h2>3. Data Stored Locally on Your Device</h2>
+  <p>The following data is stored <strong>only on your device</strong> and never leaves it:</p>
+
+  <table>
+    <tr><th>Data</th><th>Where stored</th><th>Purpose</th></tr>
+    <tr><td>Blood type, chronic conditions, allergies, emergency contact</td><td>Android Keystore (SecureStore)</td><td>Personal medical reference card</td></tr>
+    <tr><td>Favourite drugs, browsing history</td><td>AsyncStorage</td><td>Personalised experience</td></tr>
+    <tr><td>App language and theme preference</td><td>AsyncStorage</td><td>User interface settings</td></tr>
+    <tr><td>Selected countries (home / current)</td><td>AsyncStorage</td><td>Price and analog display</td></tr>
+    <tr><td>API cache (Wikipedia, drug data)</td><td>AsyncStorage</td><td>Offline performance</td></tr>
+  </table>
+
+  <div class="card">
+    <p>Sensitive medical fields (blood type, allergies, chronic conditions, emergency contact)
+    are stored in the <span class="highlight">Android Keystore</span> — the same secure hardware-backed
+    storage used by banking apps. This data <strong>cannot be accessed</strong> by other apps
+    and is <strong>never transmitted</strong> over the network.</p>
+  </div>
+
+  <!-- 4. Third-party services -->
+  <h2>4. Third-Party Services Used</h2>
+  <p>MediGlobe makes network requests to the following services when the device is online:</p>
+
+  <table>
+    <tr><th>Service</th><th>What is sent</th><th>Their privacy policy</th></tr>
+    <tr>
+      <td>Wikipedia REST API</td>
+      <td>Drug name (text query)</td>
+      <td><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" target="_blank">wikimedia.org</a></td>
+    </tr>
+    <tr>
+      <td>Wikidata SPARQL</td>
+      <td>Drug name (text query)</td>
+      <td><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" target="_blank">wikimedia.org</a></td>
+    </tr>
+    <tr>
+      <td>OpenFDA (U.S. FDA)</td>
+      <td>Drug name (text query)</td>
+      <td><a href="https://open.fda.gov/privacy/" target="_blank">open.fda.gov</a></td>
+    </tr>
+    <tr>
+      <td>PubChem (NIH)</td>
+      <td>Drug name (text query for molecule image)</td>
+      <td><a href="https://www.nlm.nih.gov/web_policies.html" target="_blank">nlm.nih.gov</a></td>
+    </tr>
+    <tr>
+      <td>ChEMBL (EMBL-EBI)</td>
+      <td>Drug name (text query)</td>
+      <td><a href="https://www.ebi.ac.uk/data-protection/privacy-notice/chembl" target="_blank">ebi.ac.uk</a></td>
+    </tr>
+    <tr>
+      <td>RxNorm (NIH)</td>
+      <td>Drug name (text query)</td>
+      <td><a href="https://www.nlm.nih.gov/web_policies.html" target="_blank">nlm.nih.gov</a></td>
+    </tr>
+    <tr>
+      <td>Open Exchange Rates</td>
+      <td>API key only (no personal data)</td>
+      <td><a href="https://openexchangerates.org/privacy" target="_blank">openexchangerates.org</a></td>
+    </tr>
+    <tr>
+      <td>Overpass API (OpenStreetMap)</td>
+      <td>Coordinates (for pharmacy/hospital search)</td>
+      <td><a href="https://wiki.openstreetmap.org/wiki/Privacy_Policy" target="_blank">openstreetmap.org</a></td>
+    </tr>
+    <tr>
+      <td>Anthropic Claude API <em>(AI features only)</em></td>
+      <td>Symptom description or drug names typed by user</td>
+      <td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com</a></td>
+    </tr>
+    <tr>
+      <td>RevenueCat <em>(premium subscriptions)</em></td>
+      <td>Anonymous purchase token from Google Play</td>
+      <td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com</a></td>
+    </tr>
+    <tr>
+      <td>Google Play <em>(payments)</em></td>
+      <td>Payment and device info (managed by Google)</td>
+      <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com</a></td>
+    </tr>
+  </table>
+
+  <p class="warn">⚠️ AI Features (symptom chat, drug interactions, abroad analog search, package scanner):
+  When you use these features, the text you type or the photo you take is sent to
+  <strong>Anthropic Claude API</strong> via an encrypted proxy. We do not store
+  these queries on our servers. Anthropic may process them per their privacy policy.
+  AI features require an active internet connection and are optional — the app works
+  fully offline without them.</p>
+
+  <!-- 5. AI proxy and security -->
+  <h2>5. AI Proxy and Security</h2>
+  <p>AI-powered features route requests through a <strong>Cloudflare Workers proxy</strong> operated by us.
+  This proxy:</p>
+  <ul>
+    <li>Validates a request token to prevent unauthorized use</li>
+    <li>Rate-limits requests to 30 per minute per IP</li>
+    <li>Forwards requests to Anthropic over HTTPS</li>
+    <li>Does <strong>not</strong> log, store, or process request contents</li>
+    <li>Hides the Claude API key from the app binary (security measure)</li>
+  </ul>
+
+  <!-- 6. Children -->
+  <h2>6. Children's Privacy</h2>
+  <p>MediGlobe is designed for travelers aged 13 and above. We do not knowingly collect
+  any personal information from children under 13. If you are a parent and believe your
+  child has used AI features that transmitted data, please contact us at
+  <a href="mailto:mediglobe@gmail.com">mediglobe@gmail.com</a>.</p>
+
+  <!-- 7. Data deletion -->
+  <h2>7. Your Rights and Data Deletion</h2>
+  <p>Since all personal data is stored locally on your device:</p>
+  <ul>
+    <li><strong>To delete all app data</strong>: Go to Profile → Reset → Reset all data. This clears all stored preferences, history, and medical profile fields.</li>
+    <li><strong>To delete the app</strong>: Uninstalling MediGlobe removes all locally stored data from your device.</li>
+    <li><strong>API query history</strong>: We do not store your queries on our servers. Any data retained by third-party APIs (e.g., Anthropic) is subject to their retention policies.</li>
+  </ul>
+
+  <!-- 8. Changes -->
+  <h2>8. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. The updated version will be published
+  at this URL. Continued use of MediGlobe after a policy update constitutes acceptance of the
+  new policy. We will note the "Last updated" date at the top of this page.</p>
+
+  <!-- 9. Contact -->
+  <h2>9. Contact Us</h2>
+  <p>For any privacy-related questions or requests:</p>
+  <p>📧 <a href="mailto:mediglobe@gmail.com">mediglobe@gmail.com</a></p>
+  <p>We aim to respond within 5 business days.</p>
+
+  <footer>
+    <p>© 2026 MediGlobe · <a href="mailto:mediglobe@gmail.com">mediglobe@gmail.com</a></p>
+    <p style="margin-top:6px">MediGlobe is an informational reference only — not a medical service. Always consult a doctor.</p>
+  </footer>
+
+</div>
+</body>
+</html>

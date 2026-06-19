@@ -9,22 +9,28 @@
 <link rel="icon" type="image/png" sizes="any" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <script src="./support.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MediGlobe","applicationCategory":"MedicalApplication","operatingSystem":"Android, iOS","url":"https://mediglobe.me/","description":"Найди местный аналог знакомого лекарства в любой стране — офлайн. 3333 препарата, 14 стран, 7 языков.","inLanguage":["ru","en","de","tr","fr","es","uk"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"MediGlobe","url":"https://mediglobe.me/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Нужен ли интернет для работы?","acceptedAnswer":{"@type":"Answer","text":"Нет. Каталог препаратов, симптомы, первая помощь и проверка взаимодействий работают полностью офлайн. Интернет нужен только для AI-ассистента и карты аптек."}},{"@type":"Question","name":"Что происходит с моими данными?","acceptedAnswer":{"@type":"Answer","text":"Ваши лекарства, аллергии и симптомы остаются на устройстве. Нет рекламы и трекеров. AI-запросы идут через защищённый прокси без передачи личных данных третьим лицам."}},{"@type":"Question","name":"Когда выйдет версия для iOS?","acceptedAnswer":{"@type":"Answer","text":"Версия для iOS уже в разработке. Android доступен прямо сейчас — следите за обновлениями в наших соцсетях, чтобы узнать о релизе в App Store первыми."}},{"@type":"Question","name":"Это замена врачу?","acceptedAnswer":{"@type":"Answer","text":"Нет. MediGlobe — справочный инструмент: он помогает сориентироваться, но не ставит диагнозов и не заменяет консультацию специалиста. При недомогании обращайтесь к врачу."}},{"@type":"Question","name":"Сколько стоит приложение?","acceptedAnswer":{"@type":"Answer","text":"MediGlobe бесплатен. Скачайте Android-версию и пользуйтесь всеми возможностями без подписок и платы."}}]}
+</script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <title>MediGlobe — справочник лекарств офлайн</title>
-<meta name="description" content="Лекарства всего мира — офлайн и на вашем языке. 3333 препарата из 14 стран, AI-проверка симптомов и взаимодействий, первая помощь. На 7 языках.">
+<meta name="description" content="Знакомое лекарство — в любой аптеке мира. Введи название или вещество и узнай местный аналог: бренды, дозировки, цены. Офлайн, 3333 препарата, 14 стран, 7 языков.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mediglobe.me/">
 <meta property="og:title" content="MediGlobe — справочник лекарств офлайн">
-<meta property="og:description" content="Лекарства всего мира — офлайн и на вашем языке. 3333 препарата из 14 стран, AI-симптомы и первая помощь. На 7 языках.">
+<meta property="og:description" content="Знакомое лекарство — в любой аптеке мира. Введи название или вещество и узнай местный аналог. Офлайн, 3333 препарата, 14 стран, 7 языков.">
 <meta property="og:image" content="https://mediglobe.me/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MediGlobe — справочник лекарств офлайн">
-<meta name="twitter:description" content="Лекарства всего мира — офлайн и на вашем языке. 3333 препарата, 14 стран, 7 языков.">
+<meta name="twitter:description" content="Знакомое лекарство — в любой аптеке мира. Местные аналоги, дозировки, цены. Офлайн, 3333 препарата, 14 стран.">
 <meta name="twitter:image" content="https://mediglobe.me/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1064,7 +1070,7 @@ header nav a.mgActive{color:#eaf4ee}
             <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
             Поддержать проект
           </a>
-          <a href="https://mediglobe.tvinkiforever.workers.dev/" target="_blank" rel="noopener" style="font-size:15px;color:#9bb3a8;text-decoration:none;border-bottom:1px solid rgba(155,179,168,0.35);padding-bottom:2px">Политика конфиденциальности</a>
+          <a href="/privacy/" target="_blank" rel="noopener" style="font-size:15px;color:#9bb3a8;text-decoration:none;border-bottom:1px solid rgba(155,179,168,0.35);padding-bottom:2px">Политика конфиденциальности</a>
         </div>
       </div>
     </div>
@@ -1095,7 +1101,7 @@ header nav a.mgActive{color:#eaf4ee}
       <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px">
         <a aria-disabled="true" style="color:#a7c0b5;text-decoration:none">Telegram</a>
         <a aria-disabled="true" style="color:#a7c0b5;text-decoration:none">Поддержать проект</a>
-        <a href="https://mediglobe.tvinkiforever.workers.dev/" target="_blank" rel="noopener" style="color:#a7c0b5;text-decoration:none">Политика конфиденциальности</a>
+        <a href="/privacy/" target="_blank" rel="noopener" style="color:#a7c0b5;text-decoration:none">Политика конфиденциальности</a>
         <a href="#vozmozhnosti" style="color:#a7c0b5;text-decoration:none">Возможности</a>
       </div>
     </div>
@@ -1108,8 +1114,8 @@ header nav a.mgActive{color:#eaf4ee}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
   &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#34e8a0&quot;, &quot;tsType&quot;: &quot;string&quot;},
-  &quot;headline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Лекарства всего мира — офлайн и на вашем языке&quot;, &quot;tsType&quot;: &quot;string&quot;},
-  &quot;tagline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;3333 препарата из 14 стран, AI-проверка симптомов и взаимодействий, первая помощь — всё офлайн и на 7 языках.&quot;, &quot;tsType&quot;: &quot;string&quot;}
+  &quot;headline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Знакомое лекарство — в любой аптеке мира&quot;, &quot;tsType&quot;: &quot;string&quot;},
+  &quot;tagline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3333 препарата, 14 стран, 7 языков.&quot;, &quot;tsType&quot;: &quot;string&quot;}
 }">
 class Component extends DCLogic {
   buildEarth() {
@@ -1685,8 +1691,8 @@ class Component extends DCLogic {
     if (!this._earth) this._earth = this.buildEarth();
     return {
       accent: this.props.accent ?? '#34e8a0',
-      headline: this.props.headline ?? 'Лекарства всего мира — офлайн и на вашем языке',
-      tagline: this.props.tagline ?? '3333 препарата из 14 стран, AI-проверка симптомов и взаимодействий, первая помощь — всё офлайн и на 7 языках.',
+      headline: this.props.headline ?? 'Знакомое лекарство — в любой аптеке мира',
+      tagline: this.props.tagline ?? 'Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3333 препарата, 14 стран, 7 языков.',
       ring: this.buildRing()
     };
   }
