@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://mediglobe.tvinkiforever.workers.dev; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://mediglobe.me/">
+<link rel="icon" type="image/png" sizes="any" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -11,20 +16,22 @@
 <title>MediGlobe — справочник лекарств офлайн</title>
 <meta name="description" content="Лекарства всего мира — офлайн и на вашем языке. 3333 препарата из 14 стран, AI-проверка симптомов и взаимодействий, первая помощь. На 7 языках.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://mediglobe.me/">
 <meta property="og:title" content="MediGlobe — справочник лекарств офлайн">
 <meta property="og:description" content="Лекарства всего мира — офлайн и на вашем языке. 3333 препарата из 14 стран, AI-симптомы и первая помощь. На 7 языках.">
-<meta property="og:image" content="assets/og-image.png">
+<meta property="og:image" content="https://mediglobe.me/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MediGlobe — справочник лекарств офлайн">
 <meta name="twitter:description" content="Лекарства всего мира — офлайн и на вашем языке. 3333 препарата, 14 стран, 7 языков.">
-<meta name="twitter:image" content="assets/og-image.png">
+<meta name="twitter:image" content="https://mediglobe.me/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
+a[aria-disabled="true"]{pointer-events:none;cursor:default;opacity:.6}
 html{scroll-behavior:smooth}
 body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 #mgAurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#06120d 0%,#071611 50%,#05100b 100%)}
@@ -198,12 +205,12 @@ header nav a.mgActive{color:#eaf4ee}
     </div>
   </div>
 
-  <div id="mgAurora">
+  <div id="mgAurora" aria-hidden="true">
     <span class="mgA1"></span>
     <span class="mgA2"></span>
     <span class="mgA3"></span>
   </div>
-  <canvas id="mgParticles" style="position:fixed;inset:0;z-index:1;pointer-events:none;width:100vw;height:100vh"></canvas>
+  <canvas id="mgParticles" aria-hidden="true" style="position:fixed;inset:0;z-index:1;pointer-events:none;width:100vw;height:100vh"></canvas>
 
   <template id="__bundler_thumbnail" data-bg-color="#06120d">
     <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -216,9 +223,9 @@ header nav a.mgActive{color:#eaf4ee}
   </template>
 
   <div id="mgProgress"></div>
-  <div id="mgGrain"></div>
+  <div id="mgGrain" aria-hidden="true"></div>
   <div id="mgStickyBar" style="position:fixed;left:0;right:0;bottom:0;z-index:75;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(6,18,13,0.92);backdrop-filter:blur(14px);border-top:1px solid rgba(52,232,160,0.18);transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.7,.2,1)">
-    <a href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius:13px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none">
+    <a aria-disabled="true" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius:13px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#06120d" fill-opacity="0.35"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#06120d" fill-opacity="0.55"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#06120d" fill-opacity="0.7"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#06120d"></path></svg>
       Скачать для Android
     </a>
@@ -289,11 +296,11 @@ header nav a.mgActive{color:#eaf4ee}
         <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,60px);line-height:1.04;letter-spacing:-0.03em;margin:24px 0 0;text-wrap:balance">{{ headline }}</h1>
         <p style="font-size:19px;line-height:1.55;color:#a7c0b5;margin:22px 0 0;max-width:520px;text-wrap:pretty">{{ tagline }}</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
-          <a href="#" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+          <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
             <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">Google Play</span></span>
           </a>
-          <a href="#" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+          <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
             <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">App Store</span></span>
           </a>
@@ -308,7 +315,7 @@ header nav a.mgActive{color:#eaf4ee}
       <div id="mgGlobeWrap" style="position:relative;display:flex;align-items:center;justify-content:center;min-height:470px;transition:transform .4s ease-out;transform-style:preserve-3d">
         <div style="position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(52,232,160,0.22),transparent 64%);filter:blur(12px);animation:pulseGlow 6s ease-in-out infinite"></div>
         <div class="mgGlobeInner" style="position:relative;animation:floaty 7s ease-in-out infinite;filter:drop-shadow(0 0 64px rgba(52,232,160,0.28)) drop-shadow(0 30px 60px rgba(0,0,0,0.5))">
-          <canvas id="mgGlobeCanvas" width="400" height="400" style="display:block;width:384px;height:384px"></canvas>
+          <canvas id="mgGlobeCanvas" aria-hidden="true" width="400" height="400" style="display:block;width:384px;height:384px"></canvas>
           <svg width="384" height="384" viewBox="0 0 400 400" fill="none" style="position:absolute;inset:0;pointer-events:none">
             <defs>
               <radialGradient id="mgSphere" cx="40%" cy="34%" r="78%">
@@ -666,9 +673,9 @@ header nav a.mgActive{color:#eaf4ee}
 
             <div style="position:absolute;bottom:0;left:0;right:0;height:60px;display:flex;align-items:center;justify-content:space-around;background:rgba(4,15,10,0.85);border-top:1px solid rgba(255,255,255,0.06);z-index:6">
               <div class="mgTab" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--accent)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"></rect><path d="M4 9h16"></path></svg><span style="font-size:8.5px">Каталог</span></div>
-              <div class="mgTab" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#5f7a6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2.5C11.55 7.2 14.8 10.45 19.5 11 14.8 11.55 11.55 14.8 11 19.5 10.45 14.8 7.2 11.55 2.5 11 7.2 10.45 10.45 7.2 11 2.5Z"></path><path d="M18.5 13.5C18.72 15.3 19.7 16.28 21.5 16.5 19.7 16.72 18.72 17.7 18.5 19.5 18.28 17.7 17.3 16.72 15.5 16.5 17.3 16.28 18.28 15.3 18.5 13.5Z"></path></svg><span style="font-size:8.5px">Симптомы</span></div>
-              <div class="mgTab" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#5f7a6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path></svg><span style="font-size:8.5px">Помощь</span></div>
-              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#5f7a6f"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span style="font-size:8.5px">Профиль</span></div>
+              <div class="mgTab" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#6f8d80"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2.5C11.55 7.2 14.8 10.45 19.5 11 14.8 11.55 11.55 14.8 11 19.5 10.45 14.8 7.2 11.55 2.5 11 7.2 10.45 10.45 7.2 11 2.5Z"></path><path d="M18.5 13.5C18.72 15.3 19.7 16.28 21.5 16.5 19.7 16.72 18.72 17.7 18.5 19.5 18.28 17.7 17.3 16.72 15.5 16.5 17.3 16.28 18.28 15.3 18.5 13.5Z"></path></svg><span style="font-size:8.5px">Симптомы</span></div>
+              <div class="mgTab" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#6f8d80"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path></svg><span style="font-size:8.5px">Помощь</span></div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#6f8d80"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4 4-6 8-6s8 2 8 6"></path></svg><span style="font-size:8.5px">Профиль</span></div>
             </div>
             <div style="position:absolute;top:34px;left:0;right:0;bottom:60px;overflow:hidden;pointer-events:none;z-index:7"><div style="position:absolute;top:-30%;left:0;width:38%;height:160%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);animation:mgGlare 7s ease-in-out infinite"></div></div>
           </div>
@@ -937,7 +944,7 @@ header nav a.mgActive{color:#eaf4ee}
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.4 20.4l17.45-7.48a1 1 0 0 0 0-1.84L3.4 3.6a.993.993 0 0 0-1.39.91L2 9.12c0 .5.37.92.87.99L17 12 2.87 13.88c-.5.07-.87.49-.87.99l.01 4.61c0 .71.73 1.2 1.39.92z"></path></svg>
         </button>
       </div>
-      <div style="padding:0 20px 18px;font-size:11.5px;color:#5f7a6f;text-align:center">Демонстрация. Не является медицинской консультацией.</div>
+      <div style="padding:0 20px 18px;font-size:11.5px;color:#6f8d80;text-align:center">Демонстрация. Не является медицинской консультацией.</div>
     </div>
   </section>
 
@@ -1019,15 +1026,15 @@ header nav a.mgActive{color:#eaf4ee}
         <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,3.8vw,44px);font-weight:700;letter-spacing:-0.025em;margin:14px 0 0;text-wrap:balance">Будьте на связи с MediGlobe</h2>
         <p style="font-size:18px;line-height:1.55;color:#b5cabf;margin:16px auto 0;max-width:520px">Скоро в сторах, в соцсетях — уже сегодня. Подпишитесь, чтобы узнать о релизе первыми, и поддержите проект.</p>
 
-        <!-- ССЫЛКИ-ЗАГЛУШКИ: замените href="#" на реальные адреса -->
+        <!-- ССЫЛКИ-ЗАГЛУШКИ: замените aria-disabled="true" на реальные адреса -->
         <div style="margin-top:40px">
           <div style="text-transform:uppercase;letter-spacing:0.16em;font-size:12px;font-weight:700;color:#7e988d;margin-bottom:14px">Скачать</div>
           <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px">
-            <a href="#" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+            <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
               <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">Google Play</span></span>
             </a>
-            <a href="#" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+            <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
               <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">App Store</span></span>
             </a>
@@ -1037,23 +1044,23 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="margin-top:36px">
           <div style="text-transform:uppercase;letter-spacing:0.16em;font-size:12px;font-weight:700;color:#7e988d;margin-bottom:14px">Мы в соцсетях</div>
           <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px">
-            <a href="#" aria-label="Telegram" class="mgSoc" style="width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#cfe3da;text-decoration:none" style-hover="transform:translateY(-3px);border-color:#29a9ea;color:#29a9ea;background:rgba(41,169,234,0.12)">
+            <a aria-disabled="true" aria-label="Telegram" class="mgSoc" style="width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#cfe3da;text-decoration:none" style-hover="transform:translateY(-3px);border-color:#29a9ea;color:#29a9ea;background:rgba(41,169,234,0.12)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M9.8 15.6 9.5 19.9c.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.8-.8L22 4.9c.3-1.3-.5-1.8-1.3-1.5L2.7 10.3c-1.2.5-1.2 1.1-.2 1.4l4.6 1.4L17.6 6.5c.5-.3.9-.1.6.2L9.8 15.6Z"></path></svg>
             </a>
-            <a href="#" aria-label="Instagram" class="mgSoc" style="width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#cfe3da;text-decoration:none" style-hover="transform:translateY(-3px);border-color:#e1306c;color:#f06090;background:rgba(225,48,108,0.12)">
+            <a aria-disabled="true" aria-label="Instagram" class="mgSoc" style="width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#cfe3da;text-decoration:none" style-hover="transform:translateY(-3px);border-color:#e1306c;color:#f06090;background:rgba(225,48,108,0.12)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17" cy="7" r="1" fill="currentColor" stroke="none"></circle></svg>
             </a>
-            <a href="#" aria-label="YouTube" class="mgSoc" style="width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#cfe3da;text-decoration:none" style-hover="transform:translateY(-3px);border-color:#ff4d4d;color:#ff6b6b;background:rgba(255,77,77,0.12)">
+            <a aria-disabled="true" aria-label="YouTube" class="mgSoc" style="width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#cfe3da;text-decoration:none" style-hover="transform:translateY(-3px);border-color:#ff4d4d;color:#ff6b6b;background:rgba(255,77,77,0.12)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10.5 9.3v5.4l4.7-2.7z" fill="currentColor" stroke="none"></path></svg>
             </a>
-            <a href="#" aria-label="TikTok" class="mgSoc" style="width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#cfe3da;text-decoration:none" style-hover="transform:translateY(-3px);border-color:#25f4ee;color:#25f4ee;background:rgba(37,244,238,0.12)">
+            <a aria-disabled="true" aria-label="TikTok" class="mgSoc" style="width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#cfe3da;text-decoration:none" style-hover="transform:translateY(-3px);border-color:#25f4ee;color:#25f4ee;background:rgba(37,244,238,0.12)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M14 4c.3 2.1 1.6 3.6 3.7 3.9v2.6c-1.3.1-2.5-.3-3.7-1v5.4c0 3-2.2 4.9-4.8 4.9-2.4 0-4.4-1.8-4.4-4.3 0-2.7 2.3-4.6 5.2-4.1v2.7c-.4-.1-.9-.2-1.3-.1-1 .2-1.6 1-1.5 2 .1.9.9 1.5 1.8 1.4 1-.1 1.6-.9 1.6-2V4H14Z"></path></svg>
             </a>
           </div>
         </div>
 
         <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px;margin-top:40px">
-          <a href="#" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:14px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 10px 30px rgba(52,232,160,0.26);transition:transform .25s ease" style-hover="transform:translateY(-2px)">
+          <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:14px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 10px 30px rgba(52,232,160,0.26);transition:transform .25s ease" style-hover="transform:translateY(-2px)">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
             Поддержать проект
           </a>
@@ -1086,14 +1093,14 @@ header nav a.mgActive{color:#eaf4ee}
         <p style="font-size:13.5px;line-height:1.6;color:#7e988d;margin:16px 0 0">MediGlobe — справочное приложение. Оно не ставит диагнозов и не заменяет консультацию врача. При недомогании обращайтесь к специалисту.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px">
-        <a href="#" style="color:#a7c0b5;text-decoration:none">Telegram</a>
-        <a href="#" style="color:#a7c0b5;text-decoration:none">Поддержать проект</a>
+        <a aria-disabled="true" style="color:#a7c0b5;text-decoration:none">Telegram</a>
+        <a aria-disabled="true" style="color:#a7c0b5;text-decoration:none">Поддержать проект</a>
         <a href="https://mediglobe.tvinkiforever.workers.dev/" target="_blank" rel="noopener" style="color:#a7c0b5;text-decoration:none">Политика конфиденциальности</a>
         <a href="#vozmozhnosti" style="color:#a7c0b5;text-decoration:none">Возможности</a>
       </div>
     </div>
     <div style="border-top:1px solid rgba(255,255,255,0.05)">
-      <div style="max-width:1180px;margin:0 auto;padding:18px 28px;font-size:13px;color:#5f7a6f">© 2026 MediGlobe · Глобальный справочник лекарств</div>
+      <div style="max-width:1180px;margin:0 auto;padding:18px 28px;font-size:13px;color:#6f8d80">© 2026 MediGlobe · Глобальный справочник лекарств</div>
     </div>
   </footer>
 
@@ -1325,7 +1332,7 @@ class Component extends DCLogic {
     let i = 0;
     const show = (n) => {
       screens.forEach((s, k) => s.classList.toggle('mgOn', k === n));
-      tabs.forEach((t, k) => { t.style.color = (k === n) ? 'var(--accent)' : '#5f7a6f'; });
+      tabs.forEach((t, k) => { t.style.color = (k === n) ? 'var(--accent)' : '#6f8d80'; });
       if (n === 1 && typing && ans) {
         typing.style.display = 'flex'; ans.style.opacity = '0'; ans.style.transition = 'opacity .4s ease';
         clearTimeout(this._phT);
@@ -1486,6 +1493,7 @@ class Component extends DCLogic {
     }
     this._last = performance.now();
     this._drawGlobe(this._last);
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const loop = (t) => { this._drawGlobe(t); this._raf = requestAnimationFrame(loop); };
     this._raf = requestAnimationFrame(loop);
   }
