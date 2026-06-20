@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <script src="./support.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MediGlobe","applicationCategory":"MedicalApplication","operatingSystem":"Android, iOS","url":"https://mediglobe.me/","description":"Найди местный аналог знакомого лекарства в любой стране — офлайн. 3333 препарата, 14 стран, 7 языков.","inLanguage":["ru","en","de","tr","fr","es","uk"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"MediGlobe","url":"https://mediglobe.me/"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MediGlobe","applicationCategory":"MedicalApplication","operatingSystem":"Android, iOS","url":"https://mediglobe.me/","description":"Найди местный аналог знакомого лекарства в любой стране — офлайн. 3252 препарата, 14 стран, 7 языков.","inLanguage":["ru","en","de","tr","fr","es","uk"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"MediGlobe","url":"https://mediglobe.me/"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Нужен ли интернет для работы?","acceptedAnswer":{"@type":"Answer","text":"Нет. Каталог препаратов, симптомы, первая помощь и проверка взаимодействий работают полностью офлайн. Интернет нужен только для AI-ассистента и карты аптек."}},{"@type":"Question","name":"Что происходит с моими данными?","acceptedAnswer":{"@type":"Answer","text":"Ваши лекарства, аллергии и симптомы остаются на устройстве. Нет рекламы и трекеров. AI-запросы идут через защищённый прокси без передачи личных данных третьим лицам."}},{"@type":"Question","name":"Когда выйдет версия для iOS?","acceptedAnswer":{"@type":"Answer","text":"Версия для iOS уже в разработке. Android доступен прямо сейчас — следите за обновлениями в наших соцсетях, чтобы узнать о релизе в App Store первыми."}},{"@type":"Question","name":"Это замена врачу?","acceptedAnswer":{"@type":"Answer","text":"Нет. MediGlobe — справочный инструмент: он помогает сориентироваться, но не ставит диагнозов и не заменяет консультацию специалиста. При недомогании обращайтесь к врачу."}},{"@type":"Question","name":"Сколько стоит приложение?","acceptedAnswer":{"@type":"Answer","text":"MediGlobe бесплатен. Скачайте Android-версию и пользуйтесь всеми возможностями без подписок и платы."}}]}
@@ -20,21 +20,21 @@
 <x-dc>
 <helmet>
 <title>MediGlobe — справочник лекарств офлайн</title>
-<meta name="description" content="Знакомое лекарство — в любой аптеке мира. Введи название или вещество и узнай местный аналог: бренды, дозировки, цены. Офлайн, 3333 препарата, 14 стран, 7 языков.">
+<meta name="description" content="Знакомое лекарство — в любой аптеке мира. Введи название или вещество и узнай местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 14 стран, 7 языков.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mediglobe.me/">
 <meta property="og:title" content="MediGlobe — справочник лекарств офлайн">
-<meta property="og:description" content="Знакомое лекарство — в любой аптеке мира. Введи название или вещество и узнай местный аналог. Офлайн, 3333 препарата, 14 стран, 7 языков.">
+<meta property="og:description" content="Знакомое лекарство — в любой аптеке мира. Введи название или вещество и узнай местный аналог. Офлайн, 3252 препарата, 14 стран, 7 языков.">
 <meta property="og:image" content="https://mediglobe.me/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MediGlobe — справочник лекарств офлайн">
-<meta name="twitter:description" content="Знакомое лекарство — в любой аптеке мира. Местные аналоги, дозировки, цены. Офлайн, 3333 препарата, 14 стран.">
+<meta name="twitter:description" content="Знакомое лекарство — в любой аптеке мира. Местные аналоги, дозировки, цены. Офлайн, 3252 препарата, 14 стран.">
 <meta name="twitter:image" content="https://mediglobe.me/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
 a[aria-disabled="true"]{pointer-events:none;cursor:default;opacity:.6}
@@ -231,7 +231,7 @@ header nav a.mgActive{color:#eaf4ee}
   <div id="mgProgress"></div>
   <div id="mgGrain" aria-hidden="true"></div>
   <div id="mgStickyBar" style="position:fixed;left:0;right:0;bottom:0;z-index:75;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(6,18,13,0.92);backdrop-filter:blur(14px);border-top:1px solid rgba(52,232,160,0.18);transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.7,.2,1)">
-    <a aria-disabled="true" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius:13px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none">
+    <a href="#mgNotifyForm" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius:13px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#06120d" fill-opacity="0.35"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#06120d" fill-opacity="0.55"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#06120d" fill-opacity="0.7"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#06120d"></path></svg>
       Скачать для Android
     </a>
@@ -280,7 +280,7 @@ header nav a.mgActive{color:#eaf4ee}
       </button>
       <a href="#vozmozhnosti" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Возможности</a>
       <a href="#kak" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Как это работает</a>
-      <a href="#ekrany" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Экраны</a>
+      <a href="#ekrany" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:none">Экраны</a>
       <a href="#strany" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Страны</a>
       <a href="#yazyki" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Языки</a>
       <a href="#faq" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Вопросы</a>
@@ -297,16 +297,16 @@ header nav a.mgActive{color:#eaf4ee}
       <div>
         <div style="display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:rgba(52,232,160,0.1);border:1px solid rgba(52,232,160,0.25);font-size:13.5px;font-weight:600;color:var(--accent)">
           <span style="width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)"></span>
-          Доступно на Android · версия для iOS скоро
+          Скоро в Google Play · версия для iOS следом
         </div>
-        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,60px);line-height:1.04;letter-spacing:-0.03em;margin:24px 0 0;text-wrap:balance">{{ headline }}</h1>
-        <p style="font-size:19px;line-height:1.55;color:#a7c0b5;margin:22px 0 0;max-width:520px;text-wrap:pretty">{{ tagline }}</p>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,60px);line-height:1.04;letter-spacing:-0.03em;margin:24px 0 0;text-wrap:balance">Знакомое лекарство — в любой аптеке мира</h1>
+        <p style="font-size:19px;line-height:1.55;color:#a7c0b5;margin:22px 0 0;max-width:520px;text-wrap:pretty">Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 14 стран, 7 языков.</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
-          <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
             <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">Google Play</span></span>
           </a>
-          <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
             <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">App Store</span></span>
           </a>
@@ -429,7 +429,7 @@ header nav a.mgActive{color:#eaf4ee}
           <span style="width:8px;height:8px;border-radius:50%;background:var(--accent2)"></span>AI-симптомы
         </div>
         <div style="position:absolute;bottom:5%;left:13%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius:13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 8s ease-in-out infinite">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span>3333 препарата
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span>3252 препарата
         </div>
       </div>
     </div>
@@ -442,7 +442,7 @@ header nav a.mgActive{color:#eaf4ee}
   <section style="position:relative">
     <div style="max-width:1180px;margin:0 auto;padding:38px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)">
       <div class="mgStat">
-        <div data-count="3333" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.02em">3333</div>
+        <div data-count="3252" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.02em">3252</div>
         <div style="font-size:14px;color:#88a397;margin-top:4px">препарат</div>
       </div>
       <div class="mgStat">
@@ -516,7 +516,7 @@ header nav a.mgActive{color:#eaf4ee}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Каталог препаратов</h3>
-        <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">3333 препарата из 14 стран — показания, дозировка, механизм действия и предупреждения. Полностью офлайн.</p>
+        <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">3252 препарата из 14 стран — показания, дозировка, механизм действия и предупреждения. Полностью офлайн.</p>
       </div>
 
       <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
@@ -690,7 +690,7 @@ header nav a.mgActive{color:#eaf4ee}
     </div>
   </section>
 
-  <section id="ekrany" style="max-width:1180px;margin:0 auto;padding:40px 28px 96px">
+  <section id="ekrany" style="max-width:1180px;margin:0 auto;padding:40px 28px 96px;display:none">
     <div style="text-align:center;max-width:640px;margin:0 auto 40px">
       <div style="text-transform:uppercase;letter-spacing:0.18em;font-size:13px;font-weight:700;color:var(--accent)">Экраны приложения</div>
       <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-0.02em;margin:14px 0 0">Посмотрите MediGlobe в деле</h2>
@@ -910,8 +910,9 @@ header nav a.mgActive{color:#eaf4ee}
         <p style="font-size:16px;line-height:1.55;color:#a7c0b5;margin:20px 0 24px">Версия для iPhone и iPad в разработке — оставьте почту, и мы сообщим о релизе в App Store.</p>
         <form id="mgNotifyForm" style="margin-top:auto;display:flex;gap:8px;flex-wrap:wrap">
           <input id="mgNotifyEmail" type="email" required placeholder="you@email.com" style="flex:1;min-width:160px;padding:13px 16px;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#eaf4ee;font-size:15px;font-family:inherit;outline:none">
-          <button type="submit" style="flex:none;padding:13px 20px;border-radius:12px;background:rgba(255,255,255,0.08);color:#eaf4ee;border:1px solid rgba(255,255,255,0.16);font-weight:700;font-size:15px;cursor:pointer;font-family:inherit">Уведомить</button>
+          <button type="submit" style="flex:none;padding:13px 20px;border-radius:12px;background:var(--accent);color:#06120d;border:1px solid var(--accent);font-weight:700;font-size:15px;cursor:pointer;font-family:inherit">Уведомить</button>
         </form>
+        <div style="margin-top:9px;font-size:13px;color:#7e988d">Только письмо о релизе. Без спама.</div>
         <div id="mgNotifyOk" style="display:none;margin-top:14px;align-items:center;gap:9px;font-size:14.5px;color:var(--accent)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Спасибо! Сообщим, как только версия выйдет.</div>
       </div>
     </div>
@@ -965,7 +966,7 @@ header nav a.mgActive{color:#eaf4ee}
           <div style="flex:none;position:relative;z-index:1;width:38px;height:38px;border-radius:50%;background:rgba(52,232,160,0.16);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;color:var(--accent)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></div>
           <div style="flex:1;padding:4px 0">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px"><h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:0">Android-релиз</h3><span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(52,232,160,0.15);color:var(--accent)">Готово</span></div>
-            <p style="font-size:15px;line-height:1.55;color:#9bb3a8;margin:6px 0 0">3333 препарата, AI-ассистент, проверка взаимодействий, первая помощь, 7 языков — всё офлайн.</p>
+            <p style="font-size:15px;line-height:1.55;color:#9bb3a8;margin:6px 0 0">3252 препарата, AI-ассистент, проверка взаимодействий, первая помощь, 7 языков — всё офлайн.</p>
           </div>
         </div>
         <div style="display:flex;gap:22px;align-items:flex-start">
@@ -1036,11 +1037,11 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="margin-top:40px">
           <div style="text-transform:uppercase;letter-spacing:0.16em;font-size:12px;font-weight:700;color:#7e988d;margin-bottom:14px">Скачать</div>
           <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px">
-            <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
               <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">Google Play</span></span>
             </a>
-            <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
               <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">App Store</span></span>
             </a>
@@ -1066,7 +1067,7 @@ header nav a.mgActive{color:#eaf4ee}
         </div>
 
         <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px;margin-top:40px">
-          <a aria-disabled="true" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:14px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 10px 30px rgba(52,232,160,0.26);transition:transform .25s ease" style-hover="transform:translateY(-2px)">
+          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:14px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 10px 30px rgba(52,232,160,0.26);transition:transform .25s ease" style-hover="transform:translateY(-2px)">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
             Поддержать проект
           </a>
@@ -1115,7 +1116,7 @@ header nav a.mgActive{color:#eaf4ee}
 <script type="text/x-dc" data-dc-script data-props="{
   &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#34e8a0&quot;, &quot;tsType&quot;: &quot;string&quot;},
   &quot;headline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Знакомое лекарство — в любой аптеке мира&quot;, &quot;tsType&quot;: &quot;string&quot;},
-  &quot;tagline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3333 препарата, 14 стран, 7 языков.&quot;, &quot;tsType&quot;: &quot;string&quot;}
+  &quot;tagline&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 14 стран, 7 языков.&quot;, &quot;tsType&quot;: &quot;string&quot;}
 }">
 class Component extends DCLogic {
   buildEarth() {
@@ -1692,7 +1693,7 @@ class Component extends DCLogic {
     return {
       accent: this.props.accent ?? '#34e8a0',
       headline: this.props.headline ?? 'Знакомое лекарство — в любой аптеке мира',
-      tagline: this.props.tagline ?? 'Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3333 препарата, 14 стран, 7 языков.',
+      tagline: this.props.tagline ?? 'Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 14 стран, 7 языков.',
       ring: this.buildRing()
     };
   }
