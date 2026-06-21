@@ -696,116 +696,41 @@ header nav a.mgActive{color:#eaf4ee}
     <div style="text-align:center;max-width:640px;margin:0 auto 40px">
       <div style="text-transform:uppercase;letter-spacing:0.18em;font-size:13px;font-weight:700;color:var(--accent)">App screens</div>
       <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-0.02em;margin:14px 0 0">See MediGlobe in action</h2>
-      <p style="font-size:17px;line-height:1.55;color:#9bb3a8;margin:16px 0 0">Real app screens — switch the platform and swipe.</p>
+      <p style="font-size:17px;line-height:1.55;color:#9bb3a8;margin:16px 0 0">Real app screens — swipe through.</p>
     </div>
-
-    <div style="display:flex;justify-content:center;margin:0 auto 38px">
-      <div id="mgPlatSwitch" style="position:relative;display:flex;width:280px;max-width:88vw;padding:5px;border-radius:15px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09)">
-        <span id="mgPlatThumb" class="mgPlatThumb" style="transform:translateX(0)"></span>
-        <button class="mgPlatBtn" data-plat="ios" data-active="1">
-          <svg width="15" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.23 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.14-2.53.99-1.45 1.4-2.86 1.42-2.93-.03-.01-2.72-1.04-2.75-4.13zM14.6 4.62c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
-          iOS
-        </button>
-        <button class="mgPlatBtn" data-plat="android" data-active="0">
-          <svg width="17" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.46 11.46 0 00-8.94 0L5.65 5.67c-.19-.29-.57-.39-.87-.2-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 001 18h22a10.78 10.78 0 00-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/></svg>
-          Android
-        </button>
+    <div class="mgShotRow" style="display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:10px 4px 20px;margin:0 -4px;justify-content:center">
+      <div class="mgShotCard" style="flex:none;width:236px">
+        <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
+          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
+          <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
+          <img src="/screenshots/app-catalog.jpg" alt="Medication catalog" loading="lazy" style="display:block;width:100%;height:100%;border-radius:35px;object-fit:cover"></img>
+        </div>
+        <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Catalog</div>
       </div>
-    </div>
-
-    <div class="mgPlatDeck" data-plat="ios" data-active="1">
-      <div class="mgShotRow" style="display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:10px 4px 20px;margin:0 -4px">
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
-            <img src="/assets/screens/en/catalog.png" alt="MediGlobe — drug catalog" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:35px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Medication catalog</div>
+      <div class="mgShotCard" style="flex:none;width:236px">
+        <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
+          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
+          <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
+          <img src="/screenshots/app-symptoms.jpg" alt="Symptom check" loading="lazy" style="display:block;width:100%;height:100%;border-radius:35px;object-fit:cover"></img>
         </div>
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
-            <img src="/assets/screens/en/detail.png" alt="MediGlobe — drug card" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:35px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Drug card</div>
-        </div>
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
-            <img src="/assets/screens/en/symptoms.png" alt="MediGlobe — symptom search" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:35px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">AI assistant</div>
-        </div>
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
-            <img src="/assets/screens/en/prices.png" alt="MediGlobe — prices by country" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:35px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Prices by country</div>
-        </div>
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
-            <img src="/assets/screens/en/firstaid.png" alt="MediGlobe — first aid" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:35px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">First aid</div>
-        </div>
+        <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Symptoms</div>
       </div>
-    </div>
-
-    <div class="mgPlatDeck" data-plat="android" data-active="0">
-      <div class="mgShotRow" style="display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:10px 4px 20px;margin:0 -4px">
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:32px;padding:8px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:18px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:11px;left:50%;transform:translateX(-50%);width:74px;height:4px;border-radius:2px;background:rgba(255,255,255,0.45);z-index:4"></div>
-            <img src="/assets/screens/en/catalog.png" alt="MediGlobe — drug catalog" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:25px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Medication catalog</div>
+      <div class="mgShotCard" style="flex:none;width:236px">
+        <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
+          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
+          <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
+          <img src="/screenshots/app-firstaid.jpg" alt="First aid" loading="lazy" style="display:block;width:100%;height:100%;border-radius:35px;object-fit:cover"></img>
         </div>
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:32px;padding:8px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:18px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:11px;left:50%;transform:translateX(-50%);width:74px;height:4px;border-radius:2px;background:rgba(255,255,255,0.45);z-index:4"></div>
-            <img src="/assets/screens/en/detail.png" alt="MediGlobe — drug card" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:25px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Drug card</div>
-        </div>
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:32px;padding:8px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:18px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:11px;left:50%;transform:translateX(-50%);width:74px;height:4px;border-radius:2px;background:rgba(255,255,255,0.45);z-index:4"></div>
-            <img src="/assets/screens/en/symptoms.png" alt="MediGlobe — symptom search" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:25px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">AI assistant</div>
-        </div>
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:32px;padding:8px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:18px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:11px;left:50%;transform:translateX(-50%);width:74px;height:4px;border-radius:2px;background:rgba(255,255,255,0.45);z-index:4"></div>
-            <img src="/assets/screens/en/prices.png" alt="MediGlobe — prices by country" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:25px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Prices by country</div>
-        </div>
-        <div class="mgShotCard" style="flex:none;width:236px">
-          <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:32px;padding:8px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-            <div style="position:absolute;top:18px;left:50%;transform:translateX(-50%);width:11px;height:11px;border-radius:50%;background:#000;z-index:4"></div>
-            <div style="position:absolute;bottom:11px;left:50%;transform:translateX(-50%);width:74px;height:4px;border-radius:2px;background:rgba(255,255,255,0.45);z-index:4"></div>
-            <img src="/assets/screens/en/firstaid.png" alt="MediGlobe — first aid" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:25px">
-          </div>
-          <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">First aid</div>
-        </div>
+        <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">First aid</div>
       </div>
-    </div>
-
-    <div style="display:flex;align-items:center;justify-content:center;gap:9px;margin-top:6px;color:#7e988d;font-size:13px;font-weight:600">
-      <span>Drag your screenshots into the frames</span>
-      <svg class="mgSwipeHint" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      <div class="mgShotCard" style="flex:none;width:236px">
+        <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
+          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
+          <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
+          <img src="/screenshots/app-pharmacies.jpg" alt="Pharmacy map" loading="lazy" style="display:block;width:100%;height:100%;border-radius:35px;object-fit:cover"></img>
+        </div>
+        <div style="text-align:center;margin-top:16px;font-size:14px;font-weight:600;color:#cfe3da;font-family:'Space Grotesk',sans-serif">Pharmacies</div>
+      </div>
     </div>
   </section>
 
