@@ -1,2 +1,4 @@
 build_en.py
 patch_i18n.py
+.wrangler/
+node_modules/
