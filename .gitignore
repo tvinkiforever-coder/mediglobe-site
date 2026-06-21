@@ -2,3 +2,8 @@ build_en.py
 patch_i18n.py
 .wrangler/
 node_modules/
+
+# secrets — never commit (public repo)
+.env
+.env.*
+.dev.vars
