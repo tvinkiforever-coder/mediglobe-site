@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediGlobe — Privacy Policy</title>
+  <title>MediGlobe — Политика конфиденциальности</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -56,170 +56,126 @@
 
   <header>
     <div class="logo">Medi<span>Globe</span></div>
-    <div class="tagline">Global Drug Catalog for Travelers</div>
-    <div class="badge">PRIVACY POLICY</div>
+    <div class="tagline">Глобальный справочник лекарств для путешественников</div>
+    <div class="badge">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</div>
   </header>
 
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: May 29, 2026 &nbsp;·&nbsp; Effective: May 29, 2026</p>
+  <h1>Политика конфиденциальности</h1>
+  <p class="updated">Последнее обновление: 29 мая 2026 &nbsp;·&nbsp; Действует с: 29 мая 2026 &nbsp;·&nbsp; <a href="/en/privacy/">English</a></p>
 
   <div class="card">
-    <p>MediGlobe is an <span class="highlight">offline-first</span> reference catalog for travelers.
-    We collect <span class="highlight">no personal accounts</span>, sell <span class="highlight">no data</span>,
-    and store sensitive health data exclusively <span class="highlight">on your device</span>.</p>
+    <p>MediGlobe — это справочный каталог для путешественников, работающий <span class="highlight">прежде всего офлайн</span>.
+    Мы <span class="highlight">не создаём аккаунтов</span>, <span class="highlight">не продаём данные</span>
+    и храним чувствительные медицинские данные исключительно <span class="highlight">на вашем устройстве</span>.</p>
   </div>
 
-  <!-- 1. Who we are -->
-  <h2>1. Who We Are</h2>
-  <p>MediGlobe is an independent mobile application developed by David Pikalov
+  <!-- 1. Кто мы -->
+  <h2>1. Кто мы</h2>
+  <p>MediGlobe — независимое мобильное приложение, разработанное David Pikalov
   (<a href="mailto:mediglobe.official@gmail.com">mediglobe.official@gmail.com</a>).
-  The app is published on Google Play and available as a standalone Android APK.</p>
+  Приложение публикуется в Google Play и доступно как отдельный Android APK.</p>
 
-  <!-- 2. Data we do NOT collect -->
-  <h2>2. Data We Do NOT Collect</h2>
-  <p>We do <strong>not</strong> collect, store or transmit:</p>
+  <!-- 2. Какие данные мы НЕ собираем -->
+  <h2>2. Какие данные мы НЕ собираем</h2>
+  <p>Мы <strong>не</strong> собираем, не храним и не передаём:</p>
   <ul>
-    <li>Your name, email address, or any account information</li>
-    <li>Your location or GPS coordinates (the map feature uses device location <em>only on your device</em> to center the map; no location data is sent to us)</li>
-    <li>Your medical profile (blood type, chronic conditions, allergies, emergency contact)</li>
-    <li>Your browsing history within the app</li>
-    <li>Any usage analytics or crash reports</li>
-    <li>Payment information (handled entirely by Google Play / RevenueCat)</li>
+    <li>Ваше имя, email или любые данные аккаунта</li>
+    <li>Ваше местоположение или GPS-координаты (функция карты использует геолокацию <em>только на вашем устройстве</em>, чтобы отцентрировать карту; данные о местоположении нам не отправляются)</li>
+    <li>Ваш медицинский профиль (группа крови, хронические заболевания, аллергии, экстренный контакт)</li>
+    <li>Историю просмотров внутри приложения</li>
+    <li>Любую аналитику использования или отчёты о сбоях</li>
+    <li>Платёжную информацию (полностью обрабатывается Google Play / RevenueCat)</li>
   </ul>
 
-  <!-- 3. Data stored on your device -->
-  <h2>3. Data Stored Locally on Your Device</h2>
-  <p>The following data is stored <strong>only on your device</strong> and never leaves it:</p>
+  <!-- 3. Данные, хранящиеся локально -->
+  <h2>3. Данные, хранящиеся локально на вашем устройстве</h2>
+  <p>Следующие данные хранятся <strong>только на вашем устройстве</strong> и никогда его не покидают:</p>
 
   <table>
-    <tr><th>Data</th><th>Where stored</th><th>Purpose</th></tr>
-    <tr><td>Blood type, chronic conditions, allergies, emergency contact</td><td>Android Keystore (SecureStore)</td><td>Personal medical reference card</td></tr>
-    <tr><td>Favourite drugs, browsing history</td><td>AsyncStorage</td><td>Personalised experience</td></tr>
-    <tr><td>App language and theme preference</td><td>AsyncStorage</td><td>User interface settings</td></tr>
-    <tr><td>Selected countries (home / current)</td><td>AsyncStorage</td><td>Price and analog display</td></tr>
-    <tr><td>API cache (Wikipedia, drug data)</td><td>AsyncStorage</td><td>Offline performance</td></tr>
+    <tr><th>Данные</th><th>Где хранятся</th><th>Назначение</th></tr>
+    <tr><td>Группа крови, хронические заболевания, аллергии, экстренный контакт</td><td>Android Keystore (SecureStore)</td><td>Личная медицинская карта</td></tr>
+    <tr><td>Избранные препараты, история просмотров</td><td>AsyncStorage</td><td>Персонализация</td></tr>
+    <tr><td>Язык приложения и тема оформления</td><td>AsyncStorage</td><td>Настройки интерфейса</td></tr>
+    <tr><td>Выбранные страны (домашняя / текущая)</td><td>AsyncStorage</td><td>Показ цен и аналогов</td></tr>
+    <tr><td>Кэш API (Wikipedia, данные о препаратах)</td><td>AsyncStorage</td><td>Работа офлайн</td></tr>
   </table>
 
   <div class="card">
-    <p>Sensitive medical fields (blood type, allergies, chronic conditions, emergency contact)
-    are stored in the <span class="highlight">Android Keystore</span> — the same secure hardware-backed
-    storage used by banking apps. This data <strong>cannot be accessed</strong> by other apps
-    and is <strong>never transmitted</strong> over the network.</p>
+    <p>Чувствительные медицинские поля (группа крови, аллергии, хронические заболевания, экстренный контакт)
+    хранятся в <span class="highlight">Android Keystore</span> — том же защищённом аппаратном хранилище,
+    которое используют банковские приложения. Эти данные <strong>недоступны</strong> другим приложениям
+    и <strong>никогда не передаются</strong> по сети.</p>
   </div>
 
-  <!-- 4. Third-party services -->
-  <h2>4. Third-Party Services Used</h2>
-  <p>MediGlobe makes network requests to the following services when the device is online:</p>
+  <!-- 4. Сторонние сервисы -->
+  <h2>4. Используемые сторонние сервисы</h2>
+  <p>MediGlobe делает сетевые запросы к следующим сервисам, когда устройство онлайн:</p>
 
   <table>
-    <tr><th>Service</th><th>What is sent</th><th>Their privacy policy</th></tr>
-    <tr>
-      <td>Wikipedia REST API</td>
-      <td>Drug name (text query)</td>
-      <td><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" target="_blank">wikimedia.org</a></td>
-    </tr>
-    <tr>
-      <td>Wikidata SPARQL</td>
-      <td>Drug name (text query)</td>
-      <td><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" target="_blank">wikimedia.org</a></td>
-    </tr>
-    <tr>
-      <td>OpenFDA (U.S. FDA)</td>
-      <td>Drug name (text query)</td>
-      <td><a href="https://open.fda.gov/privacy/" target="_blank">open.fda.gov</a></td>
-    </tr>
-    <tr>
-      <td>PubChem (NIH)</td>
-      <td>Drug name (text query for molecule image)</td>
-      <td><a href="https://www.nlm.nih.gov/web_policies.html" target="_blank">nlm.nih.gov</a></td>
-    </tr>
-    <tr>
-      <td>ChEMBL (EMBL-EBI)</td>
-      <td>Drug name (text query)</td>
-      <td><a href="https://www.ebi.ac.uk/data-protection/privacy-notice/chembl" target="_blank">ebi.ac.uk</a></td>
-    </tr>
-    <tr>
-      <td>RxNorm (NIH)</td>
-      <td>Drug name (text query)</td>
-      <td><a href="https://www.nlm.nih.gov/web_policies.html" target="_blank">nlm.nih.gov</a></td>
-    </tr>
-    <tr>
-      <td>Open Exchange Rates</td>
-      <td>API key only (no personal data)</td>
-      <td><a href="https://openexchangerates.org/privacy" target="_blank">openexchangerates.org</a></td>
-    </tr>
-    <tr>
-      <td>Overpass API (OpenStreetMap)</td>
-      <td>Coordinates (for pharmacy/hospital search)</td>
-      <td><a href="https://wiki.openstreetmap.org/wiki/Privacy_Policy" target="_blank">openstreetmap.org</a></td>
-    </tr>
-    <tr>
-      <td>Anthropic Claude API <em>(AI features only)</em></td>
-      <td>Symptom description or drug names typed by user</td>
-      <td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com</a></td>
-    </tr>
-    <tr>
-      <td>RevenueCat <em>(premium subscriptions)</em></td>
-      <td>Anonymous purchase token from Google Play</td>
-      <td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com</a></td>
-    </tr>
-    <tr>
-      <td>Google Play <em>(payments)</em></td>
-      <td>Payment and device info (managed by Google)</td>
-      <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com</a></td>
-    </tr>
+    <tr><th>Сервис</th><th>Что отправляется</th><th>Их политика конфиденциальности</th></tr>
+    <tr><td>Wikipedia REST API</td><td>Название препарата (текстовый запрос)</td><td><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" target="_blank">wikimedia.org</a></td></tr>
+    <tr><td>Wikidata SPARQL</td><td>Название препарата (текстовый запрос)</td><td><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" target="_blank">wikimedia.org</a></td></tr>
+    <tr><td>OpenFDA (U.S. FDA)</td><td>Название препарата (текстовый запрос)</td><td><a href="https://open.fda.gov/privacy/" target="_blank">open.fda.gov</a></td></tr>
+    <tr><td>PubChem (NIH)</td><td>Название препарата (запрос изображения молекулы)</td><td><a href="https://www.nlm.nih.gov/web_policies.html" target="_blank">nlm.nih.gov</a></td></tr>
+    <tr><td>ChEMBL (EMBL-EBI)</td><td>Название препарата (текстовый запрос)</td><td><a href="https://www.ebi.ac.uk/data-protection/privacy-notice/chembl" target="_blank">ebi.ac.uk</a></td></tr>
+    <tr><td>RxNorm (NIH)</td><td>Название препарата (текстовый запрос)</td><td><a href="https://www.nlm.nih.gov/web_policies.html" target="_blank">nlm.nih.gov</a></td></tr>
+    <tr><td>Open Exchange Rates</td><td>Только API-ключ (без личных данных)</td><td><a href="https://openexchangerates.org/privacy" target="_blank">openexchangerates.org</a></td></tr>
+    <tr><td>Overpass API (OpenStreetMap)</td><td>Координаты (для поиска аптек/больниц)</td><td><a href="https://wiki.openstreetmap.org/wiki/Privacy_Policy" target="_blank">openstreetmap.org</a></td></tr>
+    <tr><td>Anthropic Claude API <em>(только AI-функции)</em></td><td>Описание симптомов или названия препаратов, введённые пользователем</td><td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com</a></td></tr>
+    <tr><td>RevenueCat <em>(премиум-подписки)</em></td><td>Анонимный токен покупки из Google Play</td><td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com</a></td></tr>
+    <tr><td>Google Play <em>(платежи)</em></td><td>Платёжные данные и данные устройства (управляет Google)</td><td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com</a></td></tr>
   </table>
 
-  <p class="warn">⚠️ AI Features (symptom chat, drug interactions, abroad analog search, package scanner):
-  When you use these features, the text you type or the photo you take is sent to
-  <strong>Anthropic Claude API</strong> via an encrypted proxy. We do not store
-  these queries on our servers. Anthropic may process them per their privacy policy.
-  AI features require an active internet connection and are optional — the app works
-  fully offline without them.</p>
+  <p class="warn">⚠️ AI-функции (чат по симптомам, проверка взаимодействий, поиск аналога за рубежом, сканер упаковки):
+  когда вы пользуетесь этими функциями, введённый текст или сделанное фото отправляется в
+  <strong>Anthropic Claude API</strong> через зашифрованный прокси. Мы не храним
+  эти запросы на наших серверах. Anthropic может обрабатывать их согласно своей политике
+  конфиденциальности. AI-функции требуют активного интернет-соединения и необязательны —
+  приложение полностью работает офлайн без них.</p>
 
-  <!-- 5. AI proxy and security -->
-  <h2>5. AI Proxy and Security</h2>
-  <p>AI-powered features route requests through a <strong>Cloudflare Workers proxy</strong> operated by us.
-  This proxy:</p>
+  <!-- 5. AI-прокси и безопасность -->
+  <h2>5. AI-прокси и безопасность</h2>
+  <p>AI-функции направляют запросы через <strong>прокси на Cloudflare Workers</strong>, которым управляем мы.
+  Этот прокси:</p>
   <ul>
-    <li>Validates a request token to prevent unauthorized use</li>
-    <li>Rate-limits requests to 30 per minute per IP</li>
-    <li>Forwards requests to Anthropic over HTTPS</li>
-    <li>Does <strong>not</strong> log, store, or process request contents</li>
-    <li>Hides the Claude API key from the app binary (security measure)</li>
+    <li>Проверяет токен запроса, чтобы предотвратить несанкционированное использование</li>
+    <li>Ограничивает частоту до 30 запросов в минуту с одного IP</li>
+    <li>Пересылает запросы в Anthropic по HTTPS</li>
+    <li><strong>Не</strong> логирует, не хранит и не обрабатывает содержимое запросов</li>
+    <li>Скрывает API-ключ Claude из бинарника приложения (мера безопасности)</li>
   </ul>
 
-  <!-- 6. Children -->
-  <h2>6. Children's Privacy</h2>
-  <p>MediGlobe is designed for travelers aged 13 and above. We do not knowingly collect
-  any personal information from children under 13. If you are a parent and believe your
-  child has used AI features that transmitted data, please contact us at
+  <!-- 6. Конфиденциальность детей -->
+  <h2>6. Конфиденциальность детей</h2>
+  <p>MediGlobe рассчитан на путешественников от 13 лет и старше. Мы сознательно не собираем
+  никакой личной информации от детей младше 13 лет. Если вы родитель и считаете, что ваш
+  ребёнок воспользовался AI-функциями, которые передали данные, напишите нам на
   <a href="mailto:mediglobe.official@gmail.com">mediglobe.official@gmail.com</a>.</p>
 
-  <!-- 7. Data deletion -->
-  <h2>7. Your Rights and Data Deletion</h2>
-  <p>Since all personal data is stored locally on your device:</p>
+  <!-- 7. Ваши права и удаление данных -->
+  <h2>7. Ваши права и удаление данных</h2>
+  <p>Поскольку все личные данные хранятся локально на вашем устройстве:</p>
   <ul>
-    <li><strong>To delete all app data</strong>: Go to Profile → Reset → Reset all data. This clears all stored preferences, history, and medical profile fields.</li>
-    <li><strong>To delete the app</strong>: Uninstalling MediGlobe removes all locally stored data from your device.</li>
-    <li><strong>API query history</strong>: We do not store your queries on our servers. Any data retained by third-party APIs (e.g., Anthropic) is subject to their retention policies.</li>
+    <li><strong>Чтобы удалить все данные приложения</strong>: откройте Профиль → Сброс → Сбросить все данные. Это очистит все сохранённые настройки, историю и поля медицинского профиля.</li>
+    <li><strong>Чтобы удалить приложение</strong>: удаление MediGlobe убирает все локально сохранённые данные с вашего устройства.</li>
+    <li><strong>История запросов к API</strong>: мы не храним ваши запросы на наших серверах. Любые данные, сохранённые сторонними API (например, Anthropic), подчиняются их политикам хранения.</li>
   </ul>
 
-  <!-- 8. Changes -->
-  <h2>8. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. The updated version will be published
-  at this URL. Continued use of MediGlobe after a policy update constitutes acceptance of the
-  new policy. We will note the "Last updated" date at the top of this page.</p>
+  <!-- 8. Изменения -->
+  <h2>8. Изменения этой политики</h2>
+  <p>Мы можем время от времени обновлять эту Политику конфиденциальности. Обновлённая версия будет
+  опубликована по этому адресу. Продолжение использования MediGlobe после обновления политики означает
+  согласие с новой политикой. Дату «Последнее обновление» мы указываем вверху этой страницы.</p>
 
-  <!-- 9. Contact -->
-  <h2>9. Contact Us</h2>
-  <p>For any privacy-related questions or requests:</p>
+  <!-- 9. Контакты -->
+  <h2>9. Свяжитесь с нами</h2>
+  <p>По любым вопросам или запросам, связанным с конфиденциальностью:</p>
   <p>📧 <a href="mailto:mediglobe.official@gmail.com">mediglobe.official@gmail.com</a></p>
-  <p>We aim to respond within 5 business days.</p>
+  <p>Мы стараемся отвечать в течение 5 рабочих дней.</p>
 
   <footer>
     <p>© 2026 MediGlobe · <a href="mailto:mediglobe.official@gmail.com">mediglobe.official@gmail.com</a></p>
-    <p style="margin-top:6px">MediGlobe is an informational reference only — not a medical service. Always consult a doctor.</p>
+    <p style="margin-top:6px">MediGlobe — только справочный инструмент, не медицинская услуга. Всегда консультируйтесь с врачом.</p>
   </footer>
 
 </div>
