@@ -99,7 +99,7 @@ header nav a.mgActive{color:#eaf4ee}
 .mgScrollCue{animation:mgBob 2s ease-in-out infinite}
 .mgSep{height:1px;max-width:1100px;margin:0 auto;background:linear-gradient(90deg,transparent,rgba(52,232,160,0.32),transparent);position:relative}
 .mgSep::before{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%);box-shadow:0 0 12px var(--accent)}
-#mgTop{position:fixed;right:26px;bottom:26px;width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(10,26,19,0.9);backdrop-filter:blur(8px);border:1px solid rgba(52,232,160,0.4);color:var(--accent);cursor:pointer;z-index:90;opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity .35s ease,transform .35s ease,box-shadow .25s ease}
+#mgTop{position:fixed;right:26px;bottom:26px;width:48px;height:48px;border-radius: 14px;display:flex;align-items:center;justify-content:center;background:rgba(10,26,19,0.9);backdrop-filter:blur(8px);border:1px solid rgba(52,232,160,0.4);color:var(--accent);cursor:pointer;z-index:90;opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;transition:opacity .35s ease,transform .35s ease,box-shadow .25s ease}
 #mgTop.mgShow{opacity:1;transform:none;pointer-events:auto}
 #mgTop:hover{box-shadow:0 0 22px rgba(52,232,160,0.45)}
 .mgSoc{transition:transform .25s ease,border-color .25s ease,color .25s ease,background .25s ease}
@@ -231,7 +231,7 @@ header nav a.mgActive{color:#eaf4ee}
   <div id="mgProgress"></div>
   <div id="mgGrain" aria-hidden="true"></div>
   <div id="mgStickyBar" style="position:fixed;left:0;right:0;bottom:0;z-index:75;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(6,18,13,0.92);backdrop-filter:blur(14px);border-top:1px solid rgba(52,232,160,0.18);transform:translateY(120%);transition:transform .4s cubic-bezier(.2,.7,.2,1)">
-    <a href="#mgNotifyForm" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius:13px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none">
+    <a href="#mgNotifyForm" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;border-radius: 13px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#06120d" fill-opacity="0.35"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#06120d" fill-opacity="0.55"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#06120d" fill-opacity="0.7"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#06120d"></path></svg>
       Скачать для Android
     </a>
@@ -286,7 +286,7 @@ header nav a.mgActive{color:#eaf4ee}
       <a href="#yazyki" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Языки</a>
       <a href="#faq" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Вопросы</a>
       <a href="/en/" class="mgMenuLink" style="display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;color:#a7c0b5;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">English · EN</a>
-      <a href="#najti" class="mgMenuLink" style="margin-top:18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px;border-radius:13px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none">Скачать приложение</a>
+      <a href="#najti" class="mgMenuLink" style="margin-top:18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px;border-radius: 13px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none">Скачать приложение</a>
     </nav>
   </div>
 
@@ -304,11 +304,11 @@ header nav a.mgActive{color:#eaf4ee}
         <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,60px);line-height:1.04;letter-spacing:-0.03em;margin:24px 0 0;text-wrap:balance">Знакомое лекарство — в любой аптеке мира</h1>
         <p style="font-size:19px;line-height:1.55;color:#a7c0b5;margin:22px 0 0;max-width:520px;text-wrap:pretty">Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 14 стран, 7 языков.</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
-          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
             <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">Google Play</span></span>
           </a>
-          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
             <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">App Store</span></span>
           </a>
@@ -424,13 +424,13 @@ header nav a.mgActive{color:#eaf4ee}
           </svg>
         </div>
 
-        <div style="position:absolute;top:6%;left:-2%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius:13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 6s ease-in-out infinite">
+        <div style="position:absolute;top:6%;left:-2%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 6s ease-in-out infinite">
           <span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span>Работает офлайн
         </div>
-        <div style="position:absolute;top:34%;right:-5%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius:13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floatyB 7s ease-in-out infinite">
+        <div style="position:absolute;top:34%;right:-5%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floatyB 7s ease-in-out infinite">
           <span style="width:8px;height:8px;border-radius:50%;background:var(--accent2)"></span>AI-симптомы
         </div>
-        <div style="position:absolute;bottom:5%;left:13%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius:13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 8s ease-in-out infinite">
+        <div style="position:absolute;bottom:5%;left:13%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 8s ease-in-out infinite">
           <span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span>3252 препарата
         </div>
       </div>
@@ -513,72 +513,72 @@ header nav a.mgActive{color:#eaf4ee}
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:20px">
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Каталог препаратов</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">3252 препарата из 14 стран — показания, дозировка, механизм действия и предупреждения. Полностью офлайн.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2.5C11.55 7.2 14.8 10.45 19.5 11 14.8 11.55 11.55 14.8 11 19.5 10.45 14.8 7.2 11.55 2.5 11 7.2 10.45 10.45 7.2 11 2.5Z"></path><path d="M18.5 13.5C18.72 15.3 19.7 16.28 21.5 16.5 19.7 16.72 18.72 17.7 18.5 19.5 18.28 17.7 17.3 16.72 15.5 16.5 17.3 16.28 18.28 15.3 18.5 13.5Z"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">AI-проверка симптомов</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Опишите состояние — встроенный ассистент подскажет, на что обратить внимание. Отвечает на вашем языке.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Проверка взаимодействий</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Сравните до 5 препаратов сразу и увидьте опасные сочетания — цветовая шкала от «совместимо» до «опасно».</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"></path><path d="M3 12h18"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Сканер упаковки</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Наведите камеру на упаковку — приложение распознает препарат и откроет его карточку в каталоге.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"></rect><path d="M12 10v6M9 13h6"></path><path d="M9 6V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Первая помощь</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">31 карточка по неотложным ситуациям — от остановки сердца до ожогов и радиации. Под рукой даже без сети.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Карта аптек</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Найдите ближайшую аптеку на карте и проложите маршрут в навигаторе одним касанием.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">7 языков с первого дня</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">RU · EN · DE · FR · ES · TR · UK. Интерфейс и данные переведены полностью — приложение говорит на языке пользователя.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="8.5" cy="11" r="2"></circle><path d="M14 10h4M14 13.5h4M5.2 16c.5-1.6 1.8-2.6 3.3-2.6s2.8 1 3.3 2.6"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Медкарта путешественника</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Соберите список своих лекарств и аллергий и поделитесь им с врачом за рубежом в один тап.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(52,232,160,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M8 7h8"></path><path d="M8 11.5h.01M12 11.5h.01M16 11.5h.01M8 15.5h.01M12 15.5h.01M16 15.5h.01"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Калькулятор детской дозы</h3>
@@ -603,21 +603,21 @@ header nav a.mgActive{color:#eaf4ee}
         <p style="font-size:17px;line-height:1.55;color:#9bb3a8;margin:16px 0 0;max-width:460px">От незнакомой упаковки в чужой стране — к понятному ответу за секунды.</p>
         <div style="display:flex;flex-direction:column;gap:22px;margin-top:38px">
           <div style="display:flex;gap:18px;align-items:flex-start">
-            <div style="flex:none;width:46px;height:46px;border-radius:14px;background:rgba(52,232,160,0.12);border:1px solid rgba(52,232,160,0.3);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:var(--accent);animation:mgStepGlow 4s ease-in-out infinite">1</div>
+            <div style="flex:none;width:46px;height:46px;border-radius: 14px;background:rgba(52,232,160,0.12);border:1px solid rgba(52,232,160,0.3);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:var(--accent);animation:mgStepGlow 4s ease-in-out infinite">1</div>
             <div>
               <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 6px">Найдите препарат</h3>
               <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Поиск по названию, сканирование упаковки камерой или каталог 14 стран.</p>
             </div>
           </div>
           <div style="display:flex;gap:18px;align-items:flex-start">
-            <div style="flex:none;width:46px;height:46px;border-radius:14px;background:rgba(52,232,160,0.12);border:1px solid rgba(52,232,160,0.3);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:var(--accent);animation:mgStepGlow 4s ease-in-out infinite;animation-delay:1.3s">2</div>
+            <div style="flex:none;width:46px;height:46px;border-radius: 14px;background:rgba(52,232,160,0.12);border:1px solid rgba(52,232,160,0.3);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:var(--accent);animation:mgStepGlow 4s ease-in-out infinite;animation-delay:1.3s">2</div>
             <div>
               <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 6px">Проверьте</h3>
               <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Взаимодействия, дозировки и AI-подсказки по вашим симптомам — на вашем языке.</p>
             </div>
           </div>
           <div style="display:flex;gap:18px;align-items:flex-start">
-            <div style="flex:none;width:46px;height:46px;border-radius:14px;background:rgba(52,232,160,0.12);border:1px solid rgba(52,232,160,0.3);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:var(--accent);animation:mgStepGlow 4s ease-in-out infinite;animation-delay:2.6s">3</div>
+            <div style="flex:none;width:46px;height:46px;border-radius: 14px;background:rgba(52,232,160,0.12);border:1px solid rgba(52,232,160,0.3);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:var(--accent);animation:mgStepGlow 4s ease-in-out infinite;animation-delay:2.6s">3</div>
             <div>
               <h3 style="font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:600;margin:4px 0 6px">Действуйте офлайн</h3>
               <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Первая помощь, карта аптек и медкарта путешественника — без интернета.</p>
@@ -659,9 +659,9 @@ header nav a.mgActive{color:#eaf4ee}
 
               <div class="mgScreen" style="position:absolute;inset:0;padding:14px 16px">
                 <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#eaf4ee">AI-симптомы</div>
-                <div style="margin-top:14px;align-self:flex-end;margin-left:auto;max-width:80%;padding:10px 13px;border-radius:14px 14px 4px 14px;background:rgba(52,232,160,0.16);font-size:12.5px;color:#eafff5">Болит горло и температура 37.8</div>
-                <div id="mgPhoneTyping" style="margin-top:12px;display:none;align-items:center;gap:5px;width:fit-content;padding:11px 14px;border-radius:14px 14px 14px 4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08)"><span class="mgTypeDot"></span><span class="mgTypeDot" style="animation-delay:.2s"></span><span class="mgTypeDot" style="animation-delay:.4s"></span></div>
-                <div id="mgPhoneAns" style="margin-top:12px;max-width:88%;padding:11px 13px;border-radius:14px 14px 14px 4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);font-size:12px;line-height:1.5;color:#c2d6cc">Похоже на симптомы ОРВИ. Обильное питьё и покой. При боли — парацетамол. Если &gt;3 дней — к врачу.</div>
+                <div style="margin-top:14px;align-self:flex-end;margin-left:auto;max-width:80%;padding:10px 13px;border-radius: 14px 14px 4px 14px;background:rgba(52,232,160,0.16);font-size:12.5px;color:#eafff5">Болит горло и температура 37.8</div>
+                <div id="mgPhoneTyping" style="margin-top:12px;display:none;align-items:center;gap:5px;width:fit-content;padding:11px 14px;border-radius: 14px 14px 14px 4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08)"><span class="mgTypeDot"></span><span class="mgTypeDot" style="animation-delay:.2s"></span><span class="mgTypeDot" style="animation-delay:.4s"></span></div>
+                <div id="mgPhoneAns" style="margin-top:12px;max-width:88%;padding:11px 13px;border-radius: 14px 14px 14px 4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);font-size:12px;line-height:1.5;color:#c2d6cc">Похоже на симптомы ОРВИ. Обильное питьё и покой. При боли — парацетамол. Если &gt;3 дней — к врачу.</div>
                 <div style="margin-top:12px;display:flex;gap:7px;flex-wrap:wrap">
                   <span style="font-size:11px;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.06);color:#9bb3a8">Что принять?</span>
                   <span style="font-size:11px;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.06);color:#9bb3a8">Дозировка</span>
@@ -701,7 +701,7 @@ header nav a.mgActive{color:#eaf4ee}
     <div class="mgShotRow" style="display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:10px 4px 20px;margin:0 -4px;justify-content:center">
       <div class="mgShotCard" style="flex:none;width:236px">
         <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
+          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius: 14px;background:#000;z-index:4"></div>
           <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
           <img src="/screenshots/app-catalog.jpg" alt="Каталог лекарств" loading="lazy" style="display:block;width:100%;height:100%;border-radius:35px;object-fit:cover"></img>
         </div>
@@ -709,7 +709,7 @@ header nav a.mgActive{color:#eaf4ee}
       </div>
       <div class="mgShotCard" style="flex:none;width:236px">
         <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
+          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius: 14px;background:#000;z-index:4"></div>
           <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
           <img src="/screenshots/app-symptoms.jpg" alt="Проверка симптомов" loading="lazy" style="display:block;width:100%;height:100%;border-radius:35px;object-fit:cover"></img>
         </div>
@@ -717,7 +717,7 @@ header nav a.mgActive{color:#eaf4ee}
       </div>
       <div class="mgShotCard" style="flex:none;width:236px">
         <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
+          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius: 14px;background:#000;z-index:4"></div>
           <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
           <img src="/screenshots/app-firstaid.jpg" alt="Первая помощь" loading="lazy" style="display:block;width:100%;height:100%;border-radius:35px;object-fit:cover"></img>
         </div>
@@ -725,7 +725,7 @@ header nav a.mgActive{color:#eaf4ee}
       </div>
       <div class="mgShotCard" style="flex:none;width:236px">
         <div class="mgShotFrame" style="position:relative;width:236px;height:486px;border-radius:46px;padding:11px;background:linear-gradient(165deg,#10271d,#070f0c);border:1px solid rgba(52,232,160,0.18);box-shadow:0 30px 64px rgba(0,0,0,0.5)">
-          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius:14px;background:#000;z-index:4"></div>
+          <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:88px;height:26px;border-radius: 14px;background:#000;z-index:4"></div>
           <div style="position:absolute;bottom:13px;left:50%;transform:translateX(-50%);width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,0.5);z-index:4"></div>
           <img src="/screenshots/app-pharmacies.jpg" alt="Карта аптек" loading="lazy" style="display:block;width:100%;height:100%;border-radius:35px;object-fit:cover"></img>
         </div>
@@ -764,13 +764,13 @@ header nav a.mgActive{color:#eaf4ee}
       <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-0.02em;margin:14px 0 0">Глобально с первого дня</h2>
       <p style="font-size:18px;line-height:1.55;color:#a7c0b5;margin:16px auto 0;max-width:560px">Интерфейс и данные полностью переведены на семь языков — приложение сразу говорит на языке пользователя.</p>
       <div id="mgLangRow" style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:38px">
-        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇬🇧 English</div>
-        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇺🇦 Українська</div>
-        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇩🇪 Deutsch</div>
-        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇫🇷 Français</div>
-        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇪🇸 Español</div>
-        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇹🇷 Türkçe</div>
-        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇷🇺 Русский</div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius: 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇬🇧 English</div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius: 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇺🇦 Українська</div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius: 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇩🇪 Deutsch</div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius: 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇫🇷 Français</div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius: 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇪🇸 Español</div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius: 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇹🇷 Türkçe</div>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius: 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);font-weight:600;font-size:16px">🇷🇺 Русский</div>
       </div>
     </div>
   </section>
@@ -781,22 +781,22 @@ header nav a.mgActive{color:#eaf4ee}
       <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-0.02em;margin:14px 0 0">Создано бережно к вашим данным</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:20px">
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:30px">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:30px">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5C5 6 8.5 4.6 12 4.6M22 8.5c-1.6-1.4-3.4-2.4-5.3-3M5 12c1.7-1.4 3.7-2.2 5.7-2.4M19 12c-.8-.7-1.7-1.2-2.7-1.6M8.5 15.4c1-.8 2.2-1.2 3.5-1.2"></path><circle cx="12" cy="19" r="1"></circle><path d="M3 3l18 18"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Офлайн в первую очередь</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Каталог, симптомы и первая помощь работают без интернета. В дороге, в горах, в роуминге — всё на месте.</p>
       </div>
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:30px">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:30px">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><path d="M12 14.5v2.5"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Данные под защитой</h3>
         <p style="font-size:15.5px;line-height:1.55;color:#9bb3a8;margin:0">Запросы к AI-ассистенту передаются по защищённому соединению. Никто не получает доступ к вашим личным данным.</p>
       </div>
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:30px">
-        <div style="width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.07);border-radius: 18px;padding:30px">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 5.2A9.6 9.6 0 0 1 12 5c5 0 9 5 9 7a11 11 0 0 1-2.3 3M6.2 7.3C3.7 8.9 2 11 2 12c0 1.5 3.4 6 9.5 6.8M3 3l18 18M9.9 9.9a3 3 0 0 0 4.2 4.2"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Без слежки</h3>
@@ -814,7 +814,7 @@ header nav a.mgActive{color:#eaf4ee}
       <div style="background:linear-gradient(180deg,rgba(52,232,160,0.08),rgba(255,255,255,0.012));border:1px solid rgba(52,232,160,0.25);border-radius:20px;padding:32px;display:flex;flex-direction:column">
         <div style="display:flex;align-items:center;justify-content:space-between">
           <div style="display:flex;align-items:center;gap:14px">
-            <div style="width:52px;height:52px;border-radius:14px;background:rgba(52,232,160,0.14);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+            <div style="width:52px;height:52px;border-radius: 14px;background:rgba(52,232,160,0.14);display:flex;align-items:center;justify-content:center;color:var(--accent)">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17v-4a7 7 0 0 1 14 0v4"></path><path d="M3 17h18a1 1 0 0 1 1 1v0a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v0a1 1 0 0 1 1-1Z"></path><path d="M8 8 6.5 5.8M16 8l1.5-2.2"></path><circle cx="9.3" cy="12.4" r="0.7" fill="currentColor" stroke="none"></circle><circle cx="14.7" cy="12.4" r="0.7" fill="currentColor" stroke="none"></circle></svg>
             </div>
             <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;margin:0">Android</h3>
@@ -827,7 +827,7 @@ header nav a.mgActive{color:#eaf4ee}
       <div style="background:linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px;display:flex;flex-direction:column">
         <div style="display:flex;align-items:center;justify-content:space-between">
           <div style="display:flex;align-items:center;gap:14px">
-            <div style="width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:#cfe3da">
+            <div style="width:52px;height:52px;border-radius: 14px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;color:#cfe3da">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Z"></path><path d="M14.6 5.7c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
             </div>
             <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;margin:0">iOS</h3>
@@ -860,12 +860,12 @@ header nav a.mgActive{color:#eaf4ee}
         <div><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px">AI-ассистент</div><div style="font-size:11.5px;color:var(--accent);display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)"></span>онлайн · демо</div></div>
       </div>
       <div style="padding:22px 20px;min-height:150px">
-        <div id="mgAiUser" style="display:none;margin-left:auto;max-width:78%;width:fit-content;padding:11px 15px;border-radius:14px 14px 4px 14px;background:rgba(52,232,160,0.16);font-size:14.5px;color:#eafff5;margin-bottom:14px"></div>
+        <div id="mgAiUser" style="display:none;margin-left:auto;max-width:78%;width:fit-content;padding:11px 15px;border-radius: 14px 14px 4px 14px;background:rgba(52,232,160,0.16);font-size:14.5px;color:#eafff5;margin-bottom:14px"></div>
         <div style="display:flex;gap:11px;align-items:flex-start">
           <div style="flex:none;width:30px;height:30px;border-radius:9px;background:rgba(52,232,160,0.14);display:flex;align-items:center;justify-content:center;color:var(--accent)">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2.5C11.55 7.2 14.8 10.45 19.5 11 14.8 11.55 11.55 14.8 11 19.5 10.45 14.8 7.2 11.55 2.5 11 7.2 10.45 10.45 7.2 11 2.5Z"></path><path d="M18.5 13.5C18.72 15.3 19.7 16.28 21.5 16.5 19.7 16.72 18.72 17.7 18.5 19.5 18.28 17.7 17.3 16.72 15.5 16.5 17.3 16.28 18.28 15.3 18.5 13.5Z"></path></svg>
           </div>
-          <div id="mgAiOut" style="flex:1;max-width:90%;padding:12px 15px;border-radius:14px 14px 14px 4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);font-size:14.5px;line-height:1.55;color:#c2d6cc;min-height:22px">Привет! Опишите, что вас беспокоит — например, «болит горло и температура».</div>
+          <div id="mgAiOut" style="flex:1;max-width:90%;padding:12px 15px;border-radius: 14px 14px 14px 4px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);font-size:14.5px;line-height:1.55;color:#c2d6cc;min-height:22px">Привет! Опишите, что вас беспокоит — например, «болит горло и температура».</div>
         </div>
       </div>
       <div style="padding:0 20px 16px;display:flex;flex-wrap:wrap;gap:8px">
@@ -874,8 +874,8 @@ header nav a.mgActive{color:#eaf4ee}
         <button class="mgChip" data-q="Можно ли принимать ибупрофен с аспирином" style="font-size:12.5px;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#bdd3c8;cursor:pointer;font-family:inherit">Ибупрофен + аспирин?</button>
       </div>
       <div style="display:flex;gap:10px;padding:0 20px 20px">
-        <input id="mgAiInput" type="text" placeholder="Опишите симптом…" style="flex:1;padding:13px 16px;border-radius:13px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#eaf4ee;font-size:14.5px;font-family:inherit;outline:none">
-        <button id="mgAiSend" style="flex:none;display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:13px;background:var(--accent);color:#06120d;font-weight:700;font-size:14.5px;border:none;cursor:pointer;font-family:inherit">
+        <input id="mgAiInput" type="text" placeholder="Опишите симптом…" style="flex:1;padding:13px 16px;border-radius: 13px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#eaf4ee;font-size:14.5px;font-family:inherit;outline:none">
+        <button id="mgAiSend" style="flex:none;display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius: 13px;background:var(--accent);color:#06120d;font-weight:700;font-size:14.5px;border:none;cursor:pointer;font-family:inherit">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.4 20.4l17.45-7.48a1 1 0 0 0 0-1.84L3.4 3.6a.993.993 0 0 0-1.39.91L2 9.12c0 .5.37.92.87.99L17 12 2.87 13.88c-.5.07-.87.49-.87.99l.01 4.61c0 .71.73 1.2 1.39.92z"></path></svg>
         </button>
       </div>
@@ -973,11 +973,11 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="margin-top:40px">
           <div style="text-transform:uppercase;letter-spacing:0.16em;font-size:12px;font-weight:700;color:#7e988d;margin-bottom:14px">Скачать</div>
           <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px">
-            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
               <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">Google Play</span></span>
             </a>
-            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
               <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#9bb3a8">Скоро в</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">App Store</span></span>
             </a>
@@ -1004,7 +1004,7 @@ header nav a.mgActive{color:#eaf4ee}
         </div>
 
         <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px;margin-top:40px">
-          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:14px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 10px 30px rgba(52,232,160,0.26);transition:transform .25s ease" style-hover="transform:translateY(-2px)">
+          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius: 14px;background:var(--accent);color:#06120d;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 10px 30px rgba(52,232,160,0.26);transition:transform .25s ease" style-hover="transform:translateY(-2px)">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
             Поддержать проект
           </a>
