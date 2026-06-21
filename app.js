@@ -208,23 +208,14 @@ class App {
     const cards = [...document.querySelectorAll('[style*="border-radius: 18px"]')].filter(c => c.querySelector('h3'));
     if (!cards.length) return;
     this._sc = true;
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      const center = window.innerHeight * 0.42;
-      let best = null, bestDist = Infinity;
-      for (const c of cards) {
-        const r = c.getBoundingClientRect();
-        if (r.bottom < 40 || r.top > window.innerHeight - 40) continue;
-        const cy = r.top + r.height / 2;
-        const d = Math.abs(cy - center);
-        if (d < bestDist) { bestDist = d; best = c; }
-      }
-      cards.forEach(c => c.classList.toggle('mgFocus', c === best));
-    };
-    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
-    update();
+    if (!('IntersectionObserver' in window)) { cards.forEach(c => c.classList.add('mgFocus')); return; }
+    // A card is "open" while it sits inside the central viewport band, and
+    // collapses as it leaves. IntersectionObserver = no per-frame scroll math,
+    // no single-card "snapping" → smooth reveal.
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => e.target.classList.toggle('mgFocus', e.isIntersecting));
+    }, { rootMargin: '-24% 0px -34% 0px', threshold: 0 });
+    cards.forEach(c => io.observe(c));
   }
   _initPhone() {
     if (this._ph) return;
