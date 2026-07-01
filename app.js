@@ -456,10 +456,10 @@ class App {
     d.arcs.forEach((a, i) => this._drawArc(ctx, a[0], a[1], lon0, t, i));
     d.pins.forEach((p, i) => {
       const [x, y, z] = this._proj(p[0], p[1], lon0); if (z <= 0.12) return;
-      const ph = (((t / 1000) + i * 0.6) % 2.4) / 2.4;
-      ctx.globalAlpha = (1 - ph) * 0.8 * z; ctx.beginPath(); ctx.arc(x, y, 2 + ph * 10, 0, 7); ctx.strokeStyle = '#c3f9de'; ctx.lineWidth = 1.3; ctx.stroke();
-      ctx.globalAlpha = Math.min(1, z + 0.25); ctx.beginPath(); ctx.arc(x, y, 2.5, 0, 7); ctx.fillStyle = '#eafff5'; ctx.fill();
-      ctx.beginPath(); ctx.arc(x, y, 1, 0, 7); ctx.fillStyle = '#ffffff'; ctx.fill();
+      const ph = (((t / 1000) + i * 0.6) % 2.4) / 2.4; const red = i % 3 === 1;
+      ctx.globalAlpha = (1 - ph) * 0.8 * z; ctx.beginPath(); ctx.arc(x, y, 2 + ph * 10, 0, 7); ctx.strokeStyle = red ? '#ff7f9c' : '#c3f9de'; ctx.lineWidth = 1.3; ctx.stroke();
+      ctx.globalAlpha = Math.min(1, z + 0.25); ctx.beginPath(); ctx.arc(x, y, 2.5, 0, 7); ctx.fillStyle = red ? '#ffd6de' : '#eafff5'; ctx.fill();
+      ctx.beginPath(); ctx.arc(x, y, 1, 0, 7); ctx.fillStyle = red ? '#ff5d7d' : '#ffffff'; ctx.fill();
     });
     ctx.globalAlpha = 1; ctx.restore();
     ctx.fillStyle = d.vg; ctx.beginPath(); ctx.arc(CX, CY, 158, 0, 7); ctx.fill();
