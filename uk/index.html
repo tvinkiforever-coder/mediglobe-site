@@ -45,6 +45,8 @@ body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,san
 .mgA1{width:780px;height:780px;top:-12%;right:-10%;background:radial-gradient(circle,rgba(52,232,160,0.16),transparent 68%);animation:mgAurora1 26s ease-in-out infinite}
 .mgA2{width:680px;height:680px;top:34%;left:-16%;background:radial-gradient(circle,rgba(56,214,200,0.13),transparent 68%);animation:mgAurora2 32s ease-in-out infinite}
 .mgA3{width:620px;height:620px;bottom:-10%;right:6%;background:radial-gradient(circle,rgba(40,180,150,0.12),transparent 68%);animation:mgAurora3 30s ease-in-out infinite}
+.mgA4{width:420px;height:420px;top:8%;left:38%;background:radial-gradient(circle,rgba(255,59,92,0.10),transparent 68%);animation:mgAurora4 28s ease-in-out infinite}
+.mgA5{width:360px;height:360px;bottom:12%;left:22%;background:radial-gradient(circle,rgba(255,255,255,0.06),transparent 70%);animation:mgAurora2 24s ease-in-out infinite}
 @media (prefers-reduced-motion: reduce){#mgAurora span{animation:none}}
 :root{--accent:#34e8a0;--accent2:#38d6c8;--red:#ff3b5c;--red2:#ff5d7d}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
@@ -55,6 +57,7 @@ body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,san
 @keyframes mgAurora1{0%,100%{transform:translate(-8%,-6%) scale(1)}33%{transform:translate(10%,8%) scale(1.18)}66%{transform:translate(-4%,12%) scale(0.92)}}
 @keyframes mgAurora2{0%,100%{transform:translate(6%,4%) scale(1.05)}40%{transform:translate(-10%,-8%) scale(0.9)}70%{transform:translate(8%,-4%) scale(1.2)}}
 @keyframes mgAurora3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-12%,6%) scale(1.15)}}
+@keyframes mgAurora4{0%,100%{transform:translate(4%,-4%) scale(1)}50%{transform:translate(-8%,10%) scale(1.2)}}
 @keyframes mgEcg{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
 @keyframes mgPing{0%{transform:scale(0.4);opacity:0.9}70%{opacity:0}100%{transform:scale(3);opacity:0}}
 @keyframes mgTwinkle{0%,100%{opacity:0.25}50%{opacity:0.9}}
@@ -217,6 +220,8 @@ header nav a.mgActive{color:#eaf4ee}
     <span class="mgA1"></span>
     <span class="mgA2"></span>
     <span class="mgA3"></span>
+    <span class="mgA4"></span>
+    <span class="mgA5"></span>
   </div>
   <canvas id="mgParticles" aria-hidden="true" style="position:fixed;inset:0;z-index:1;pointer-events:none;width:100vw;height:100vh"></canvas>
 
@@ -326,7 +331,7 @@ header nav a.mgActive{color:#eaf4ee}
 
       <div id="mgGlobeWrap" style="position:relative;display:flex;align-items:center;justify-content:center;min-height:470px;transition:transform .4s ease-out;transform-style:preserve-3d">
         <div style="position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(52,232,160,0.22),transparent 64%);filter:blur(12px);animation:pulseGlow 6s ease-in-out infinite"></div>
-        <div class="mgGlobeInner" style="position:relative;animation:floaty 7s ease-in-out infinite;filter:drop-shadow(0 0 64px rgba(52,232,160,0.28)) drop-shadow(0 30px 60px rgba(0,0,0,0.5))">
+        <div class="mgGlobeInner" style="position:relative;animation:floaty 7s ease-in-out infinite;filter:drop-shadow(0 0 64px rgba(52,232,160,0.28)) drop-shadow(0 0 46px rgba(255,59,92,0.16)) drop-shadow(0 30px 60px rgba(0,0,0,0.5))">
           <canvas id="mgGlobeCanvas" aria-hidden="true" width="400" height="400" style="display:block;width:384px;height:384px"></canvas>
           <svg width="384" height="384" viewBox="0 0 400 400" fill="none" style="position:absolute;inset:0;pointer-events:none">
             <defs>
@@ -452,7 +457,7 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="font-size:14px;color:#88a397;margin-top:4px">препаратів</div>
       </div>
       <div class="mgStat">
-        <div data-count="14" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.02em">14</div>
+        <div data-count="13" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.02em">13</div>
         <div style="font-size:14px;color:#88a397;margin-top:4px">країн</div>
       </div>
       <div class="mgStat">
