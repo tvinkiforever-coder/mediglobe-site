@@ -299,7 +299,7 @@ class App {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     this._pt = true;
     const ctx = cv.getContext('2d');
-    let W, H, dpr = Math.min(1.75, window.devicePixelRatio || 1), parts = [];
+    let W, H, dpr = Math.min(1.5, window.devicePixelRatio || 1), parts = [];
     const resize = () => {
       W = window.innerWidth; H = window.innerHeight;
       cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -356,7 +356,7 @@ class App {
     if (!cv || this._glb) return;
     this._glb = true;
     const ctx = cv.getContext('2d');
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const dpr = Math.min(1.5, window.devicePixelRatio || 1);
     cv.width = 400 * dpr; cv.height = 400 * dpr;
     ctx.scale(dpr, dpr);
     const D = Math.PI / 180;
@@ -382,16 +382,19 @@ class App {
       return inside;
     };
     const isLand = (lon, lat) => { for (const p of LAND) if (pip(lon, lat, p)) return true; return false; };
+    // pre-bake sin/cos of lat and base lon so per-frame projection is multiply-only
+    const pre = (lat, lon) => { const la = lat * D, lo = lon * D; return { slat: Math.sin(la), clat: Math.cos(la), slon: Math.sin(lo), clon: Math.cos(lo) }; };
     const land = [];
+    let li = 0;
     for (let lat = -78; lat <= 78; lat += 3.6) {
       const step = 3.6 / Math.max(0.26, Math.cos(lat * D));
-      for (let lon = -180; lon < 180; lon += step) if (isLand(lon, lat)) land.push([lat, lon]);
+      for (let lon = -180; lon < 180; lon += step) if (isLand(lon, lat)) { const p = pre(lat, lon); p.warm = li % 11 === 0; p.pale = !p.warm && li % 19 === 0; land.push(p); li++; }
     }
     const grat = [];
-    [-60, -30, 0, 30, 60].forEach(lat => { const pts = []; for (let lon = -180; lon <= 180; lon += 4) pts.push([lat, lon]); grat.push({ pts, major: lat === 0 }); });
-    [-150, -120, -90, -60, -30, 0, 30, 60, 90, 120, 150].forEach(lon => { const pts = []; for (let lat = -84; lat <= 84; lat += 4) pts.push([lat, lon]); grat.push({ pts, major: false }); });
-    const pins = [[51, 0], [40, -74], [-22, -46], [30, 31], [28, 77], [35, 139], [-26, 133]];
-    const arcs = [[[51, 0], [40, -74]], [[40, -74], [-22, -46]], [[51, 0], [30, 31]], [[30, 31], [28, 77]], [[28, 77], [35, 139]], [[51, 0], [-26, 133]]];
+    [-60, -30, 0, 30, 60].forEach(lat => { const pts = []; for (let lon = -180; lon <= 180; lon += 4) pts.push(pre(lat, lon)); grat.push({ pts, major: lat === 0 }); });
+    [-150, -120, -90, -60, -30, 0, 30, 60, 90, 120, 150].forEach(lon => { const pts = []; for (let lat = -84; lat <= 84; lat += 4) pts.push(pre(lat, lon)); grat.push({ pts, major: false }); });
+    const pins = [[51, 0], [40, -74], [-22, -46], [30, 31], [28, 77], [35, 139], [-26, 133]].map(p => pre(p[0], p[1]));
+    const arcs = [[[51, 0], [40, -74]], [[40, -74], [-22, -46]], [[51, 0], [30, 31]], [[30, 31], [28, 77]], [[28, 77], [35, 139]], [[51, 0], [-26, 133]]].map(([a, b]) => { const pts = []; for (let s = 0; s <= 46; s++) { const f = s / 46; pts.push(pre(a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f)); } return pts; });
     const tilt = 16 * D;
     const GX = 200, GY = 200;
     const ga = ctx.createRadialGradient(GX, GY, 150, GX, GY, 190);
@@ -415,22 +418,23 @@ class App {
     const loop = (t) => { this._drawGlobe(t); this._raf = requestAnimationFrame(loop); };
     this._raf = requestAnimationFrame(loop);
   }
-  _proj(lat, lon, lon0) {
-    const d = this._glbData, la = lat * d.D, lo = lon * d.D - lon0;
-    const x = Math.cos(la) * Math.sin(lo), y = Math.sin(la), z = Math.cos(la) * Math.cos(lo);
+  _projP(p, s, c) {
+    const d = this._glbData;
+    const sinLo = p.slon * c - p.clon * s, cosLo = p.clon * c + p.slon * s;
+    const x = p.clat * sinLo, y = p.slat, z = p.clat * cosLo;
     const y2 = y * d.ct - z * d.st, z2 = y * d.st + z * d.ct;
     return [d.CX + x * d.R, d.CY - y2 * d.R, z2];
   }
-  _drawArc(ctx, a, b, lon0, t, i) {
+  _drawArc(ctx, arcPts, sinL, cosL, t, i) {
     const N = 46, pts = [];
-    for (let s = 0; s <= N; s++) { const f = s / N; pts.push(this._proj(a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f, lon0)); }
+    for (let k = 0; k <= N; k++) pts.push(this._projP(arcPts[k], sinL, cosL));
     ctx.beginPath(); let on = false;
     for (const [x, y, z] of pts) { if (z > 0.05) { if (on) ctx.lineTo(x, y); else ctx.moveTo(x, y); on = true; } else on = false; }
     ctx.strokeStyle = 'rgba(90,231,170,0.16)'; ctx.lineWidth = 1; ctx.stroke();
     const head = ((t / 1000 * 0.32) + i * 0.28) % 1, hi = Math.floor(head * N);
-    for (let s = Math.max(1, hi - 7); s <= hi; s++) {
-      const c = pts[s], p = pts[s - 1]; if (!c || !p || c[2] <= 0.05 || p[2] <= 0.05) continue;
-      const a2 = 1 - (hi - s) / 7;
+    for (let k = Math.max(1, hi - 7); k <= hi; k++) {
+      const c = pts[k], p = pts[k - 1]; if (!c || !p || c[2] <= 0.05 || p[2] <= 0.05) continue;
+      const a2 = 1 - (hi - k) / 7;
       ctx.beginPath(); ctx.moveTo(p[0], p[1]); ctx.lineTo(c[0], c[1]);
       ctx.strokeStyle = 'rgba(190,255,228,' + (a2 * 0.85 * c[2]).toFixed(3) + ')'; ctx.lineWidth = 1.9; ctx.stroke();
     }
@@ -440,7 +444,7 @@ class App {
     const dt = Math.min(0.05, (t - this._last) / 1000); this._last = t;
     this._spin.speed += (this._spin.target - this._spin.speed) * Math.min(1, dt * 3);
     this._spin.lon += this._spin.speed * dt;
-    const lon0 = this._spin.lon;
+    const lon0 = this._spin.lon, sinL = Math.sin(lon0), cosL = Math.cos(lon0);
     ctx.clearRect(0, 0, 400, 400);
     ctx.fillStyle = d.ga; ctx.beginPath(); ctx.arc(CX, CY, 190, 0, 7); ctx.fill();
     ctx.fillStyle = d.gBody; ctx.beginPath(); ctx.arc(CX, CY, 158, 0, 7); ctx.fill();
@@ -448,14 +452,14 @@ class App {
     ctx.lineCap = 'round';
     for (const gl of d.grat) {
       ctx.beginPath(); let on = false;
-      for (const [la, lo] of gl.pts) { const [x, y, z] = this._proj(la, lo, lon0); if (z > 0.02) { if (on) ctx.lineTo(x, y); else ctx.moveTo(x, y); on = true; } else on = false; }
+      for (const p of gl.pts) { const [x, y, z] = this._projP(p, sinL, cosL); if (z > 0.02) { if (on) ctx.lineTo(x, y); else ctx.moveTo(x, y); on = true; } else on = false; }
       ctx.strokeStyle = 'rgba(205,247,234,' + (gl.major ? 0.5 : 0.2) + ')'; ctx.lineWidth = gl.major ? 1.2 : 0.8; ctx.stroke();
     }
-    d.land.forEach(([la, lo], i) => { const [x, y, z] = this._proj(la, lo, lon0); if (z <= 0.05) return; const warm = i % 11 === 0, pale = !warm && i % 19 === 0; ctx.globalAlpha = (0.22 + z * 0.62) * (warm || pale ? 1.15 : 1); ctx.fillStyle = warm ? '#ff5d7d' : (pale ? '#eafff5' : '#5fe7aa'); ctx.beginPath(); ctx.arc(x, y, (0.7 + z * 1.7) * (warm ? 1.25 : 1), 0, 7); ctx.fill(); });
+    d.land.forEach((p) => { const [x, y, z] = this._projP(p, sinL, cosL); if (z <= 0.05) return; const warm = p.warm, pale = p.pale; ctx.globalAlpha = (0.22 + z * 0.62) * (warm || pale ? 1.15 : 1); ctx.fillStyle = warm ? '#ff5d7d' : (pale ? '#eafff5' : '#5fe7aa'); ctx.beginPath(); ctx.arc(x, y, (0.7 + z * 1.7) * (warm ? 1.25 : 1), 0, 7); ctx.fill(); });
     ctx.globalAlpha = 1;
-    d.arcs.forEach((a, i) => this._drawArc(ctx, a[0], a[1], lon0, t, i));
+    d.arcs.forEach((a, i) => this._drawArc(ctx, a, sinL, cosL, t, i));
     d.pins.forEach((p, i) => {
-      const [x, y, z] = this._proj(p[0], p[1], lon0); if (z <= 0.12) return;
+      const [x, y, z] = this._projP(p, sinL, cosL); if (z <= 0.12) return;
       const ph = (((t / 1000) + i * 0.6) % 2.4) / 2.4; const red = i % 3 === 1;
       ctx.globalAlpha = (1 - ph) * 0.8 * z; ctx.beginPath(); ctx.arc(x, y, 2 + ph * 10, 0, 7); ctx.strokeStyle = red ? '#ff7f9c' : '#c3f9de'; ctx.lineWidth = 1.3; ctx.stroke();
       ctx.globalAlpha = Math.min(1, z + 0.25); ctx.beginPath(); ctx.arc(x, y, 2.5, 0, 7); ctx.fillStyle = red ? '#ffd6de' : '#eafff5'; ctx.fill();
