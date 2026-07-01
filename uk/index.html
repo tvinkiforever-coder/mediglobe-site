@@ -67,7 +67,7 @@ body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,san
 @keyframes mgReveal{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){
   @media (prefers-reduced-motion: no-preference){
-    body section:not(#top){animation:mgReveal linear both;animation-timeline:view();animation-range:entry 4% cover 24%;}
+    body section:not(#top){animation:mgReveal linear both;animation-timeline:view();animation-range:entry 3% entry 40%;}
   }
 }
 #mgProgress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#34e8a0,#38d6c8);box-shadow:0 0 12px rgba(52,232,160,0.6);z-index:100;pointer-events:none}
@@ -1072,7 +1072,7 @@ header nav a.mgActive{color:#eaf4ee}
   </footer>
 
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/app.js?v=14"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/app.js?v=15"></script>
 <!-- Cloudflare Web Analytics (cookieless) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7e516f0ae85c4d13b9b9871e0d3e69f0"}'></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"7e0e8b45c73d4b1d9feeeb119afc4650","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
