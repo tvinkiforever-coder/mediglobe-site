@@ -303,15 +303,15 @@ class App {
     const resize = () => {
       W = window.innerWidth; H = window.innerHeight;
       cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const n = Math.round(Math.min(84, W / 17));
+      const n = Math.round(Math.min(94, W / 15));
       parts = [];
       for (let i = 0; i < n; i++) {
         const rnd = Math.random();
         const kind = rnd < 0.5 ? 'dot' : (rnd < 0.78 ? 'capsule' : 'cross');
         const big = kind !== 'dot' && Math.random() < 0.34;
         const tintRnd = Math.random();
-        const tint = tintRnd < 0.44 ? '120,240,200' : (tintRnd < 0.72 ? '255,255,255' : (tintRnd < 0.86 ? '255,96,124' : '255,58,92'));
-        const warm = tintRnd >= 0.44;
+        const tint = tintRnd < 0.38 ? '120,240,200' : (tintRnd < 0.68 ? '255,255,255' : (tintRnd < 0.84 ? '255,96,124' : '255,52,88'));
+        const warm = tintRnd >= 0.38;
         parts.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 1.7 + 0.5, vx: (Math.random() - 0.5) * 0.16, vy: -(Math.random() * 0.22 + 0.05), a: big ? (Math.random() * 0.14 + 0.09) : (Math.random() * 0.5 + (warm ? 0.34 : 0.2)), tw: Math.random() * Math.PI * 2, kind, tint, sz: big ? (Math.random() * 16 + 26) : (Math.random() * 6 + 9), rot: Math.random() * Math.PI, vr: (Math.random() - 0.5) * (big ? 0.0035 : 0.006), big });
       }
     };
@@ -473,8 +473,9 @@ class App {
       const ang = (t / 1000) * 0.5 + k * (Math.PI * 2 / 3);
       const s = Math.sin(ang); if (s <= 0) continue;
       const x = CX + Math.cos(ang) * 184, y = 214 + s * 50;
-      ctx.globalAlpha = Math.min(1, s + 0.15); ctx.shadowColor = '#34e8a0'; ctx.shadowBlur = 10;
-      ctx.beginPath(); ctx.arc(x, y, 2.6, 0, 7); ctx.fillStyle = '#aef7d6'; ctx.fill();
+      const sparkFill = ['#aef7d6', '#ff8aa3', '#ffffff'][k], sparkGlow = ['#34e8a0', '#ff4f74', '#ffd0da'][k];
+      ctx.globalAlpha = Math.min(1, s + 0.15); ctx.shadowColor = sparkGlow; ctx.shadowBlur = 11;
+      ctx.beginPath(); ctx.arc(x, y, 2.7, 0, 7); ctx.fillStyle = sparkFill; ctx.fill();
     }
     ctx.restore();
   }
@@ -497,18 +498,29 @@ class App {
     glow.addColorStop(1, 'rgba(255,80,112,0)');
     ctx.fillStyle = glow;
     ctx.beginPath(); ctx.arc(CX, CY, 104, 0, 7); ctx.fill();
-    ctx.globalAlpha = 0.94;
+    ctx.globalAlpha = 0.96;
     const vg = ctx.createLinearGradient(CX, CY - armLen / 2, CX, CY + armLen / 2);
     vg.addColorStop(0, '#8dffcb'); vg.addColorStop(0.45, '#00e89f'); vg.addColorStop(1, '#00a974');
     ctx.fillStyle = vg;
     ctx.shadowColor = 'rgba(160,255,215,0.4)'; ctx.shadowBlur = 16;
     pill(CX - armT / 2, CY - armLen / 2, armT, armLen); ctx.fill();
-    const hg = ctx.createLinearGradient(CX - armLen / 2, CY, CX + armLen / 2, CY);
-    hg.addColorStop(0, '#ffffff'); hg.addColorStop(0.34, '#ffe3e9'); hg.addColorStop(0.62, '#ff5d7d'); hg.addColorStop(1, '#ff2d52');
+    const hx0 = CX - armLen / 2;
+    const halo = ctx.createLinearGradient(hx0, CY, hx0 + armLen, CY);
+    halo.addColorStop(0, 'rgba(255,255,255,0.45)'); halo.addColorStop(0.5, 'rgba(255,150,175,0.4)'); halo.addColorStop(1, 'rgba(255,45,85,0.5)');
+    ctx.fillStyle = halo;
+    ctx.shadowColor = 'rgba(255,70,110,0.6)'; ctx.shadowBlur = 32;
+    pill(hx0, CY - armT / 2, armLen, armT); ctx.fill();
+    const hg = ctx.createLinearGradient(hx0, CY, hx0 + armLen, CY);
+    hg.addColorStop(0, '#ffffff'); hg.addColorStop(0.24, '#fff1f4'); hg.addColorStop(0.5, '#ff9db1'); hg.addColorStop(0.76, '#ff5170'); hg.addColorStop(1, '#ff1f48');
     ctx.fillStyle = hg;
-    ctx.shadowColor = 'rgba(255,45,82,0.5)'; ctx.shadowBlur = 22;
-    pill(CX - armLen / 2, CY - armT / 2, armLen, armT); ctx.fill();
-    ctx.shadowBlur = 0; ctx.globalAlpha = 1;
+    ctx.shadowColor = 'rgba(255,40,82,0.45)'; ctx.shadowBlur = 14;
+    pill(hx0, CY - armT / 2, armLen, armT); ctx.fill();
+    ctx.shadowBlur = 0;
+    const gloss = ctx.createLinearGradient(CX, CY - armT / 2, CX, CY + armT / 2);
+    gloss.addColorStop(0, 'rgba(255,255,255,0.5)'); gloss.addColorStop(0.5, 'rgba(255,255,255,0.05)'); gloss.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = gloss;
+    pill(hx0 + 5, CY - armT / 2 + 3, armLen - 10, armT * 0.4); ctx.fill();
+    ctx.globalAlpha = 1;
     ctx.restore();
   }
   _initMotion() {
