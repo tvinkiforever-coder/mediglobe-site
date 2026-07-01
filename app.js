@@ -451,8 +451,7 @@ class App {
       for (const [la, lo] of gl.pts) { const [x, y, z] = this._proj(la, lo, lon0); if (z > 0.02) { if (on) ctx.lineTo(x, y); else ctx.moveTo(x, y); on = true; } else on = false; }
       ctx.strokeStyle = 'rgba(205,247,234,' + (gl.major ? 0.5 : 0.2) + ')'; ctx.lineWidth = gl.major ? 1.2 : 0.8; ctx.stroke();
     }
-    ctx.fillStyle = '#5fe7aa';
-    for (const [la, lo] of d.land) { const [x, y, z] = this._proj(la, lo, lon0); if (z <= 0.05) continue; ctx.globalAlpha = 0.22 + z * 0.62; ctx.beginPath(); ctx.arc(x, y, 0.7 + z * 1.7, 0, 7); ctx.fill(); }
+    d.land.forEach(([la, lo], i) => { const [x, y, z] = this._proj(la, lo, lon0); if (z <= 0.05) return; const warm = i % 11 === 0, pale = !warm && i % 19 === 0; ctx.globalAlpha = (0.22 + z * 0.62) * (warm || pale ? 1.15 : 1); ctx.fillStyle = warm ? '#ff5d7d' : (pale ? '#eafff5' : '#5fe7aa'); ctx.beginPath(); ctx.arc(x, y, (0.7 + z * 1.7) * (warm ? 1.25 : 1), 0, 7); ctx.fill(); });
     ctx.globalAlpha = 1;
     d.arcs.forEach((a, i) => this._drawArc(ctx, a[0], a[1], lon0, t, i));
     d.pins.forEach((p, i) => {

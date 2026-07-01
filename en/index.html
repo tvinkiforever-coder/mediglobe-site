@@ -88,11 +88,11 @@ body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,san
 @property --mgAng{syntax:'<angle>';inherits:false;initial-value:0deg}
 @keyframes mgBorderSpin{to{--mgAng:360deg}}
 .mgGlowBorder::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.6px;background:conic-gradient(from var(--mgAng),transparent 0 36%,rgba(52,232,160,0.85) 48% 52%,transparent 64% 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:mgBorderSpin 7s linear infinite;pointer-events:none;z-index:4}
-::selection{background:rgba(52,232,160,0.32);color:#f0fff8}
+::selection{background:rgba(255,59,92,0.34);color:#fff}
 ::-webkit-scrollbar{width:11px;height:11px}
 ::-webkit-scrollbar-track{background:#06120d}
-::-webkit-scrollbar-thumb{background:linear-gradient(#1c5a40,#0e2a1e);border-radius:8px;border:2px solid #06120d}
-::-webkit-scrollbar-thumb:hover{background:#2a7d59}
+::-webkit-scrollbar-thumb{background:linear-gradient(#2f7d5a,#c22a48);border-radius:8px;border:2px solid #06120d}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(#34e8a0,#ff3b5c)}
 html{scrollbar-color:#1c5a40 #06120d}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
 #mgGrain{position:fixed;inset:0;z-index:70;pointer-events:none;opacity:0.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -953,7 +953,7 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="padding:0 22px 20px;font-size:15.5px;line-height:1.6;color:#a9c2b8">No. The medication catalog, symptoms, first aid and the interaction checker all work fully offline. The internet is only needed for the AI assistant and the pharmacy map.</div>
       </details>
       <details class="mgFaq" style="border:1px solid rgba(255,255,255,0.08);border-radius:16px;background:rgba(255,255,255,0.025);overflow:hidden">
-        <summary style="list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#eaf4ee">What happens to my data?<span class="mgFaqIco" style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(52,232,160,0.4);display:flex;align-items:center;justify-content:center;color:var(--accent);transition:transform .3s ease">+</span></summary>
+        <summary style="list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#eaf4ee">What happens to my data?<span class="mgFaqIco" style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,59,92,0.45);display:flex;align-items:center;justify-content:center;color:var(--red);transition:transform .3s ease">+</span></summary>
         <div style="padding:0 22px 20px;font-size:15.5px;line-height:1.6;color:#a9c2b8">Your medications, allergies and symptoms stay on your device. No ads or trackers. AI requests go through a secure proxy without sharing personal data with third parties.</div>
       </details>
       <details class="mgFaq" style="border:1px solid rgba(255,255,255,0.08);border-radius:16px;background:rgba(255,255,255,0.025);overflow:hidden">
@@ -961,7 +961,7 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="padding:0 22px 20px;font-size:15.5px;line-height:1.6;color:#a9c2b8">The iOS version is already in development. Android is on the way — follow us on social media to be the first to hear about the App Store release.</div>
       </details>
       <details class="mgFaq" style="border:1px solid rgba(255,255,255,0.08);border-radius:16px;background:rgba(255,255,255,0.025);overflow:hidden">
-        <summary style="list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#eaf4ee">Is it a replacement for a doctor?<span class="mgFaqIco" style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(52,232,160,0.4);display:flex;align-items:center;justify-content:center;color:var(--accent);transition:transform .3s ease">+</span></summary>
+        <summary style="list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#eaf4ee">Is it a replacement for a doctor?<span class="mgFaqIco" style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,59,92,0.45);display:flex;align-items:center;justify-content:center;color:var(--red);transition:transform .3s ease">+</span></summary>
         <div style="padding:0 22px 20px;font-size:15.5px;line-height:1.6;color:#a9c2b8">No. MediGlobe is a reference tool: it helps you get oriented but does not diagnose and does not replace a professional consultation. If you feel unwell, see a doctor.</div>
       </details>
       <details class="mgFaq" style="border:1px solid rgba(255,255,255,0.08);border-radius:16px;background:rgba(255,255,255,0.025);overflow:hidden">
@@ -1071,7 +1071,7 @@ header nav a.mgActive{color:#eaf4ee}
   </footer>
 
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/app.js?v=10"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/app.js?v=11"></script>
 <!-- Cloudflare Web Analytics (cookieless) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7e516f0ae85c4d13b9b9871e0d3e69f0"}'></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"7e0e8b45c73d4b1d9feeeb119afc4650","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
