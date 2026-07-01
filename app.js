@@ -493,13 +493,12 @@ class App {
     };
     ctx.save();
     // ambient glow behind the emblem — white core, red + green fringe
-    const glow = ctx.createRadialGradient(CX, CY, 6, CX, CY, 116);
-    glow.addColorStop(0, 'rgba(255,255,255,0.3)');
-    glow.addColorStop(0.34, 'rgba(255,80,112,0.17)');
-    glow.addColorStop(0.64, 'rgba(120,240,190,0.12)');
-    glow.addColorStop(1, 'rgba(120,240,190,0)');
+    const glow = ctx.createRadialGradient(CX, CY, 6, CX, CY, 118);
+    glow.addColorStop(0, 'rgba(255,255,255,0.34)');
+    glow.addColorStop(0.42, 'rgba(255,90,120,0.16)');
+    glow.addColorStop(1, 'rgba(255,90,120,0)');
     ctx.fillStyle = glow;
-    ctx.beginPath(); ctx.arc(CX, CY, 116, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(CX, CY, 118, 0, 7); ctx.fill();
 
     const vx0 = CX - armT / 2, vy0 = CY - armLen / 2, vseam = CY - 1;
     const hx0 = CX - armLen / 2, hy0 = CY - armT / 2, hseam = CX + 2;
