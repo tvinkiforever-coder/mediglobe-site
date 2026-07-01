@@ -493,6 +493,17 @@ class App {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const loop = (t) => { this._drawGlobe(t); this._raf = requestAnimationFrame(loop); };
     this._raf = requestAnimationFrame(loop);
+    // pause the render loop while the globe is offscreen (battery/CPU)
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((es) => {
+        es.forEach(en => {
+          if (en.isIntersecting) {
+            if (!this._raf) { this._last = performance.now(); this._raf = requestAnimationFrame(loop); }
+          } else if (this._raf) { cancelAnimationFrame(this._raf); this._raf = 0; }
+        });
+      }, { rootMargin: '90px' });
+      io.observe(cv);
+    }
   }
   _projP(p, s, c) {
     const d = this._glbData;
