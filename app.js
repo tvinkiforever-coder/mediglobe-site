@@ -480,7 +480,7 @@ class App {
     ctx.restore();
   }
   _drawCross(ctx) {
-    const CX = 200, CY = 200, armLen = 118, armT = 40;
+    const CX = 200, CY = 200, armLen = 136, armT = 50;
     const pill = (x, y, w, h) => {
       const rr = Math.min(w, h) / 2;
       ctx.beginPath();
@@ -492,41 +492,68 @@ class App {
       ctx.closePath();
     };
     ctx.save();
-    const glow = ctx.createRadialGradient(CX, CY, 6, CX, CY, 108);
-    glow.addColorStop(0, 'rgba(255,255,255,0.28)');
-    glow.addColorStop(0.36, 'rgba(255,80,112,0.2)');
-    glow.addColorStop(1, 'rgba(255,80,112,0)');
+    // ambient glow behind the emblem — white core, red + green fringe
+    const glow = ctx.createRadialGradient(CX, CY, 6, CX, CY, 116);
+    glow.addColorStop(0, 'rgba(255,255,255,0.3)');
+    glow.addColorStop(0.34, 'rgba(255,80,112,0.17)');
+    glow.addColorStop(0.64, 'rgba(120,240,190,0.12)');
+    glow.addColorStop(1, 'rgba(120,240,190,0)');
     ctx.fillStyle = glow;
-    ctx.beginPath(); ctx.arc(CX, CY, 104, 0, 7); ctx.fill();
-    ctx.globalAlpha = 0.96;
-    const vg = ctx.createLinearGradient(CX, CY - armLen / 2, CX, CY + armLen / 2);
-    vg.addColorStop(0, '#8dffcb'); vg.addColorStop(0.45, '#00e89f'); vg.addColorStop(1, '#00a974');
-    ctx.fillStyle = vg;
-    ctx.shadowColor = 'rgba(160,255,215,0.4)'; ctx.shadowBlur = 16;
-    pill(CX - armT / 2, CY - armLen / 2, armT, armLen); ctx.fill();
-    const hx0 = CX - armLen / 2, hy0 = CY - armT / 2, seam = CX + 2;
-    const halo = ctx.createLinearGradient(hx0, CY, hx0 + armLen, CY);
-    halo.addColorStop(0, 'rgba(255,255,255,0.5)'); halo.addColorStop(0.5, 'rgba(255,150,175,0.35)'); halo.addColorStop(1, 'rgba(255,45,85,0.6)');
-    ctx.fillStyle = halo;
-    ctx.shadowColor = 'rgba(255,70,110,0.6)'; ctx.shadowBlur = 30;
-    pill(hx0, hy0, armLen, armT); ctx.fill();
-    ctx.shadowBlur = 0; ctx.globalAlpha = 1;
+    ctx.beginPath(); ctx.arc(CX, CY, 116, 0, 7); ctx.fill();
+
+    const vx0 = CX - armT / 2, vy0 = CY - armLen / 2, vseam = CY - 1;
+    const hx0 = CX - armLen / 2, hy0 = CY - armT / 2, hseam = CX + 2;
+
+    // ===== vertical capsule: white (top) + green (bottom) =====
+    ctx.save();
+    ctx.shadowColor = 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 15; ctx.shadowOffsetY = 6;
+    ctx.fillStyle = '#0a2419'; pill(vx0, vy0, armT, armLen); ctx.fill();
+    ctx.restore();
+    ctx.save();
+    pill(vx0, vy0, armT, armLen); ctx.clip();
+    const vTop = ctx.createLinearGradient(0, vy0, 0, vseam);
+    vTop.addColorStop(0, '#ffffff'); vTop.addColorStop(1, '#eef2f4');
+    ctx.fillStyle = vTop; ctx.fillRect(vx0 - 4, vy0 - 4, armT + 8, vseam - vy0 + 4);
+    const vBot = ctx.createLinearGradient(0, vseam, 0, vy0 + armLen);
+    vBot.addColorStop(0, '#3af0a6'); vBot.addColorStop(0.5, '#08c880'); vBot.addColorStop(1, '#049a62');
+    ctx.fillStyle = vBot; ctx.fillRect(vx0 - 4, vseam, armT + 8, vy0 + armLen - vseam + 4);
+    const vSh = ctx.createLinearGradient(vx0, 0, vx0 + armT, 0);
+    vSh.addColorStop(0, 'rgba(0,0,0,0.34)'); vSh.addColorStop(0.32, 'rgba(0,0,0,0)'); vSh.addColorStop(0.7, 'rgba(0,0,0,0)'); vSh.addColorStop(1, 'rgba(0,0,0,0.36)');
+    ctx.fillStyle = vSh; ctx.fillRect(vx0 - 4, vy0 - 4, armT + 8, armLen + 8);
+    const vHi = ctx.createLinearGradient(vx0, 0, vx0 + armT, 0);
+    vHi.addColorStop(0.18, 'rgba(255,255,255,0)'); vHi.addColorStop(0.33, 'rgba(255,255,255,0.6)'); vHi.addColorStop(0.48, 'rgba(255,255,255,0)');
+    ctx.fillStyle = vHi; ctx.fillRect(vx0 - 4, vy0 - 4, armT + 8, armLen + 8);
+    const vSm = ctx.createLinearGradient(0, vseam - 6, 0, vseam + 5);
+    vSm.addColorStop(0, 'rgba(0,50,30,0)'); vSm.addColorStop(0.65, 'rgba(0,45,28,0.3)'); vSm.addColorStop(1, 'rgba(0,50,30,0)');
+    ctx.fillStyle = vSm; ctx.fillRect(vx0 - 4, vseam - 6, armT + 8, 11);
+    ctx.restore();
+
+    // ===== horizontal capsule: white (left) + red (right), on top =====
+    ctx.save();
+    ctx.shadowColor = 'rgba(0,0,0,0.55)'; ctx.shadowBlur = 17; ctx.shadowOffsetY = 7;
+    ctx.fillStyle = '#280a12'; pill(hx0, hy0, armLen, armT); ctx.fill();
+    ctx.restore();
     ctx.save();
     pill(hx0, hy0, armLen, armT); ctx.clip();
-    const wl = ctx.createLinearGradient(0, hy0, 0, hy0 + armT);
-    wl.addColorStop(0, '#ffffff'); wl.addColorStop(0.5, '#f1f4f6'); wl.addColorStop(1, '#c9d0d6');
-    ctx.fillStyle = wl; ctx.fillRect(hx0 - 3, hy0 - 3, seam - hx0 + 3, armT + 6);
-    const rl = ctx.createLinearGradient(0, hy0, 0, hy0 + armT);
-    rl.addColorStop(0, '#ff5f7a'); rl.addColorStop(0.5, '#ff2246'); rl.addColorStop(1, '#c2123a');
-    ctx.fillStyle = rl; ctx.fillRect(seam, hy0 - 3, hx0 + armLen - seam + 3, armT + 6);
-    const sm = ctx.createLinearGradient(seam - 7, 0, seam + 3, 0);
-    sm.addColorStop(0, 'rgba(110,8,28,0)'); sm.addColorStop(0.7, 'rgba(110,8,28,0.3)'); sm.addColorStop(1, 'rgba(110,8,28,0)');
-    ctx.fillStyle = sm; ctx.fillRect(seam - 7, hy0 - 3, 10, armT + 6);
-    const gl = ctx.createLinearGradient(0, hy0, 0, CY);
-    gl.addColorStop(0, 'rgba(255,255,255,0.55)'); gl.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.fillStyle = gl; ctx.fillRect(hx0 + 4, hy0 + 3, armLen - 8, armT * 0.42);
+    const hL = ctx.createLinearGradient(0, hy0, 0, hy0 + armT);
+    hL.addColorStop(0, '#ffffff'); hL.addColorStop(1, '#e7edef');
+    ctx.fillStyle = hL; ctx.fillRect(hx0 - 4, hy0 - 4, hseam - hx0 + 4, armT + 8);
+    const hR = ctx.createLinearGradient(0, hy0, 0, hy0 + armT);
+    hR.addColorStop(0, '#ff5f79'); hR.addColorStop(0.5, '#ff1f45'); hR.addColorStop(1, '#cc0f37');
+    ctx.fillStyle = hR; ctx.fillRect(hseam, hy0 - 4, hx0 + armLen - hseam + 4, armT + 8);
+    const hSh = ctx.createLinearGradient(0, hy0, 0, hy0 + armT);
+    hSh.addColorStop(0, 'rgba(0,0,0,0.14)'); hSh.addColorStop(0.3, 'rgba(0,0,0,0)'); hSh.addColorStop(0.68, 'rgba(0,0,0,0)'); hSh.addColorStop(1, 'rgba(0,0,0,0.42)');
+    ctx.fillStyle = hSh; ctx.fillRect(hx0 - 4, hy0 - 4, armLen + 8, armT + 8);
+    const hHi = ctx.createLinearGradient(0, hy0, 0, hy0 + armT);
+    hHi.addColorStop(0.12, 'rgba(255,255,255,0)'); hHi.addColorStop(0.28, 'rgba(255,255,255,0.55)'); hHi.addColorStop(0.46, 'rgba(255,255,255,0)');
+    ctx.fillStyle = hHi; ctx.fillRect(hx0 - 4, hy0 - 4, armLen + 8, armT + 8);
+    const hSm = ctx.createLinearGradient(hseam - 7, 0, hseam + 5, 0);
+    hSm.addColorStop(0, 'rgba(120,8,28,0)'); hSm.addColorStop(0.65, 'rgba(120,6,26,0.34)'); hSm.addColorStop(1, 'rgba(120,8,28,0)');
+    ctx.fillStyle = hSm; ctx.fillRect(hseam - 7, hy0 - 4, 12, armT + 8);
     ctx.restore();
-    ctx.globalAlpha = 1;
+    // crisp bright rim
+    pill(hx0, hy0, armLen, armT);
+    ctx.strokeStyle = 'rgba(255,255,255,0.22)'; ctx.lineWidth = 1; ctx.stroke();
     ctx.restore();
   }
   _initMotion() {
