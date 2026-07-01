@@ -299,9 +299,9 @@ class App {
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     this._pt = true;
     const ctx = cv.getContext('2d');
-    let W, H, dpr = Math.min(1.5, window.devicePixelRatio || 1), parts = [];
+    let W, H, lastW = 0, dpr = Math.min(1.5, window.devicePixelRatio || 1), parts = [];
     const resize = () => {
-      W = window.innerWidth; H = window.innerHeight;
+      W = window.innerWidth; H = window.innerHeight; lastW = W;
       cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const n = Math.round(Math.min(94, W / 15));
       parts = [];
@@ -316,7 +316,7 @@ class App {
       }
     };
     resize();
-    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('resize', () => { if (window.innerWidth === lastW) return; resize(); }, { passive: true });
     const loop = (t) => {
       ctx.clearRect(0, 0, W, H);
       for (const p of parts) {
