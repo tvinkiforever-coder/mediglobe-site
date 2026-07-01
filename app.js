@@ -104,6 +104,18 @@ class App {
     this._initScrollCards();
     setTimeout(() => this._initScrollCards(), 300);
     this._initUI();
+    this._initHoverStyles();
+  }
+  _initHoverStyles() {
+    if (this._hovS) return; this._hovS = true;
+    if (!window.matchMedia || !window.matchMedia('(hover:hover)').matches) return;
+    document.querySelectorAll('[style-hover]').forEach(el => {
+      const base = el.getAttribute('style') || '';
+      const hov = el.getAttribute('style-hover');
+      if (!hov) return;
+      el.addEventListener('mouseenter', () => { el.setAttribute('style', base + ';' + hov); });
+      el.addEventListener('mouseleave', () => { el.setAttribute('style', base); });
+    });
   }
   _initUI() {
     if (this._ui) return; this._ui = true;
@@ -180,24 +192,31 @@ class App {
     const emailInput = document.getElementById('mgNotifyEmail');
     if (form && ok) {
       const self = this;
+      const pageLang = (document.documentElement.lang || 'ru').slice(0, 2);
+      const sendingTxt = pageLang === 'uk' ? 'Надсилаємо…' : (pageLang === 'en' ? 'Sending…' : 'Отправляем…');
+      const failTxt = pageLang === 'uk' ? 'Не вдалося надіслати. Перевірте інтернет і спробуйте ще раз.' : (pageLang === 'en' ? 'Could not send. Check your connection and try again.' : 'Не удалось отправить. Проверьте интернет и попробуйте ещё раз.');
+      const btnLabel = btn ? btn.textContent : '';
+      document.querySelectorAll('a[href="#mgNotifyForm"]').forEach(a => {
+        a.addEventListener('click', () => { setTimeout(() => { if (emailInput && form.style.display !== 'none') emailInput.focus(); }, 500); });
+      });
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = (emailInput && emailInput.value || '').trim();
         if (!email) return;
         if (errBox) errBox.style.display = 'none';
-        if (btn) { btn.disabled = true; btn.textContent = 'Отправляем…'; btn.style.opacity = '0.7'; }
+        if (btn) { btn.disabled = true; btn.textContent = sendingTxt; btn.style.opacity = '0.7'; }
         try {
           const res = await fetch('https://mediglobe-waitlist.tvinkiforever.workers.dev/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, lang: 'ru' }),
+            body: JSON.stringify({ email: email, lang: pageLang }),
           });
           if (!res.ok) throw new Error('bad status ' + res.status);
           form.style.display = 'none'; ok.style.display = 'flex';
           self._blip();
         } catch (err) {
-          if (btn) { btn.disabled = false; btn.textContent = 'Уведомить'; btn.style.opacity = '1'; }
-          if (errBox) { errBox.textContent = 'Не удалось отправить. Проверьте интернет и попробуйте ещё раз.'; errBox.style.display = 'block'; }
+          if (btn) { btn.disabled = false; btn.textContent = btnLabel; btn.style.opacity = '1'; }
+          if (errBox) { errBox.textContent = failTxt; errBox.style.display = 'block'; }
         }
       });
     }
@@ -263,10 +282,10 @@ class App {
     };
     if (preset && ANS[preset]) return ANS[preset];
     return uk
-      ? 'Це демо — повні відповіді доступні в застосунку. Встановіть MediGlobe, щоб поставити своє запитання AI-асистенту й отримати докладний розбір. Памʼятайте: застосунок не замінює консультацію лікаря.'
+      ? 'Це демо — повні відповіді доступні в застосунку. Залиште пошту у формі нижче — надішлемо посилання в день релізу, і ви зможете поставити AI-асистенту своє запитання. Памʼятайте: застосунок не замінює консультацію лікаря.'
       : en
-      ? 'This is a demo \u2014 full answers are available in the app. Install MediGlobe to ask the AI assistant your own question and get a detailed breakdown. Remember: the app does not replace a doctor\u2019s consultation.'
-      : '\u042d\u0442\u043e \u0434\u0435\u043c\u043e \u2014 \u043f\u043e\u043b\u043d\u044b\u0435 \u043e\u0442\u0432\u0435\u0442\u044b \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438. \u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u0435 MediGlobe, \u0447\u0442\u043e\u0431\u044b \u0437\u0430\u0434\u0430\u0442\u044c \u0441\u0432\u043e\u0439 \u0432\u043e\u043f\u0440\u043e\u0441 AI-\u0430\u0441\u0441\u0438\u0441\u0442\u0435\u043d\u0442\u0443 \u0438 \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u044b\u0439 \u0440\u0430\u0437\u0431\u043e\u0440. \u041f\u043e\u043c\u043d\u0438\u0442\u0435: \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043d\u0435 \u0437\u0430\u043c\u0435\u043d\u044f\u0435\u0442 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0438\u044e \u0432\u0440\u0430\u0447\u0430.';
+      ? 'This is a demo — full answers are available in the app. Leave your email in the form below and we will send you the link on release day, so you can ask the AI assistant your own question. Remember: the app does not replace a medical consultation.'
+      : 'Это демо — полные ответы доступны в приложении. Оставьте почту в форме ниже — пришлём ссылку в день релиза, и вы сможете задать AI-ассистенту свой вопрос. Помните: приложение не заменяет консультацию врача.';
   }
   _initAiDemo() {
     if (this._ai) return;
@@ -483,18 +502,20 @@ class App {
   }
   _initMotion() {
     if (this._md) return; this._md = true;
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const co = new IntersectionObserver((es) => {
-      es.forEach(e => { if (e.isIntersecting) { this._animateCount(e.target); co.unobserve(e.target); } });
-    }, { threshold: 0.6 });
-    document.querySelectorAll('[data-count]').forEach(n => co.observe(n));
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+      const co = new IntersectionObserver((es) => {
+        es.forEach(e => { if (e.isIntersecting) { this._animateCount(e.target); co.unobserve(e.target); } });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('[data-count]').forEach(n => co.observe(n));
+    }
     // back-to-top button
     const topBtn = document.getElementById('mgTop');
     if (topBtn) {
       const onScroll = () => { topBtn.classList.toggle('mgShow', window.scrollY > 700); };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
-      const go = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+      const go = () => window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
       topBtn.addEventListener('click', go);
       topBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     }
@@ -505,6 +526,7 @@ class App {
       es.forEach(e => { if (e.isIntersecting) { const l = linkFor(e.target.id); if (l) { navLinks.forEach(a => a.classList.remove('mgActive')); l.classList.add('mgActive'); } } });
     }, { threshold: 0.3, rootMargin: '-30% 0px -55% 0px' });
     document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
+    if (reduce) return;
     // 3D parallax tilt of the globe cluster following the cursor
     const hero = document.getElementById('top');
     const wrap = document.getElementById('mgGlobeWrap');
@@ -532,7 +554,6 @@ class App {
         if (fine) card.style.transform = 'perspective(900px) rotateY(' + ((px - 0.5) * 6).toFixed(2) + 'deg) rotateX(' + ((0.5 - py) * 6).toFixed(2) + 'deg) translateY(-4px)';
       });
       card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-      card.addEventListener('pointerenter', () => this._blip());
     });
     // magnetic primary buttons
     if (fine) document.querySelectorAll('a[style*="border-radius: 14px"]').forEach(btn => {
