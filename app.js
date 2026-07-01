@@ -244,7 +244,9 @@ class App {
     this._phI = setInterval(() => { i = (i + 1) % 3; show(i); }, 3600);
   }
   _aiAnswer(q, preset) {
-    var en = (document.documentElement.lang || 'ru').slice(0, 2) === 'en';
+    var L = (document.documentElement.lang || 'ru').slice(0, 2);
+    var en = L === 'en';
+    var uk = L === 'uk';
     var ANS = en ? {
       'Sore throat and fever 37.8': 'It could be a cold or a viral infection. Rest and warm fluids; for fever or pain \u2014 paracetamol at an age-appropriate dose. If it doesn\u2019t improve in 3 days \u2014 see a doctor.',
       'Severe headache for a second day': 'Most often this is tension, dehydration or lack of sleep. Rest, water, paracetamol. If the pain is sudden, with nausea or vision changes \u2014 see a doctor urgently.',
@@ -254,8 +256,15 @@ class App {
       '\u0421\u0438\u043b\u044c\u043d\u0430\u044f \u0433\u043e\u043b\u043e\u0432\u043d\u0430\u044f \u0431\u043e\u043b\u044c \u0432\u0442\u043e\u0440\u043e\u0439 \u0434\u0435\u043d\u044c': '\u0427\u0430\u0449\u0435 \u044d\u0442\u043e \u043d\u0430\u043f\u0440\u044f\u0436\u0435\u043d\u0438\u0435, \u043e\u0431\u0435\u0437\u0432\u043e\u0436\u0438\u0432\u0430\u043d\u0438\u0435 \u0438\u043b\u0438 \u043d\u0435\u0434\u043e\u0441\u044b\u043f. \u041e\u0442\u0434\u044b\u0445, \u0432\u043e\u0434\u0430, \u043f\u0430\u0440\u0430\u0446\u0435\u0442\u0430\u043c\u043e\u043b. \u0415\u0441\u043b\u0438 \u0431\u043e\u043b\u044c \u0440\u0435\u0437\u043a\u0430\u044f, \u0441 \u0442\u043e\u0448\u043d\u043e\u0442\u043e\u0439 \u0438\u043b\u0438 \u043d\u0430\u0440\u0443\u0448\u0435\u043d\u0438\u0435\u043c \u0437\u0440\u0435\u043d\u0438\u044f \u2014 \u0441\u0440\u043e\u0447\u043d\u043e \u043a \u0432\u0440\u0430\u0447\u0443.',
       '\u041c\u043e\u0436\u043d\u043e \u043b\u0438 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0442\u044c \u0438\u0431\u0443\u043f\u0440\u043e\u0444\u0435\u043d \u0441 \u0430\u0441\u043f\u0438\u0440\u0438\u043d\u043e\u043c': '\u041e\u0431\u0430 \u2014 \u041d\u041f\u0412\u041f, \u0441\u043e\u0432\u043c\u0435\u0449\u0430\u0442\u044c \u0431\u0435\u0437 \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u0432\u0440\u0430\u0447\u0430 \u043d\u0435 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0443\u0435\u0442\u0441\u044f: \u0432\u044b\u0448\u0435 \u0440\u0438\u0441\u043a \u0434\u043b\u044f \u0436\u0435\u043b\u0443\u0434\u043a\u0430. \u0412 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438 \u0442\u0430\u043a\u043e\u0435 \u0441\u043e\u0447\u0435\u0442\u0430\u043d\u0438\u0435 \u043f\u043e\u043c\u0435\u0447\u0430\u0435\u0442\u0441\u044f \u043a\u0430\u043a \u00ab\u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u043e\u0441\u0442\u043e\u0440\u043e\u0436\u043d\u043e\u0441\u0442\u0438\u00bb.'
     };
+    if (uk) ANS = {
+      'Болить горло і температура 37.8': 'Це може бути застуда або ГРВІ. Спокій і тепле пиття; за температури чи болю — парацетамол у віковій дозі. Якщо не легшає 3 дні — до лікаря.',
+      'Сильний головний біль другий день': 'Найчастіше це напруження, зневоднення або недосипання. Відпочинок, вода, парацетамол. Якщо біль різкий, з нудотою чи порушенням зору — терміново до лікаря.',
+      'Чи можна приймати ібупрофен з аспірином': 'Обидва — НПЗП, поєднувати без призначення лікаря не рекомендується: вищий ризик для шлунка. У застосунку таке поєднання позначається як «потребує обережності».'
+    };
     if (preset && ANS[preset]) return ANS[preset];
-    return en
+    return uk
+      ? 'Це демо — повні відповіді доступні в застосунку. Встановіть MediGlobe, щоб поставити своє запитання AI-асистенту й отримати докладний розбір. Памʼятайте: застосунок не замінює консультацію лікаря.'
+      : en
       ? 'This is a demo \u2014 full answers are available in the app. Install MediGlobe to ask the AI assistant your own question and get a detailed breakdown. Remember: the app does not replace a doctor\u2019s consultation.'
       : '\u042d\u0442\u043e \u0434\u0435\u043c\u043e \u2014 \u043f\u043e\u043b\u043d\u044b\u0435 \u043e\u0442\u0432\u0435\u0442\u044b \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438. \u0423\u0441\u0442\u0430\u043d\u043e\u0432\u0438\u0442\u0435 MediGlobe, \u0447\u0442\u043e\u0431\u044b \u0437\u0430\u0434\u0430\u0442\u044c \u0441\u0432\u043e\u0439 \u0432\u043e\u043f\u0440\u043e\u0441 AI-\u0430\u0441\u0441\u0438\u0441\u0442\u0435\u043d\u0442\u0443 \u0438 \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u044b\u0439 \u0440\u0430\u0437\u0431\u043e\u0440. \u041f\u043e\u043c\u043d\u0438\u0442\u0435: \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043d\u0435 \u0437\u0430\u043c\u0435\u043d\u044f\u0435\u0442 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0438\u044e \u0432\u0440\u0430\u0447\u0430.';
   }
