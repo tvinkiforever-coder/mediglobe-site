@@ -480,7 +480,7 @@ class App {
     ctx.restore();
   }
   _drawCross(ctx) {
-    const CX = 200, CY = 200, armLen = 136, armT = 50;
+    const CX = 200, CY = 200, armLen = 184, armT = 66;
     const pill = (x, y, w, h) => {
       const rr = Math.min(w, h) / 2;
       ctx.beginPath();
@@ -492,13 +492,18 @@ class App {
       ctx.closePath();
     };
     ctx.save();
-    // ambient glow behind the emblem — white core, red + green fringe
-    const glow = ctx.createRadialGradient(CX, CY, 6, CX, CY, 118);
-    glow.addColorStop(0, 'rgba(255,255,255,0.34)');
-    glow.addColorStop(0.42, 'rgba(255,90,120,0.16)');
+    // dark backing disc so the white/red capsule reads against the green globe
+    const dk = ctx.createRadialGradient(CX, CY, 14, CX, CY, 150);
+    dk.addColorStop(0, 'rgba(3,11,8,0.62)'); dk.addColorStop(0.6, 'rgba(3,11,8,0.36)'); dk.addColorStop(1, 'rgba(3,11,8,0)');
+    ctx.fillStyle = dk;
+    ctx.beginPath(); ctx.arc(CX, CY, 150, 0, 7); ctx.fill();
+    // ambient glow behind the emblem — white core, red fringe
+    const glow = ctx.createRadialGradient(CX, CY, 6, CX, CY, 150);
+    glow.addColorStop(0, 'rgba(255,255,255,0.3)');
+    glow.addColorStop(0.4, 'rgba(255,90,120,0.15)');
     glow.addColorStop(1, 'rgba(255,90,120,0)');
     ctx.fillStyle = glow;
-    ctx.beginPath(); ctx.arc(CX, CY, 118, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(CX, CY, 150, 0, 7); ctx.fill();
 
     const vx0 = CX - armT / 2, vy0 = CY - armLen / 2, vseam = CY - 1;
     const hx0 = CX - armLen / 2, hy0 = CY - armT / 2, hseam = CX + 2;
