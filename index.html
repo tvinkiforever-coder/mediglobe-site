@@ -78,7 +78,7 @@ body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,san
     body section:not(#top){animation:mgReveal linear both;animation-timeline:view();animation-range:entry 3% entry 40%;}
   }
 }
-#mgProgress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#34e8a0,#38d6c8);box-shadow:0 0 12px rgba(52,232,160,0.6);z-index:100;pointer-events:none}
+#mgProgress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#34e8a0,#eafff5 55%,#ff3b5c);box-shadow:0 0 12px rgba(255,93,125,0.5);z-index:100;pointer-events:none}
 @supports (animation-timeline: scroll()){#mgProgress{animation:mgProg linear;animation-timeline:scroll(root)}}
 @keyframes mgProg{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes mgGridDrift{to{background-position:36px 36px}}
@@ -205,6 +205,7 @@ header nav a.mgActive{color:#eaf4ee}
   .mgShotRow{margin-left:-22px;margin-right:-22px;padding-left:22px;padding-right:22px}
 }
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important}html{scroll-behavior:auto!important}}
+.mgEcg{max-width:640px;margin:0 auto;padding:0 28px}.mgEcg svg{display:block;width:100%;height:44px;overflow:visible}@media (prefers-reduced-motion: reduce){.mgEcg .mgEcgDot{display:none}}
 </style>
 <noscript><style>#mgLoader{display:none}</style></noscript>
 </head>
@@ -320,7 +321,7 @@ header nav a.mgActive{color:#eaf4ee}
           <span style="width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)"></span>
           Скоро в Google Play · версия для iOS следом
         </div>
-        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,60px);line-height:1.04;letter-spacing:-0.03em;margin:24px 0 0;text-wrap:balance">Знакомое лекарство — в любой аптеке мира</h1>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,60px);line-height:1.04;letter-spacing:-0.03em;margin:24px 0 0;text-wrap:balance">Знакомое <span style="background:linear-gradient(115deg,#ffffff 12%,#ffd6de 45%,#ff5d7d 75%,#ff3b5c);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#ffd6de">лекарство</span> — в любой аптеке мира</h1>
         <p style="font-size:19px;line-height:1.55;color:#b3cac0;margin:22px 0 0;max-width:520px;text-wrap:pretty">Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 13 стран, 7 языков.</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
           <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
@@ -333,9 +334,9 @@ header nav a.mgActive{color:#eaf4ee}
           </a>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:24px;font-size:14px;color:#7e988d">
-          <span style="display:inline-flex;align-items:center;gap:7px"><span style="width:6px;height:6px;border-radius:50%;background:var(--accent)"></span>Бесплатно</span>
-          <span style="display:inline-flex;align-items:center;gap:7px"><span style="width:6px;height:6px;border-radius:50%;background:#ffffff"></span>Работает офлайн</span>
-          <span style="display:inline-flex;align-items:center;gap:7px"><span style="width:6px;height:6px;border-radius:50%;background:var(--red)"></span>Без рекламы и трекеров</span>
+          <span style="display:inline-flex;align-items:center;gap:7px"><span style="width:13px;height:6px;border-radius:3px;flex:none;background:linear-gradient(90deg,#ffffff 50%,var(--accent) 50%);transform:rotate(-22deg)"></span>Бесплатно</span>
+          <span style="display:inline-flex;align-items:center;gap:7px"><span style="width:13px;height:6px;border-radius:3px;flex:none;background:#ffffff;transform:rotate(-22deg)"></span>Работает офлайн</span>
+          <span style="display:inline-flex;align-items:center;gap:7px"><span style="width:13px;height:6px;border-radius:3px;flex:none;background:linear-gradient(90deg,#ffffff 50%,var(--red) 50%);transform:rotate(-22deg)"></span>Без рекламы и трекеров</span>
         </div>
       </div>
 
@@ -456,13 +457,13 @@ header nav a.mgActive{color:#eaf4ee}
         </div>
 
         <div style="position:absolute;top:6%;left:-2%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 6s ease-in-out infinite">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span>Работает офлайн
+          <svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true" style="flex:none"><path d="M4.6 1.2h2.8v3.4h3.4v2.8H7.4v3.4H4.6V7.4H1.2V4.6h3.4z" fill="#34e8a0"/></svg>Работает офлайн
         </div>
         <div style="position:absolute;top:34%;right:-5%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floatyB 7s ease-in-out infinite">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--accent2)"></span>AI-симптомы
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="flex:none"><rect x="0.8" y="3.9" width="10.4" height="4.2" rx="2.1" transform="rotate(-28 6 6)" fill="#eafff5"/><rect x="0.8" y="3.9" width="5.2" height="4.2" rx="2.1" transform="rotate(-28 6 6)" fill="#38d6c8"/></svg>AI-симптомы
         </div>
         <div style="position:absolute;bottom:5%;left:13%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 8s ease-in-out infinite">
-          <span style="width:8px;height:8px;border-radius:50%;background:var(--red)"></span>3252 препарата
+          <svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z" fill="#ff5d7d"/></svg>3252 препарата
         </div>
       </div>
     </div>
@@ -496,6 +497,8 @@ header nav a.mgActive{color:#eaf4ee}
       </div>
     </div>
   </section>
+
+  <div class="mgEcg" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" fill="none"><path id="mgEcgP1" d="M0 30 H228 L244 30 L253 10 L263 52 L273 21 L281 30 H600" stroke="rgba(255,255,255,0.48)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="mgEcgDot" r="3.6" fill="#ff3b5c" style="filter:drop-shadow(0 0 6px rgba(255,59,92,0.9))"><animateMotion dur="3.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#mgEcgP1"/></animateMotion></circle></svg></div>
 
   <section style="max-width:880px;margin:0 auto;padding:96px 28px;text-align:center">
     <div style="text-transform:uppercase;letter-spacing:0.18em;font-size:13px;font-weight:700;color:var(--accent)">О приложении</div>
@@ -1001,6 +1004,8 @@ header nav a.mgActive{color:#eaf4ee}
       <div style="margin-top:18px;font-size:14.5px;color:#a9c2b8">Пишите нам напрямую: <a href="https://t.me/mediglobe_me" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:none">Telegram</a> · <a href="mailto:mediglobe.official@gmail.com" style="color:var(--accent);text-decoration:none">email</a></div>
     </div>
   </section>
+
+  <div class="mgEcg" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" fill="none"><path id="mgEcgP2" d="M0 30 H228 L244 30 L253 10 L263 52 L273 21 L281 30 H600" stroke="rgba(255,255,255,0.48)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="mgEcgDot" r="3.6" fill="#ff3b5c" style="filter:drop-shadow(0 0 6px rgba(255,59,92,0.9))"><animateMotion dur="3.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#mgEcgP2"/></animateMotion></circle></svg></div>
 
   <section id="najti" style="max-width:1180px;margin:0 auto;padding:20px 28px 100px">
     <div class="mgGlowBorder" style="position:relative;overflow:hidden;border:1px solid rgba(52,232,160,0.18);border-radius:26px;padding:64px 36px;text-align:center;background:linear-gradient(180deg,rgba(52,232,160,0.1),rgba(8,26,19,0.4));animation:mgCtaGlow 5s ease-in-out infinite">
