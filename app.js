@@ -256,6 +256,24 @@ class App {
       document.querySelectorAll('a[href="#mgNotifyForm"]').forEach(a => {
         a.addEventListener('click', () => { setTimeout(() => { if (emailInput && form.style.display !== 'none') emailInput.focus(); }, 500); });
       });
+      const cntEl = document.getElementById('mgWaitCount');
+      if (cntEl) {
+        fetch('https://mediglobe-waitlist.tvinkiforever.workers.dev/count').then(r => r.ok ? r.json() : null).then(d => {
+          const n = d && d.count;
+          if (!n || n < 25) return;
+          let word;
+          if (pageLang === 'en') word = n === 1 ? 'traveller is' : 'travellers are';
+          else {
+            const m10 = n % 10, m100 = n % 100;
+            const few = m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14);
+            const one = m10 === 1 && m100 !== 11;
+            word = pageLang === 'uk' ? (one ? 'мандрівник вже чекає' : (few ? 'мандрівники вже чекають' : 'мандрівників вже чекають')) : (one ? 'путешественник уже ждёт' : (few ? 'путешественника уже ждут' : 'путешественников уже ждут'));
+          }
+          cntEl.textContent = pageLang === 'en' ? (n + ' ' + word + ' waiting for the release') : (n + ' ' + word + ' релиз');
+          if (pageLang === 'uk') cntEl.textContent = n + ' ' + word + ' на реліз';
+          cntEl.style.display = 'block';
+        }).catch(() => {});
+      }
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = (emailInput && emailInput.value || '').trim();
