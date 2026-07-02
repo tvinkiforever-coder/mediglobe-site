@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mediglobe.me/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mediglobe.me/"/>
@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://mediglobe.me/en/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mediglobe.me/"/>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://mediglobe.me/uk/</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://mediglobe.me/"/>
@@ -33,38 +33,44 @@
   </url>
   <url>
     <loc>https://mediglobe.me/privacy/</loc>
-    <lastmod>2026-06-19</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mediglobe.me/en/privacy/</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mediglobe.me/terms/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mediglobe.me/en/terms/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mediglobe.me/uk/privacy/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mediglobe.me/uk/terms/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://mediglobe.me/press/</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 </urlset>
