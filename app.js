@@ -107,6 +107,7 @@ class App {
     this._initUI();
     this._initHoverStyles();
     this._initFindDemo();
+    this._initMiniGlobe();
   }
   _initHoverStyles() {
     if (this._hovS) return; this._hovS = true;
@@ -522,6 +523,70 @@ class App {
       }, { rootMargin: '90px' });
       io.observe(cv);
     }
+  }
+  _initMiniGlobe() {
+    if (this._miniG) return; this._miniG = true;
+    const cv = document.getElementById('mgLogoGlobe');
+    if (!cv) return;
+    const ctx = cv.getContext('2d');
+    const S = 76, C = 38, R = 35;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const pill = (x, y, w, h) => {
+      const rr = Math.min(w, h) / 2;
+      ctx.beginPath();
+      ctx.moveTo(x + rr, y);
+      ctx.arcTo(x + w, y, x + w, y + h, rr);
+      ctx.arcTo(x + w, y + h, x, y + h, rr);
+      ctx.arcTo(x, y + h, x, y, rr);
+      ctx.arcTo(x, y, x + w, y, rr);
+      ctx.closePath();
+    };
+    let lon = 0.6, last = performance.now();
+    const draw = (t) => {
+      const d = this._glbData;
+      if (!d) { last = t; return; }
+      const dt = Math.min(0.05, (t - last) / 1000); last = t;
+      lon += 0.22 * dt;
+      const sinL = Math.sin(lon), cosL = Math.cos(lon);
+      ctx.clearRect(0, 0, S, S);
+      const g = ctx.createRadialGradient(C - 9, C - 11, 3, C, C, R);
+      g.addColorStop(0, '#1c4836'); g.addColorStop(0.5, '#0f2e20'); g.addColorStop(1, '#050f0a');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(C, C, R, 0, 7); ctx.fill();
+      ctx.save(); ctx.beginPath(); ctx.arc(C, C, R, 0, 7); ctx.clip();
+      const scale = R / d.R;
+      for (const p of d.land) {
+        const sinLo = p.slon * cosL - p.clon * sinL, cosLo = p.clon * cosL + p.slon * sinL;
+        const x = p.clat * sinLo, y = p.slat, z2 = y * d.st + (p.clat * cosLo) * d.ct;
+        if (z2 <= 0.12) continue;
+        const y2 = y * d.ct - (p.clat * cosLo) * d.st;
+        ctx.globalAlpha = 0.25 + z2 * 0.6;
+        ctx.fillStyle = p.warm ? '#ff5d7d' : (p.pale ? '#eafff5' : '#5fe7aa');
+        ctx.beginPath(); ctx.arc(C + x * R, C - y2 * R, 0.5 + z2 * 0.9, 0, 7); ctx.fill();
+      }
+      ctx.globalAlpha = 1; ctx.restore();
+      ctx.beginPath(); ctx.arc(C, C, R - 0.5, 0, 7);
+      ctx.strokeStyle = 'rgba(191,243,227,0.3)'; ctx.lineWidth = 1; ctx.stroke();
+      const aL = 34, aT = 11.5;
+      ctx.save();
+      pill(C - aL / 2, C - aT / 2, aL, aT); ctx.clip();
+      ctx.fillStyle = '#f2f6f7'; ctx.fillRect(C - aL / 2 - 1, C - aT / 2 - 1, aL / 2 + 1.5, aT + 2);
+      ctx.fillStyle = '#ff2d52'; ctx.fillRect(C + 0.5, C - aT / 2 - 1, aL / 2 + 1, aT + 2);
+      ctx.restore();
+      ctx.save();
+      pill(C - aT / 2, C - aL / 2, aT, aL); ctx.clip();
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(C - aT / 2 - 1, C - aL / 2 - 1, aT + 2, aL / 2 + 1.5);
+      ctx.fillStyle = '#0cc57f'; ctx.fillRect(C - aT / 2 - 1, C + 0.5, aT + 2, aL / 2 + 1);
+      ctx.restore();
+      pill(C - aT / 2, C - aL / 2, aT, aL);
+      ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.lineWidth = 0.8; ctx.stroke();
+    };
+    if (reduce) {
+      const once = (t) => { if (this._glbData) { draw(performance.now()); } else setTimeout(() => once(), 350); };
+      once();
+      return;
+    }
+    const loop = (t) => { draw(t); this._miniRaf = requestAnimationFrame(loop); };
+    this._miniRaf = requestAnimationFrame(loop);
   }
   _projP(p, s, c) {
     const d = this._glbData;
