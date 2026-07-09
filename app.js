@@ -529,7 +529,8 @@ class App {
     const cv = document.getElementById('mgLogoGlobe');
     if (!cv) return;
     const ctx = cv.getContext('2d');
-    const S = 76, C = 38, R = 35;
+    cv.width = 152; cv.height = 152;
+    const S = 152, C = 76, R = 70;
     const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const pill = (x, y, w, h) => {
       const rr = Math.min(w, h) / 2;
@@ -549,24 +550,25 @@ class App {
       lon += 0.22 * dt;
       const sinL = Math.sin(lon), cosL = Math.cos(lon);
       ctx.clearRect(0, 0, S, S);
-      const g = ctx.createRadialGradient(C - 9, C - 11, 3, C, C, R);
+      const g = ctx.createRadialGradient(C - 18, C - 22, 6, C, C, R);
       g.addColorStop(0, '#1c4836'); g.addColorStop(0.5, '#0f2e20'); g.addColorStop(1, '#050f0a');
       ctx.fillStyle = g; ctx.beginPath(); ctx.arc(C, C, R, 0, 7); ctx.fill();
       ctx.save(); ctx.beginPath(); ctx.arc(C, C, R, 0, 7); ctx.clip();
       const scale = R / d.R;
-      for (const p of d.land) {
+      for (let li = 0; li < d.land.length; li += 2) {
+        const p = d.land[li];
         const sinLo = p.slon * cosL - p.clon * sinL, cosLo = p.clon * cosL + p.slon * sinL;
         const x = p.clat * sinLo, y = p.slat, z2 = y * d.st + (p.clat * cosLo) * d.ct;
         if (z2 <= 0.12) continue;
         const y2 = y * d.ct - (p.clat * cosLo) * d.st;
         ctx.globalAlpha = 0.25 + z2 * 0.6;
         ctx.fillStyle = p.warm ? '#ff5d7d' : (p.pale ? '#eafff5' : '#5fe7aa');
-        ctx.beginPath(); ctx.arc(C + x * R, C - y2 * R, 0.5 + z2 * 0.9, 0, 7); ctx.fill();
+        ctx.beginPath(); ctx.arc(C + x * R, C - y2 * R, 1 + z2 * 1.8, 0, 7); ctx.fill();
       }
       ctx.globalAlpha = 1; ctx.restore();
-      ctx.beginPath(); ctx.arc(C, C, R - 0.5, 0, 7);
-      ctx.strokeStyle = 'rgba(191,243,227,0.3)'; ctx.lineWidth = 1; ctx.stroke();
-      const aL = 34, aT = 11.5;
+      ctx.beginPath(); ctx.arc(C, C, R - 1, 0, 7);
+      ctx.strokeStyle = 'rgba(191,243,227,0.3)'; ctx.lineWidth = 2; ctx.stroke();
+      const aL = 68, aT = 23;
       ctx.save();
       pill(C - aL / 2, C - aT / 2, aL, aT); ctx.clip();
       ctx.fillStyle = '#f2f6f7'; ctx.fillRect(C - aL / 2 - 1, C - aT / 2 - 1, aL / 2 + 1.5, aT + 2);
@@ -578,13 +580,15 @@ class App {
       ctx.fillStyle = '#0cc57f'; ctx.fillRect(C - aT / 2 - 1, C + 0.5, aT + 2, aL / 2 + 1);
       ctx.restore();
       pill(C - aT / 2, C - aL / 2, aT, aL);
-      ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.lineWidth = 0.8; ctx.stroke();
+      ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.lineWidth = 1.6; ctx.stroke();
     };
     if (reduce) {
       const once = (t) => { if (this._glbData) { draw(performance.now()); } else setTimeout(() => once(), 350); };
       once();
       return;
     }
+    const kick = () => { if (this._glbData) draw(performance.now()); else setTimeout(kick, 250); };
+    kick();
     const loop = (t) => { draw(t); this._miniRaf = requestAnimationFrame(loop); };
     this._miniRaf = requestAnimationFrame(loop);
   }
@@ -625,7 +629,27 @@ class App {
       for (const p of gl.pts) { const [x, y, z] = this._projP(p, sinL, cosL); if (z > 0.02) { if (on) ctx.lineTo(x, y); else ctx.moveTo(x, y); on = true; } else on = false; }
       ctx.strokeStyle = 'rgba(205,247,234,' + (gl.major ? 0.5 : 0.2) + ')'; ctx.lineWidth = gl.major ? 1.2 : 0.8; ctx.stroke();
     }
-    d.land.forEach((p) => { const [x, y, z] = this._projP(p, sinL, cosL); if (z <= 0.05) return; const warm = p.warm, pale = p.pale; ctx.globalAlpha = (0.22 + z * 0.62) * (warm || pale ? 1.15 : 1); ctx.fillStyle = warm ? '#ff5d7d' : (pale ? '#eafff5' : '#5fe7aa'); ctx.beginPath(); ctx.arc(x, y, (0.7 + z * 1.7) * (warm ? 1.25 : 1), 0, 7); ctx.fill(); });
+    const buckets = this._dotBuckets || (this._dotBuckets = { g: [], w: [], r: [] });
+    const NB = 6;
+    for (const k in buckets) { const a = buckets[k]; for (let i = 0; i < NB; i++) a[i] = null; }
+    for (const p of d.land) {
+      const [x, y, z] = this._projP(p, sinL, cosL); if (z <= 0.05) continue;
+      const bi = Math.min(NB - 1, (z * NB) | 0);
+      const key = p.warm ? 'r' : (p.pale ? 'w' : 'g');
+      const path = buckets[key][bi] || (buckets[key][bi] = new Path2D());
+      const rad = (0.7 + z * 1.7) * (p.warm ? 1.25 : 1);
+      path.moveTo(x + rad, y); path.arc(x, y, rad, 0, 7);
+    }
+    const COLS = { g: '#5fe7aa', w: '#eafff5', r: '#ff5d7d' };
+    for (const k in buckets) {
+      ctx.fillStyle = COLS[k];
+      for (let i = 0; i < NB; i++) {
+        const path = buckets[k][i]; if (!path) continue;
+        const zMid = (i + 0.5) / NB;
+        ctx.globalAlpha = Math.min(1, (0.22 + zMid * 0.62) * (k === 'g' ? 1 : 1.15));
+        ctx.fill(path);
+      }
+    }
     ctx.globalAlpha = 1;
     d.arcs.forEach((a, i) => this._drawArc(ctx, a, sinL, cosL, t, i));
     d.pins.forEach((p, i) => {
