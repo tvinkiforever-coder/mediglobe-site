@@ -259,7 +259,7 @@ class App {
       });
       const cntEl = document.getElementById('mgWaitCount');
       if (cntEl) {
-        fetch('https://mediglobe-waitlist.tvinkiforever.workers.dev/count').then(r => r.ok ? r.json() : null).then(d => {
+        fetch('/api/count').then(r => r.ok ? r.json() : null).then(d => {
           const n = d && d.count;
           if (!n || n < 25) return;
           let word;
@@ -282,7 +282,7 @@ class App {
         if (errBox) errBox.style.display = 'none';
         if (btn) { btn.disabled = true; btn.textContent = sendingTxt; btn.style.opacity = '0.7'; }
         try {
-          const res = await fetch('https://mediglobe-waitlist.tvinkiforever.workers.dev/subscribe', {
+          const res = await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email, lang: pageLang }),
