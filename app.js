@@ -108,6 +108,17 @@ class App {
     this._initHoverStyles();
     this._initFindDemo();
     this._initMiniGlobe();
+    this._captureRef();
+  }
+  _captureRef() {
+    try {
+      const p = new URLSearchParams(location.search);
+      let src = p.get('ref') || p.get('utm_source') || '';
+      if (!src && document.referrer) {
+        try { const h = new URL(document.referrer).hostname.replace(/^www\./, ''); if (h && h !== location.hostname) src = h; } catch (e) {}
+      }
+      if (src && !localStorage.getItem('mg_src')) localStorage.setItem('mg_src', String(src).slice(0, 40));
+    } catch (e) {}
   }
   _initHoverStyles() {
     if (this._hovS) return; this._hovS = true;
@@ -285,7 +296,7 @@ class App {
           const res = await fetch('/api/subscribe', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, lang: pageLang }),
+            body: JSON.stringify({ email: email, lang: pageLang, source: (function () { try { return localStorage.getItem('mg_src') || 'direct'; } catch (e) { return 'direct'; } })() }),
           });
           if (!res.ok) { const e429 = new Error('bad status ' + res.status); e429.rate = res.status === 429; throw e429; }
           form.style.display = 'none'; ok.style.display = 'flex';
@@ -805,7 +816,7 @@ class App {
     return {
       accent: this.props.accent ?? '#34e8a0',
       headline: this.props.headline ?? 'Знакомое лекарство — в любой аптеке мира',
-      tagline: this.props.tagline ?? 'Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 14 стран, 7 языков.',
+      tagline: this.props.tagline ?? 'Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 13 стран, 10 языков.',
       ring: this.buildRing()
     };
   }
