@@ -287,12 +287,13 @@ class App {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email, lang: pageLang }),
           });
-          if (!res.ok) throw new Error('bad status ' + res.status);
+          if (!res.ok) { const e429 = new Error('bad status ' + res.status); e429.rate = res.status === 429; throw e429; }
           form.style.display = 'none'; ok.style.display = 'flex';
           self._blip();
         } catch (err) {
           if (btn) { btn.disabled = false; btn.textContent = btnLabel; btn.style.opacity = '1'; }
-          if (errBox) { errBox.textContent = failTxt; errBox.style.display = 'block'; }
+          const rateTxt = pageLang === 'uk' ? 'Забагато спроб — зачекайте хвилину і спробуйте ще раз.' : (pageLang === 'en' ? 'Too many attempts — wait a minute and try again.' : 'Слишком много попыток — подождите минуту и попробуйте ещё раз.');
+          if (errBox) { errBox.textContent = (err && err.rate) ? rateTxt : failTxt; errBox.style.display = 'block'; }
         }
       });
     }
