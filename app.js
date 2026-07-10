@@ -143,10 +143,10 @@ class App {
     if (inp && sel && out) {
       const inAppTxt = lang === 'uk' ? '\u0414\u043e\u0437\u0443\u0432\u0430\u043d\u043d\u044f, \u043f\u043e\u043f\u0435\u0440\u0435\u0434\u0436\u0435\u043d\u043d\u044f \u0439 \u0446\u0456\u043d\u0438 \u2014 \u0443 \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443.' : (lang === 'en' ? 'Dosages, warnings and prices \u2014 in the app.' : '\u0414\u043e\u0437\u0438\u0440\u043e\u0432\u043a\u0438, \u043f\u0440\u0435\u0434\u0443\u043f\u0440\u0435\u0436\u0434\u0435\u043d\u0438\u044f \u0438 \u0446\u0435\u043d\u044b \u2014 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438.');
       const missTxt = lang === 'uk'
-        ? '\u0423 \u0434\u0435\u043c\u043e \u043b\u0438\u0448\u0435 30 \u043f\u0440\u0435\u043f\u0430\u0440\u0430\u0442\u0456\u0432 \u2014 \u0443 \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443 \u0457\u0445 3252. <a href="#mgNotifyForm" style="color:var(--accent)">\u0414\u0456\u0437\u043d\u0430\u0442\u0438\u0441\u044f \u043f\u0440\u043e \u0440\u0435\u043b\u0456\u0437 \u2192</a>'
+        ? '\u0423 \u0434\u0435\u043c\u043e \u043b\u0438\u0448\u0435 30 \u043f\u0440\u0435\u043f\u0430\u0440\u0430\u0442\u0456\u0432 \u2014 \u0443 \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443 \u0457\u0445 3250. <a href="#mgNotifyForm" style="color:var(--accent)">\u0414\u0456\u0437\u043d\u0430\u0442\u0438\u0441\u044f \u043f\u0440\u043e \u0440\u0435\u043b\u0456\u0437 \u2192</a>'
         : (lang === 'en'
-        ? 'The demo covers only 30 medications \u2014 the app has 3252. <a href="#mgNotifyForm" style="color:var(--accent)">Join the waitlist \u2192</a>'
-        : '\u0412 \u0434\u0435\u043c\u043e \u0442\u043e\u043b\u044c\u043a\u043e 30 \u043f\u0440\u0435\u043f\u0430\u0440\u0430\u0442\u043e\u0432 \u2014 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438 \u0438\u0445 3252. <a href="#mgNotifyForm" style="color:var(--accent)">\u0423\u0437\u043d\u0430\u0442\u044c \u043e \u0440\u0435\u043b\u0438\u0437\u0435 \u2192</a>');
+        ? 'The demo covers only 30 medications \u2014 the app has 3250. <a href="#mgNotifyForm" style="color:var(--accent)">Join the waitlist \u2192</a>'
+        : '\u0412 \u0434\u0435\u043c\u043e \u0442\u043e\u043b\u044c\u043a\u043e 30 \u043f\u0440\u0435\u043f\u0430\u0440\u0430\u0442\u043e\u0432 \u2014 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438 \u0438\u0445 3250. <a href="#mgNotifyForm" style="color:var(--accent)">\u0423\u0437\u043d\u0430\u0442\u044c \u043e \u0440\u0435\u043b\u0438\u0437\u0435 \u2192</a>');
       const render = () => {
         const q = norm(inp.value);
         if (q.length < 2) { out.innerHTML = ''; return; }
@@ -798,7 +798,7 @@ class App {
     return {
       accent: this.props.accent ?? '#34e8a0',
       headline: this.props.headline ?? 'Знакомое лекарство — в любой аптеке мира',
-      tagline: this.props.tagline ?? 'Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3252 препарата, 13 стран, 10 языков.',
+      tagline: this.props.tagline ?? 'Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3250 препаратов, 13 стран, 10 языков.',
       ring: this.buildRing()
     };
   }
