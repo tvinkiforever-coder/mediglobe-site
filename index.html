@@ -188,12 +188,6 @@ header nav a.mgActive{color:#eaf4ee}
 .mgShotFrame{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
 @media (hover:hover){.mgShotCard:hover .mgShotFrame{transform:translateY(-8px);box-shadow:0 38px 74px rgba(0,0,0,.55),0 0 0 1px rgba(52,232,160,.3)}}
 /* iOS / Android переключатель */
-.mgPlatBtn{position:relative;z-index:2;flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border:none;background:transparent;color:#8fa89c;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;cursor:pointer;border-radius:11px;transition:color .25s ease;-webkit-tap-highlight-color:transparent}
-.mgPlatBtn[data-active="1"]{color:#04130d}
-.mgPlatThumb{position:absolute;top:5px;left:5px;width:calc(50% - 5px);height:calc(100% - 10px);border-radius:11px;background:linear-gradient(135deg,#34e8a0,#21c8b8);box-shadow:0 6px 18px rgba(0,229,160,.32);transition:transform .32s cubic-bezier(.4,1.3,.5,1);z-index:1}
-.mgPlatDeck{display:none}
-.mgPlatDeck[data-active="1"]{display:block;animation:mgDeckIn .42s cubic-bezier(.2,.7,.2,1)}
-@keyframes mgDeckIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .mgSwipeHint{animation:mgSwipeNudge 2.4s ease-in-out infinite}
 @keyframes mgSwipeNudge{0%,100%{transform:translateX(0);opacity:.6}50%{transform:translateX(7px);opacity:1}}
 /* на мобиле — горизонтальный свайп для стран и языков, развод кнопки «наверх» и липкого бара */
@@ -1082,7 +1076,7 @@ header nav a.mgActive{color:#eaf4ee}
   </footer>
 
 </div>
-<script src="/app.js?v=28"></script>
+<script src="/app.js?v=29"></script>
 <!-- Cloudflare Web Analytics (cookieless) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7e516f0ae85c4d13b9b9871e0d3e69f0"}'></script>
 </body>

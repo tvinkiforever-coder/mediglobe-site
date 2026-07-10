@@ -236,24 +236,6 @@ class App {
       document.addEventListener('focusout', () => { bar.dataset.hidden = ''; onScroll(); });
       onScroll();
     }
-    // iOS / Android platform switch
-    const psw = document.getElementById('mgPlatSwitch');
-    if (psw) {
-      const thumb = document.getElementById('mgPlatThumb');
-      const btns = psw.querySelectorAll('.mgPlatBtn');
-      const decks = document.querySelectorAll('.mgPlatDeck');
-      const setPlat = (plat) => {
-        thumb.style.transform = plat === 'android' ? 'translateX(100%)' : 'translateX(0)';
-        btns.forEach(b => b.dataset.active = b.dataset.plat === plat ? '1' : '0');
-        decks.forEach(d => d.dataset.active = d.dataset.plat === plat ? '1' : '0');
-        try { localStorage.setItem('mgPlat', plat); } catch (e) {}
-        this._blip && this._blip();
-      };
-      btns.forEach(b => b.addEventListener('click', () => setPlat(b.dataset.plat)));
-      let saved = 'ios';
-      try { saved = localStorage.getItem('mgPlat') || 'ios'; } catch (e) {}
-      setPlat(saved);
-    }
     const form = document.getElementById('mgNotifyForm');
     const ok = document.getElementById('mgNotifyOk');
     const errBox = document.getElementById('mgNotifyErr');
