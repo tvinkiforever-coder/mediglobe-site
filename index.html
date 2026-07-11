@@ -46,7 +46,7 @@
 <style>
 *{box-sizing:border-box}
 a[aria-disabled="true"]{pointer-events:none;cursor:default;opacity:.6}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 #mgAurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#06120d 0%,#071611 50%,#05100b 100%)}
 #mgAurora span{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform}
@@ -170,6 +170,7 @@ header nav a.mgActive{color:#eaf4ee}
 @keyframes mgLoadSpin{to{transform:rotate(360deg)}}
 @keyframes mgLoadPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
 @media (max-width:600px){
+  .mgGlobeBadge{display:none!important}
   .mgGlobeInner canvas,.mgGlobeInner svg{width:308px!important;height:308px!important}
   #mgGlobeWrap{min-height:340px !important}
   [style*="padding:96px 28px"]{padding-top:60px !important;padding-bottom:60px !important}
@@ -439,13 +440,13 @@ header nav a.mgActive{color:#eaf4ee}
           </svg>
         </div>
 
-        <div style="position:absolute;top:6%;left:-2%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 6s ease-in-out infinite">
+        <div class="mgGlobeBadge" style="position:absolute;top:6%;left:-2%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 6s ease-in-out infinite">
           <svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true" style="flex:none"><path d="M4.6 1.2h2.8v3.4h3.4v2.8H7.4v3.4H4.6V7.4H1.2V4.6h3.4z" fill="#34e8a0"/></svg>Работает офлайн
         </div>
-        <div style="position:absolute;top:34%;right:-5%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floatyB 7s ease-in-out infinite">
+        <div class="mgGlobeBadge" style="position:absolute;top:34%;right:-5%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floatyB 7s ease-in-out infinite">
           <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" style="flex:none"><rect x="0.8" y="3.9" width="10.4" height="4.2" rx="2.1" transform="rotate(-28 6 6)" fill="#eafff5"/><rect x="0.8" y="3.9" width="5.2" height="4.2" rx="2.1" transform="rotate(-28 6 6)" fill="#38d6c8"/></svg>AI-симптомы
         </div>
-        <div style="position:absolute;bottom:5%;left:13%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 8s ease-in-out infinite">
+        <div class="mgGlobeBadge" style="position:absolute;bottom:5%;left:13%;display:inline-flex;align-items:center;gap:9px;padding:10px 15px;border-radius: 13px;background:rgba(10,26,19,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.09);font-size:14px;font-weight:600;box-shadow:0 14px 32px rgba(0,0,0,0.4);animation:floaty 8s ease-in-out infinite">
           <svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true" style="flex:none"><path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18L12 21z" fill="#ff5d7d"/></svg>3250 препаратов
         </div>
       </div>
