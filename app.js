@@ -109,11 +109,57 @@ class App {
     this._initFindDemo();
     this._initMiniGlobe();
     this._captureRef();
+    this._initFirstAidDemo();
+  }
+  _initFirstAidDemo() {
+    const dataEl = document.getElementById('faData');
+    const tabs = document.getElementById('faTabs');
+    const card = document.getElementById('faCard');
+    if (!dataEl || !tabs || !card) return;
+    let data;
+    try { data = JSON.parse(dataEl.textContent); } catch (e) { return; }
+    if (!data || !data.length) return;
+    const esc = function (s) {
+      return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    };
+    const render = function (i) {
+      const c = data[i];
+      for (let j = 0; j < tabs.children.length; j++) {
+        const on = j === i;
+        tabs.children[j].className = 'faTab' + (on ? ' faTabOn' : '');
+        tabs.children[j].setAttribute('aria-selected', on ? 'true' : 'false');
+      }
+      let h = '<div class="faTtl">' + esc(c.title) + '</div>';
+      if (c.sub) h += '<div class="faSub">' + esc(c.sub) + '</div>';
+      if (c.danger) h += '<div class="faDanger">' + esc(c.danger) + '</div>';
+      h += '<ol class="faSteps">';
+      for (let s = 0; s < c.steps.length; s++) {
+        const st = c.steps[s];
+        const cl = st.color === 'ok' ? ' faOk' : (st.color === 'warn' ? ' faWarn' : '');
+        h += '<li class="faStep' + cl + '"><div class="faStepTtl">' + esc(st.ttl) + '</div>' + (st.txt ? '<div class="faStepTxt">' + esc(st.txt) + '</div>' : '') + '</li>';
+      }
+      h += '</ol>';
+      card.innerHTML = h;
+    };
+    for (let i = 0; i < data.length; i++) {
+      (function (idx) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'faTab';
+        b.setAttribute('role', 'tab');
+        b.textContent = data[idx].label;
+        b.addEventListener('click', function () { render(idx); });
+        tabs.appendChild(b);
+      })(i);
+    }
+    render(0);
   }
   _captureRef() {
     try {
       const p = new URLSearchParams(location.search);
       let src = p.get('ref') || p.get('utm_source') || '';
+      const camp = p.get('utm_campaign');
+      if (camp) src = src ? (src + '/' + camp) : camp;
       if (!src && document.referrer) {
         try { const h = new URL(document.referrer).hostname.replace(/^www\./, ''); if (h && h !== location.hostname) src = h; } catch (e) {}
       }
