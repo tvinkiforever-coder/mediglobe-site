@@ -452,6 +452,18 @@ class App {
     };
     resize();
     window.addEventListener('resize', () => { if (window.innerWidth === lastW) return; resize(); }, { passive: true });
+    // keep background particles OFF the hero globe (they clutter it) — track its on-screen disc
+    const globeEl = document.getElementById('mgGlobeCanvas');
+    let gCx = 0, gCy = 0, gR = -1;
+    const updGlobe = () => {
+      if (!globeEl) { gR = -1; return; }
+      const r = globeEl.getBoundingClientRect();
+      if (r.width < 2 || r.bottom < -80 || r.top > window.innerHeight + 80) { gR = -1; return; }
+      gCx = r.left + r.width / 2; gCy = r.top + r.height / 2; gR = r.width * 0.5;
+    };
+    updGlobe();
+    window.addEventListener('scroll', updGlobe, { passive: true });
+    window.addEventListener('resize', updGlobe, { passive: true });
     const capMsP = (window.matchMedia && window.matchMedia('(hover:none)').matches) ? ((window.devicePixelRatio || 1) > 2.5 ? 44 : 32) : 0;
     let lastFP = -1e9;
     const loop = (t) => {
@@ -463,8 +475,15 @@ class App {
         const margin = p.kind === 'dot' ? 6 : 20;
         if (p.y < -margin) { p.y = H + margin; p.x = Math.random() * W; }
         if (p.x < -margin) p.x = W + margin; if (p.x > W + margin) p.x = -margin;
+        let fade = 1;
+        if (gR > 0) {
+          const dx = p.x - gCx, dy = p.y - gCy, d2 = dx * dx + dy * dy;
+          if (d2 < gR * gR) continue;
+          const ring = gR + 48;
+          if (d2 < ring * ring) fade = (Math.sqrt(d2) - gR) / 48;
+        }
         const tw = 0.55 + 0.45 * Math.sin(t / 1000 + p.tw);
-        const al = p.a * tw;
+        const al = p.a * tw * fade;
         if (p.kind === 'dot') {
           ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7);
           ctx.fillStyle = 'rgba(' + p.tint + ',' + al.toFixed(3) + ')';
