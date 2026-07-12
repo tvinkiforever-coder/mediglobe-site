@@ -452,7 +452,7 @@ class App {
     };
     resize();
     window.addEventListener('resize', () => { if (window.innerWidth === lastW) return; resize(); }, { passive: true });
-    const capMsP = (window.matchMedia && window.matchMedia('(hover:none)').matches) ? 32 : 0;
+    const capMsP = (window.matchMedia && window.matchMedia('(hover:none)').matches) ? ((window.devicePixelRatio || 1) > 2.5 ? 44 : 32) : 0;
     let lastFP = -1e9;
     const loop = (t) => {
       if (t - lastFP < capMsP) { this._ptRaf = requestAnimationFrame(loop); return; }
@@ -554,7 +554,8 @@ class App {
     this._last = performance.now();
     this._drawGlobe(this._last);
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const capMs = (window.matchMedia && window.matchMedia('(hover:none)').matches) ? 32 : 0;
+    const _touch = window.matchMedia && window.matchMedia('(hover:none)').matches;
+    const capMs = _touch ? ((window.devicePixelRatio || 1) > 2.5 ? 44 : 32) : 0;
     let lastF = -1e9;
     const loop = (t) => { if (t - lastF >= capMs) { lastF = t; this._drawGlobe(t); } this._raf = requestAnimationFrame(loop); };
     this._raf = requestAnimationFrame(loop);
