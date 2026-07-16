@@ -56,7 +56,7 @@
       var bar = document.createElement('div');
       bar.setAttribute('role', 'region');
       bar.setAttribute('aria-label', msg);
-      bar.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:210;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:rgba(8,22,15,0.96);border-bottom:1px solid rgba(52,232,160,0.3);font-size:14px;color:#eaf4ee;backdrop-filter:blur(8px)';
+      bar.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:210;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:rgba(8,22,15,0.96);font-size:14px;color:#eaf4ee;backdrop-filter:blur(8px)';
       var txt = document.createElement('span');
       txt.textContent = msg;
       var go = document.createElement('a');

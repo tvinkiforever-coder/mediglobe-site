@@ -312,7 +312,13 @@ class App {
           cntEl.textContent = pageLang === 'en' ? (n + ' ' + word + ' waiting for the release') : (n + ' ' + word + ' релиз');
           if (pageLang === 'uk') cntEl.textContent = n + ' ' + word + ' на реліз';
           cntEl.style.display = 'block';
+          var _hc = document.getElementById('mgWaitCountHeroTxt');
+          if (_hc && _hc.parentElement) { _hc.textContent = cntEl.textContent; _hc.parentElement.style.display = 'inline-flex'; }
         }).catch(() => {});
+      }
+      if (emailInput && btn) {
+        var _syncBtn = function () { var v = emailInput.checkValidity() && emailInput.value.trim().length > 3; btn.disabled = !v; btn.style.opacity = v ? '1' : '0.55'; btn.style.cursor = v ? 'pointer' : 'not-allowed'; };
+        emailInput.addEventListener('input', _syncBtn); _syncBtn();
       }
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -327,7 +333,7 @@ class App {
             body: JSON.stringify({ email: email, lang: pageLang, source: (function () { try { return localStorage.getItem('mg_src') || 'direct'; } catch (e) { return 'direct'; } })() }),
           });
           if (!res.ok) { const e429 = new Error('bad status ' + res.status); e429.rate = res.status === 429; throw e429; }
-          form.style.display = 'none'; ok.style.display = 'flex';
+          form.style.display = 'none'; ok.style.display = 'flex'; ok.classList.add('mgOkIn');
           self._blip();
         } catch (err) {
           if (btn) { btn.disabled = false; btn.textContent = btnLabel; btn.style.opacity = '1'; }
@@ -339,7 +345,6 @@ class App {
   }
   _initScrollCards() {
     if (this._sc) return;
-    if (!(window.matchMedia && window.matchMedia('(hover:none)').matches)) return;
     const cards = [...document.querySelectorAll('[style*="border-radius: 18px"]')].filter(c => c.querySelector('h3'));
     if (!cards.length) return;
     this._sc = true;
@@ -348,8 +353,8 @@ class App {
     // collapses as it leaves. IntersectionObserver = no per-frame scroll math,
     // no single-card "snapping" → smooth reveal.
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => e.target.classList.toggle('mgFocus', e.isIntersecting));
-    }, { rootMargin: '-24% 0px -34% 0px', threshold: 0 });
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('mgFocus'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -38% 0px', threshold: 0.01 });
     cards.forEach(c => io.observe(c));
   }
   _initPhone() {

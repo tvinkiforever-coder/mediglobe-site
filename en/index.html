@@ -12,7 +12,7 @@
 <link rel="alternate" hreflang="x-default" href="https://mediglobe.me/">
 <link rel="icon" type="image/png" sizes="any" href="/assets/favicon.png?v=3">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=3">
-<script src="/lang.js?v=2"></script>
+<script src="/lang.js?v=3"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"MediGlobe","applicationCategory":"MedicalApplication","operatingSystem":"Android, iOS","url":"https://mediglobe.me/en/","description":"Find the local equivalent of a familiar medication in any country — offline. 3250 medications, 13 countries, 10 languages.","inLanguage":["ru","en","de","tr","fr","es","uk","it","pt","pl"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"MediGlobe","url":"https://mediglobe.me/","email":"mediglobe.official@gmail.com","sameAs":["https://t.me/mediglobe_app"]}}
 </script>
@@ -53,10 +53,10 @@ body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,san
 .mgA1{width:780px;height:780px;top:-12%;right:-10%;background:radial-gradient(circle,rgba(52,232,160,0.16),transparent 68%);animation:mgAurora1 26s ease-in-out infinite}
 .mgA2{width:680px;height:680px;top:34%;left:-16%;background:radial-gradient(circle,rgba(56,214,200,0.13),transparent 68%);animation:mgAurora2 32s ease-in-out infinite}
 .mgA3{width:620px;height:620px;bottom:-10%;right:6%;background:radial-gradient(circle,rgba(40,180,150,0.12),transparent 68%);animation:mgAurora3 30s ease-in-out infinite}
-.mgA4{width:460px;height:460px;top:8%;left:38%;background:radial-gradient(circle,rgba(255,59,92,0.17),transparent 68%);animation:mgAurora4 28s ease-in-out infinite}
+.mgA4{width:460px;height:460px;top:8%;left:38%;background:radial-gradient(circle,rgba(255,90,95,0.17),transparent 68%);animation:mgAurora4 28s ease-in-out infinite}
 .mgA5{width:380px;height:380px;bottom:12%;left:22%;background:radial-gradient(circle,rgba(255,255,255,0.10),transparent 70%);animation:mgAurora2 24s ease-in-out infinite}
 @media (prefers-reduced-motion: reduce){#mgAurora span{animation:none}}
-:root{--accent:#34e8a0;--accent2:#38d6c8;--red:#ff3b5c;--red2:#ff5d7d}
+:root{--accent:#34e8a0;--accent2:#38d6c8;--red:#ff5a5f;--red2:#ff8a80}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes floatyB{0%,100%{transform:translateY(0)}50%{transform:translateY(11px)}}
 @keyframes orbit{to{transform:rotate(360deg)}}
@@ -78,7 +78,7 @@ body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,san
     body section:not(#top){animation:mgReveal linear both;animation-timeline:view();animation-range:entry 3% entry 40%;}
   }
 }
-#mgProgress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#34e8a0,#eafff5 55%,#ff3b5c);box-shadow:0 0 12px rgba(255,93,125,0.5);z-index:100;pointer-events:none}
+#mgProgress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#34e8a0,#eafff5 55%,#ff5a5f);box-shadow:0 0 12px rgba(255,90,95,0.5);z-index:100;pointer-events:none}
 @supports (animation-timeline: scroll()){#mgProgress{animation:mgProg linear;animation-timeline:scroll(root)}}
 @keyframes mgProg{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes mgGridDrift{to{background-position:36px 36px}}
@@ -96,11 +96,11 @@ body{margin:0;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,san
 @property --mgAng{syntax:'<angle>';inherits:false;initial-value:0deg}
 @keyframes mgBorderSpin{to{--mgAng:360deg}}
 .mgGlowBorder::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.6px;background:conic-gradient(from var(--mgAng),transparent 0 36%,rgba(52,232,160,0.85) 48% 52%,transparent 64% 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:mgBorderSpin 7s linear infinite;pointer-events:none;z-index:4}
-::selection{background:rgba(255,59,92,0.34);color:#fff}
+::selection{background:rgba(255,90,95,0.34);color:#fff}
 ::-webkit-scrollbar{width:11px;height:11px}
 ::-webkit-scrollbar-track{background:#06120d}
-::-webkit-scrollbar-thumb{background:linear-gradient(#2f7d5a,#c22a48);border-radius:8px;border:2px solid #06120d}
-::-webkit-scrollbar-thumb:hover{background:linear-gradient(#34e8a0,#ff3b5c)}
+::-webkit-scrollbar-thumb{background:linear-gradient(#2f7d5a,#cf5850);border-radius:8px;border:2px solid #06120d}
+::-webkit-scrollbar-thumb:hover{background:linear-gradient(#34e8a0,#ff5a5f)}
 html{scrollbar-color:#1c5a40 #06120d}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
 #mgGrain{position:fixed;inset:0;z-index:70;pointer-events:none;opacity:0.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -203,7 +203,96 @@ header nav a.mgActive{color:#eaf4ee}
 .mgEcg{max-width:640px;margin:0 auto;padding:0 28px}.mgEcg svg{display:block;width:100%;height:44px;overflow:visible}@media (prefers-reduced-motion: reduce){.mgEcg .mgEcgDot{display:none}}
 </style>
 <noscript><style>#mgLoader{display:none}</style></noscript>
-</head>
+<meta name="theme-color" content="#06120d"><meta name="color-scheme" content="dark"><style id="mgCoach">/* ===== DEPTH / ELEVATION (from ultracode design workflow; fixed-bg removed, hover scoped) ===== */
+/* Level 0 — page: FLAT uniform base (vignette removed -> no tonal seams anywhere; depth comes from cards) */
+body{background:#06120d !important}
+section{position:relative}
+/* Level 1 — cards: lighter top-lit slab + asymmetric rim + layered cast shadow + inner highlights */
+[style*="border-radius: 18px"],[style*="border-radius:20px"],[style*="border-radius: 20px"]{background:linear-gradient(178deg,rgba(255,255,255,0.074) 0%,rgba(255,255,255,0.026) 56%,rgba(255,255,255,0.012) 82%,rgba(0,0,0,0.05) 100%) !important;border:1px solid rgba(255,255,255,0.10) !important;border-top-color:rgba(255,255,255,0.20) !important;border-bottom-color:rgba(0,0,0,0.34) !important;box-shadow:0 26px 52px -22px rgba(0,0,0,0.82),0 11px 22px -14px rgba(0,0,0,0.60),0 2px 6px -3px rgba(0,0,0,0.58),inset 1px 1px 0 -0.5px rgba(255,255,255,0.14),inset 0 1px 0 rgba(255,255,255,0.10),inset 0 -1px 0 rgba(0,0,0,0.28) !important;transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s cubic-bezier(.2,.7,.3,1)}
+@media (hover:hover){[style*="border-radius: 18px"]:hover,[style*="border-radius:20px"]:hover,[style*="border-radius: 20px"]:hover{transform:translateY(-3px);box-shadow:0 40px 70px -26px rgba(0,0,0,0.88),0 18px 30px -16px rgba(0,0,0,0.64),0 3px 8px -3px rgba(0,0,0,0.62),inset 1px 1px 0 -0.5px rgba(255,255,255,0.16),inset 0 1px 0 rgba(255,255,255,0.12),inset 0 -1px 0 rgba(0,0,0,0.30) !important}}
+/* accent-tinted level-1 cards */
+[style*="border-radius: 20px"][style*="rgba(52,232,160"],[style*="border-radius:20px"][style*="rgba(52,232,160"],[style*="border-radius: 18px"][style*="rgba(52,232,160,0.08"]{background:linear-gradient(178deg,rgba(52,232,160,0.10) 0%,rgba(52,232,160,0.030) 58%,rgba(255,255,255,0.010) 82%,rgba(0,0,0,0.045) 100%) !important;border:1px solid rgba(52,232,160,0.24) !important;border-top-color:rgba(120,255,210,0.30) !important;border-bottom-color:rgba(0,0,0,0.34) !important;box-shadow:0 26px 52px -22px rgba(0,0,0,0.82),0 11px 22px -14px rgba(0,0,0,0.58),0 2px 6px -3px rgba(0,0,0,0.55),inset 1px 1px 0 -0.5px rgba(150,255,215,0.16),inset 0 1px 0 rgba(120,255,210,0.14),inset 0 -1px 0 rgba(0,0,0,0.26) !important}
+/* coral-tinted level-1 cards */
+[style*="border-radius: 18px"][style*="rgba(255,90,95,0.12"],[style*="border-radius: 20px"][style*="rgba(255,59,92,0.05"],[style*="border-radius:20px"][style*="rgba(255,59,92,0.05"]{border-top-color:rgba(255,150,160,0.24) !important;border-bottom-color:rgba(0,0,0,0.34) !important;box-shadow:0 26px 52px -22px rgba(0,0,0,0.82),0 11px 22px -14px rgba(0,0,0,0.58),0 2px 6px -3px rgba(0,0,0,0.55),inset 1px 1px 0 -0.5px rgba(255,160,168,0.14),inset 0 1px 0 rgba(255,150,160,0.12),inset 0 -1px 0 rgba(0,0,0,0.26) !important}
+/* Level 2 — icon tiles (scoped as descendants: standalone radius:13 untouched) */
+[style*="border-radius: 18px"] [style*="border-radius: 13px"],[style*="border-radius:20px"] [style*="border-radius: 13px"],[style*="border-radius: 20px"] [style*="border-radius: 13px"]{border:1px solid rgba(255,255,255,0.10);box-shadow:0 10px 20px -8px rgba(0,0,0,0.58),0 2px 5px -2px rgba(0,0,0,0.46),inset 1px 1px 0 -0.5px rgba(255,255,255,0.20),inset 0 1px 0 rgba(255,255,255,0.16),inset 0 -1px 0 rgba(0,0,0,0.30) !important}
+[style*="border-radius: 18px"] [style*="border-radius: 13px"][style*="rgba(52,232,160,0.12"],[style*="border-radius:20px"] [style*="border-radius: 13px"][style*="rgba(52,232,160,0.12"],[style*="border-radius: 20px"] [style*="border-radius: 13px"][style*="rgba(52,232,160,0.12"]{background:linear-gradient(180deg,rgba(52,232,160,0.20),rgba(52,232,160,0.11)) !important;box-shadow:0 10px 22px -8px rgba(0,0,0,0.56),0 2px 5px -2px rgba(0,0,0,0.44),0 0 18px -8px rgba(52,232,160,0.28),inset 0 1px 0 rgba(160,255,222,0.30),inset 0 -1px 0 rgba(0,0,0,0.30) !important}
+[style*="border-radius: 18px"] [style*="border-radius: 13px"][style*="rgba(255,90,95,0.12"],[style*="border-radius:20px"] [style*="border-radius: 13px"][style*="rgba(255,90,95,0.12"],[style*="border-radius: 20px"] [style*="border-radius: 13px"][style*="rgba(255,90,95,0.12"]{background:linear-gradient(180deg,rgba(255,90,95,0.22),rgba(255,90,95,0.11)) !important;box-shadow:0 10px 22px -8px rgba(0,0,0,0.56),0 2px 5px -2px rgba(0,0,0,0.44),0 0 18px -8px rgba(255,90,95,0.28),inset 0 1px 0 rgba(255,180,184,0.28),inset 0 -1px 0 rgba(0,0,0,0.30) !important}
+
+/* extend elevation to medium panels (demo / first-aid / comparison / FAQ) — more objём across the page */
+[style*="border-radius:16px"],[style*="border-radius:22px"],[style*="border-radius:26px"]{box-shadow:0 20px 44px -20px rgba(0,0,0,0.78),0 8px 18px -12px rgba(0,0,0,0.55),0 2px 5px -3px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.06),inset 0 -1px 0 rgba(0,0,0,0.24) !important}
+
+/* ===== REVEAL: smooth fade-in, NO height change -> nothing jumps (David's pick) ===== */
+[style*="border-radius: 18px"]>p{max-height:none !important;overflow:visible !important;margin-top:12px !important;opacity:0 !important;transform:translateY(8px) !important;transition:opacity .55s ease,transform .6s cubic-bezier(.22,.61,.36,1) !important}
+[style*="border-radius: 18px"].mgFocus>p,[style*="border-radius: 18px"]:hover>p{opacity:1 !important;transform:none !important}
+[style*="border-radius: 18px"]::after{display:none !important}
+[style*="border-radius: 18px"] [style*="border-radius: 13px"]{transition:box-shadow .4s ease,transform .4s ease !important}
+[style*="border-radius: 18px"].mgFocus [style*="border-radius: 13px"],[style*="border-radius: 18px"]:hover [style*="border-radius: 13px"]{transform:none !important}
+/* section entrance: subtle + smooth */
+@keyframes mgReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion:no-preference){body section:not(#top){animation-range:entry 2% entry 16% !important}}}
+
+/* ===== COACH ITEM: first-aid step hierarchy (title clearly bigger/bolder than desc) ===== */
+.faStepTtl{font-size:17px !important;font-weight:700 !important;color:#eef6f1 !important;letter-spacing:-.01em}
+.faStepTxt{font-size:14.5px !important;color:#b3cabf !important;margin-top:5px !important;line-height:1.6}
+
+/* (store-badge one-line handled by direct inline edit in coach_apply.py — more robust than :has) */
+
+/* ===== COACH ITEM: feature cards -> icon LEFT, text RIGHT (scoped to the 9 grid cards via padding:28px) ===== */
+[style*="border-radius: 18px;padding:28px"]{display:grid !important;grid-template-columns:auto 1fr !important;column-gap:16px !important;align-items:start !important}
+[style*="border-radius: 18px;padding:28px"] > [style*="border-radius: 13px"]{grid-column:1 !important;grid-row:1 / span 2 !important;align-self:start !important}
+[style*="border-radius: 18px;padding:28px"] > h3{grid-column:2 !important;grid-row:1 !important;margin:0 0 6px !important}
+[style*="border-radius: 18px;padding:28px"] > p{grid-column:2 !important;grid-row:2 !important}
+
+/* ===== SEAMLESS: kill full-width divider lines between info blocks (single-side 1px band borders) ===== */
+[style*="border-top:1px solid rgba(255,255,255,0.05)"],[style*="border-top:1px solid rgba(255,255,255,0.06)"],[style*="border-top:1px solid rgba(255,255,255,0.07)"],[style*="border-bottom:1px solid rgba(255,255,255,0.05)"],[style*="border-bottom:1px solid rgba(255,255,255,0.06)"],[style*="border-bottom:1px solid rgba(255,255,255,0.07)"]{border-top-color:transparent !important;border-bottom-color:transparent !important}
+header{border-bottom-color:transparent !important}
+footer{border-top-color:transparent !important}
+.mgGlowBorder{box-shadow:none !important}
+
+/* ===== remove the "Листайте ⬇" scroll cue from under the globe (David) ===== */
+.mgScrollCue{display:none !important}
+
+/* ===== soften globe halo + dark under-shadow so there's no visible edge ("seam") under the globe ===== */
+.mgGlobeInner{filter:drop-shadow(0 12px 30px rgba(0,0,0,0.42)) !important}
+[style*="radial-gradient(circle,rgba(52,232,160,0.22),transparent 64%)"]{display:none !important}
+
+/* ===== TRULY SEAMLESS: flatten #mgAurora (fixed gradient+blobs created a lighter mid-band whose edge read as a seam) ===== */
+#mgAurora{background:#06120d !important}
+#mgAurora span{display:none !important}
+
+/* ===== KILL the seam under the globe: remove hero bg decorations that end abruptly (dot-grid + teal glow) ===== */
+[style*="radial-gradient(rgba(120,240,200"]{display:none !important}
+[style*="rgba(56,214,200,0.1)"]{display:none !important}
+
+/* ===== POLISH PASS (David picked: quick visual 1-5 + form 6) ===== */
+/* п4: kill remaining decorative overlay (grain) for perf — aurora/hero blobs already hidden above */
+#mgGrain{display:none !important}
+/* п3: first-aid tab tactile press + steady demo height (no resize jump on tab switch) */
+.faTab{transition:transform .12s ease,filter .12s ease,color .45s ease !important}
+.faTab:active{transform:scale(.96) !important;filter:brightness(1.12) !important}
+.faSteps{min-height:250px}
+/* п5: focus-visible on ALL interactive controls (custom-role ones were skipped) */
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,.faTab:focus-visible,.mgChip:focus-visible,.mgCountry:focus-visible,#mgTop:focus-visible,#mgBurger:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent) !important;outline-offset:3px !important;border-radius:8px}
+/* п6: form states — success glow pill + error slide-in + valid-button feel */
+@keyframes mgOkPulse{0%{box-shadow:0 0 0 0 rgba(52,232,160,0)}25%{box-shadow:0 0 26px 2px rgba(52,232,160,0.45)}100%{box-shadow:0 0 0 0 rgba(52,232,160,0)}}
+#mgNotifyOk.mgOkIn{background:rgba(52,232,160,0.08) !important;border:1px solid rgba(52,232,160,0.3) !important;border-radius:12px !important;padding:14px 16px !important;animation:mgOkPulse 1.6s ease 1}
+@keyframes mgErrIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+#mgNotifyErr{animation:mgErrIn .35s ease}
+#mgNotifyBtn{transition:opacity .2s ease,transform .15s ease,box-shadow .2s ease !important}
+#mgNotifyBtn:not(:disabled):active{transform:scale(.97)}
+#mgNotifyEmail:valid{border-color:rgba(52,232,160,0.4) !important}
+
+/* ===== DEPTH ON ALL WINDOWS (David: add volume to EVERY box/panel/badge) ===== */
+/* medium boxes: store buttons, CTAs, icon containers, #mgTop (radius 14) */
+[style*="border-radius:14px"],[style*="border-radius: 14px"]{box-shadow:0 10px 24px -12px rgba(0,0,0,0.62),inset 0 1px 0 rgba(255,255,255,0.06)}
+/* small boxes: inputs, buttons, chips, selects (radius 10-12) */
+[style*="border-radius:12px"],[style*="border-radius: 12px"],[style*="border-radius:11px"],[style*="border-radius: 11px"],[style*="border-radius:10px"],[style*="border-radius: 10px"]{box-shadow:0 6px 16px -10px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.05)}
+/* pills / badges with INLINE radius:999px (orbit pills use a class -> unaffected) */
+[style*="border-radius:999px"]{box-shadow:0 5px 14px -7px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.07)}
+/* large rounded panels = phone mockups / frames (float them) */
+[style*="border-radius:32px"],[style*="border-radius:35px"],[style*="border-radius:42px"],[style*="border-radius:46px"]{box-shadow:0 30px 60px -26px rgba(0,0,0,0.82),0 10px 22px -12px rgba(0,0,0,0.52),inset 0 1px 0 rgba(255,255,255,0.06)}
+</style></head>
 <body>
 <div id="mgRoot" style="--accent: #34e8a0;position:relative;min-height:100vh;color:#eaf4ee;font-family:Manrope,system-ui,sans-serif;overflow-x:hidden">
 
@@ -304,14 +393,14 @@ header nav a.mgActive{color:#eaf4ee}
           <span style="width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)"></span>
           Coming soon to Google Play · iOS to follow
         </div>
-        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,60px);line-height:1.04;letter-spacing:-0.03em;margin:24px 0 0;text-wrap:balance">A familiar <span style="background:linear-gradient(115deg,#ffffff 22%,#ffe0e6 52%,#ff8fa6 82%,#ff5d7d);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#ffd6de">medication</span> — in any pharmacy worldwide</h1>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(38px,4.8vw,60px);line-height:1.04;letter-spacing:-0.03em;margin:24px 0 0;text-wrap:balance">A familiar <span style="background:linear-gradient(115deg,#ffffff 22%,#ffe3db 52%,#ff9a82 82%,#ff8a80);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:#ffe0d8">medication</span> — in any pharmacy worldwide</h1>
         <p style="font-size:19px;line-height:1.62;color:#c6dad0;margin:22px 0 0;max-width:520px;text-wrap:pretty">Type a name or ingredient — find its local equivalent: brands, dosages, prices. Offline, 3250 medications, 13 countries, 10 languages.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
-          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+        <div id="mgWaitCountHero" style="display:none;align-items:center;gap:8px;margin-top:18px;font-size:14.5px;color:var(--accent);font-weight:600"><span style="width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);flex:none"></span><span id="mgWaitCountHeroTxt"></span></div><div style="display:flex;flex-wrap:nowrap;gap:10px;margin-top:26px">
+          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 14px;border-radius: 14px;background:#0e2018;flex:1 1 0;min-width:0;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
             <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#bccfc6">Coming to</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">Google Play</span></span>
           </a>
-          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+          <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 14px;border-radius: 14px;background:#0e2018;flex:1 1 0;min-width:0;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
             <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#bccfc6">Coming to</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">App Store</span></span>
           </a>
@@ -326,7 +415,7 @@ header nav a.mgActive{color:#eaf4ee}
 
       <div id="mgGlobeWrap" style="position:relative;display:flex;align-items:center;justify-content:center;min-height:470px;transition:transform .4s ease-out;transform-style:preserve-3d">
         <div style="position:absolute;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(52,232,160,0.22),transparent 64%);filter:blur(12px);animation:pulseGlow 6s ease-in-out infinite"></div>
-        <div class="mgGlobeInner" style="position:relative;animation:floaty 7s ease-in-out infinite;filter:drop-shadow(0 0 64px rgba(52,232,160,0.28)) drop-shadow(0 0 46px rgba(255,59,92,0.16)) drop-shadow(0 30px 60px rgba(0,0,0,0.5))">
+        <div class="mgGlobeInner" style="position:relative;animation:floaty 7s ease-in-out infinite;filter:drop-shadow(0 0 64px rgba(52,232,160,0.28)) drop-shadow(0 0 46px rgba(255,90,95,0.16)) drop-shadow(0 30px 60px rgba(0,0,0,0.5))">
           <canvas id="mgGlobeCanvas" aria-hidden="true" width="400" height="400" style="display:block;width:384px;height:384px"></canvas>
           <svg width="384" height="384" viewBox="0 0 400 400" fill="none" style="position:absolute;inset:0;pointer-events:none">
             <defs>
@@ -443,7 +532,7 @@ header nav a.mgActive{color:#eaf4ee}
         <div class="mgOrbit" aria-hidden="true">
           <span class="mgOrbitPill mgOP1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34e8a0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Works offline</span>
           <span class="mgOrbitPill mgOP2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38d6c8" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"></path></svg>10 languages</span>
-          <span class="mgOrbitPill mgOP3"><svg width="14" height="14" viewBox="0 0 24 24"><rect x="2.5" y="8.6" width="19" height="6.8" rx="3.4" transform="rotate(-40 12 12)" fill="#ff5d7d"></rect><rect x="2.5" y="8.6" width="9.5" height="6.8" rx="3.4" transform="rotate(-40 12 12)" fill="#ffffff" opacity="0.92"></rect></svg>3250 medications</span>
+          <span class="mgOrbitPill mgOP3"><svg width="14" height="14" viewBox="0 0 24 24"><rect x="2.5" y="8.6" width="19" height="6.8" rx="3.4" transform="rotate(-40 12 12)" fill="#ff8a80"></rect><rect x="2.5" y="8.6" width="9.5" height="6.8" rx="3.4" transform="rotate(-40 12 12)" fill="#ffffff" opacity="0.92"></rect></svg>3250 medications</span>
         </div>
       </div>
     </div>
@@ -460,7 +549,7 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="font-size:14px;color:#a4bcb0;margin-top:4px">medications</div>
       </div>
       <div class="mgStat">
-        <div data-count="13" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.02em;color:var(--red)">13</div>
+        <div data-count="13" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.02em;color:#eafff5">13</div>
         <div style="font-size:14px;color:#a4bcb0;margin-top:4px">countries</div>
       </div>
       <div class="mgStat">
@@ -472,7 +561,7 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="font-size:14px;color:#a4bcb0;margin-top:4px">symptoms</div>
       </div>
       <div class="mgStat">
-        <div data-count="83" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.02em;color:var(--red2)">83</div>
+        <div data-count="83" style="font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:700;letter-spacing:-0.02em;color:var(--red)">83</div>
         <div style="font-size:14px;color:#a4bcb0;margin-top:4px">first-aid cards</div>
       </div>
     </div>
@@ -485,7 +574,7 @@ header nav a.mgActive{color:#eaf4ee}
     <p style="font-size:14px;line-height:1.65;color:#9bb2a7;margin:18px 0 0">Data sources: open regulatory databases (OpenFDA, RxNorm) and official medication leaflets.</p>
   </section>
 
-  <div class="mgEcg" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" fill="none"><path id="mgEcgP1" d="M0 30 H228 L244 30 L253 10 L263 52 L273 21 L281 30 H600" stroke="rgba(255,255,255,0.48)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="mgEcgDot" r="3.6" fill="#ff3b5c" style="filter:drop-shadow(0 0 6px rgba(255,59,92,0.9))"><animateMotion dur="3.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#mgEcgP1"/></animateMotion></circle></svg></div>
+  <div class="mgEcg" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" fill="none"><path id="mgEcgP1" d="M0 30 H228 L244 30 L253 10 L263 52 L273 21 L281 30 H600" stroke="rgba(255,255,255,0.48)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="mgEcgDot" r="3.6" fill="#ff5a5f" style="filter:drop-shadow(0 0 6px rgba(255,90,95,0.9))"><animateMotion dur="3.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#mgEcgP1"/></animateMotion></circle></svg></div>
 
   <section id="demo" style="max-width:1180px;margin:0 auto;padding:40px 28px 96px">
     <div style="text-align:center;max-width:640px;margin:0 auto 40px">
@@ -534,10 +623,10 @@ header nav a.mgActive{color:#eaf4ee}
   </section>
 
 
-  <div class="mgEcg" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" fill="none"><path id="mgEcgP2" d="M0 30 H228 L244 30 L253 10 L263 52 L273 21 L281 30 H600" stroke="rgba(255,255,255,0.42)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle r="3.6" fill="#ff3b5c" style="filter:drop-shadow(0 0 6px rgba(255,59,92,0.9))"><animateMotion dur="3.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#mgEcgP2"/></animateMotion></circle></svg></div>
+  <div class="mgEcg" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" fill="none"><path id="mgEcgP2" d="M0 30 H228 L244 30 L253 10 L263 52 L273 21 L281 30 H600" stroke="rgba(255,255,255,0.42)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle r="3.6" fill="#ff5a5f" style="filter:drop-shadow(0 0 6px rgba(255,90,95,0.9))"><animateMotion dur="3.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#mgEcgP2"/></animateMotion></circle></svg></div>
 
   <section id="pomosh" style="max-width:1180px;margin:0 auto;padding:40px 28px 96px">
-    <style>#pomosh .faTabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px;justify-content:center}#pomosh .faTab{font-size:13.5px;padding:9px 15px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#c7d7cf;cursor:pointer;font-family:inherit;transition:background .18s,border-color .18s,color .18s}#pomosh .faTab:hover{border-color:rgba(255,90,106,0.5)}#pomosh .faTabOn{background:rgba(255,59,92,0.16);border-color:rgba(255,90,106,0.6);color:#ffd6de;font-weight:600}#pomosh .faCard{border:1px solid rgba(255,255,255,0.14);border-radius:20px;background:linear-gradient(180deg,rgba(255,59,92,0.05),rgba(255,255,255,0.012));padding:26px 24px;min-height:220px}#pomosh .faTtl{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#f4fbf7;line-height:1.15}#pomosh .faSub{font-size:14px;color:#9db8ac;margin-top:5px}#pomosh .faDanger{margin-top:16px;padding:12px 15px;border-radius:12px;background:rgba(255,59,92,0.12);border:1px solid rgba(255,90,106,0.4);color:#ffc2cb;font-size:14.5px;font-weight:600;line-height:1.45}#pomosh .faSteps{list-style:none;margin:18px 0 0;padding:0;counter-reset:fa}#pomosh .faStep{position:relative;padding:0 0 0 46px;margin-bottom:16px;counter-increment:fa}#pomosh .faStep:last-child{margin-bottom:0}#pomosh .faStep::before{content:counter(fa);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:10px;background:rgba(255,59,92,0.14);color:#ff8a97;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif}#pomosh .faStep.faOk::before{background:rgba(52,232,160,0.14);color:var(--accent);content:'\2713'}#pomosh .faStep.faWarn::before{background:rgba(243,179,90,0.16);color:#f3b35a}#pomosh .faStepTtl{font-weight:600;font-size:15.5px;color:#e6f1ec}#pomosh .faStepTxt{font-size:14.5px;line-height:1.62;color:#bccfc6;margin-top:3px}#pomosh .faNote{margin-top:18px;font-size:12.5px;color:#9bb2a7;text-align:center}</style>
+    <style>#pomosh .faTabs{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px;justify-content:center}#pomosh .faTab{font-size:13.5px;padding:9px 15px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#c7d7cf;cursor:pointer;font-family:inherit;transition:background .18s,border-color .18s,color .18s}#pomosh .faTab:hover{border-color:rgba(255,90,106,0.5)}#pomosh .faTabOn{background:rgba(255,90,95,0.16);border-color:rgba(255,90,106,0.6);color:#ffe0d8;font-weight:600}#pomosh .faCard{border:1px solid rgba(255,255,255,0.14);border-radius:20px;background:linear-gradient(180deg,rgba(255,90,95,0.05),rgba(255,255,255,0.012));padding:26px 24px;min-height:220px}#pomosh .faTtl{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#f4fbf7;line-height:1.15}#pomosh .faSub{font-size:14px;color:#9db8ac;margin-top:5px}#pomosh .faDanger{margin-top:16px;padding:12px 15px;border-radius:12px;background:rgba(255,90,95,0.12);border:1px solid rgba(255,90,106,0.4);color:#ffc2cb;font-size:14.5px;font-weight:600;line-height:1.45}#pomosh .faSteps{list-style:none;margin:18px 0 0;padding:0;counter-reset:fa}#pomosh .faStep{position:relative;padding:0 0 0 46px;margin-bottom:16px;counter-increment:fa}#pomosh .faStep:last-child{margin-bottom:0}#pomosh .faStep::before{content:counter(fa);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:10px;background:rgba(255,90,95,0.14);color:#ff9a8c;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif}#pomosh .faStep.faOk::before{background:rgba(52,232,160,0.14);color:var(--accent);content:'\2713'}#pomosh .faStep.faWarn::before{background:rgba(243,179,90,0.16);color:#f3b35a}#pomosh .faStepTtl{font-weight:600;font-size:15.5px;color:#e6f1ec}#pomosh .faStepTxt{font-size:14.5px;line-height:1.62;color:#bccfc6;margin-top:3px}#pomosh .faNote{margin-top:18px;font-size:12.5px;color:#9bb2a7;text-align:center}</style>
     <div style="text-align:center;max-width:720px;margin:0 auto 34px">
       <div style="text-transform:uppercase;letter-spacing:0.18em;font-size:13px;font-weight:700;color:var(--red)">When minutes matter</div>
       <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-0.02em;margin:14px 0 0"><span style="color:var(--red2)">83</span> first-aid cards — offline</h2>
@@ -616,8 +705,8 @@ header nav a.mgActive{color:#eaf4ee}
         <p style="font-size:15.5px;line-height:1.62;color:#bccfc6;margin:0">Describe how you feel — the built-in assistant points out what to pay attention to. It answers in your language.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.14);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(255,59,92,0.4)">
-        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(255,59,92,0.12);display:flex;align-items:center;justify-content:center;color:var(--red)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.14);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(255,90,95,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(255,90,95,0.12);display:flex;align-items:center;justify-content:center;color:var(--red)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">Interaction checker</h3>
@@ -632,8 +721,8 @@ header nav a.mgActive{color:#eaf4ee}
         <p style="font-size:15.5px;line-height:1.62;color:#bccfc6;margin:0">Point your camera at the package — the app recognizes the medication and opens its card in the catalog.</p>
       </div>
 
-      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.14);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(255,59,92,0.4)">
-        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(255,59,92,0.12);display:flex;align-items:center;justify-content:center;color:var(--red)">
+      <div style="background:linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.012));border:1px solid rgba(255,255,255,0.14);border-radius: 18px;padding:28px;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-4px);border-color:rgba(255,90,95,0.4)">
+        <div style="width:50px;height:50px;border-radius: 13px;background:rgba(255,90,95,0.12);display:flex;align-items:center;justify-content:center;color:var(--red)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"></rect><path d="M12 10v6M9 13h6"></path><path d="M9 6V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"></path></svg>
         </div>
         <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin:20px 0 8px">First aid</h3>
@@ -931,8 +1020,8 @@ header nav a.mgActive{color:#eaf4ee}
           <button id="mgNotifyBtn" type="submit" style="flex:none;padding:13px 20px;border-radius:12px;background:var(--accent);color:#06120d;border:1px solid var(--accent);font-weight:700;font-size:15px;cursor:pointer;font-family:inherit">Notify me</button>
         </form>
         <div style="margin-top:9px;font-size:13px;color:#9bb2a7">Just a release email. No spam.</div>
-        <div id="mgNotifyErr" style="display:none;margin-top:10px;font-size:13.5px;color:#f3946a"></div>
-        <div id="mgNotifyOk" style="display:none;margin-top:14px;flex-direction:column;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--accent)"><div style="display:flex;align-items:center;gap:9px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Thanks! We’ll let you know as soon as it’s out.</div><a href="https://t.me/mediglobe_app" target="_blank" rel="noopener noreferrer" style="color:#5ec8f5;text-decoration:none;font-weight:600">Meanwhile — dev news on Telegram →</a></div>
+        <div id="mgNotifyErr" role="alert" style="display:none;margin-top:10px;font-size:13.5px;color:#f3946a"></div>
+        <div id="mgNotifyOk" role="status" aria-live="polite" style="display:none;margin-top:14px;flex-direction:column;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--accent)"><div style="display:flex;align-items:center;gap:9px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>Thanks! We’ll let you know as soon as it’s out.</div><a href="https://t.me/mediglobe_app" target="_blank" rel="noopener noreferrer" style="color:#5ec8f5;text-decoration:none;font-weight:600">Meanwhile — dev news on Telegram →</a></div>
       </div>
     </div>
   </section>
@@ -987,7 +1076,7 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="padding:0 22px 20px;font-size:15.5px;line-height:1.65;color:#bccfc6">No. The medication catalog, symptoms, first aid and the interaction checker all work fully offline. The pharmacy map shows previously-opened areas offline; pharmacy search and the AI assistant need the internet.</div>
       </details>
       <details class="mgFaq" style="border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.025);overflow:hidden">
-        <summary style="list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#eaf4ee">What happens to my data?<span class="mgFaqIco" style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,59,92,0.45);display:flex;align-items:center;justify-content:center;color:var(--red);transition:transform .3s ease">+</span></summary>
+        <summary style="list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#eaf4ee">What happens to my data?<span class="mgFaqIco" style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,90,95,0.45);display:flex;align-items:center;justify-content:center;color:var(--red);transition:transform .3s ease">+</span></summary>
         <div style="padding:0 22px 20px;font-size:15.5px;line-height:1.65;color:#bccfc6">Your medications, allergies and symptoms stay on your device. AI requests go through a secure proxy without sharing personal data with third parties.</div>
       </details>
       <details class="mgFaq" style="border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.025);overflow:hidden">
@@ -995,7 +1084,7 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="padding:0 22px 20px;font-size:15.5px;line-height:1.65;color:#bccfc6">The iOS version is already in development. Android is on the way — follow us on social media to be the first to hear about the App Store release.</div>
       </details>
       <details class="mgFaq" style="border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.025);overflow:hidden">
-        <summary style="list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#eaf4ee">Is it a replacement for a doctor?<span class="mgFaqIco" style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,59,92,0.45);display:flex;align-items:center;justify-content:center;color:var(--red);transition:transform .3s ease">+</span></summary>
+        <summary style="list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;color:#eaf4ee">Is it a replacement for a doctor?<span class="mgFaqIco" style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,90,95,0.45);display:flex;align-items:center;justify-content:center;color:var(--red);transition:transform .3s ease">+</span></summary>
         <div style="padding:0 22px 20px;font-size:15.5px;line-height:1.65;color:#bccfc6">No. MediGlobe is a reference tool: it helps you get oriented but does not diagnose and does not replace a professional consultation. If you feel unwell, see a doctor.</div>
       </details>
       <details class="mgFaq" style="border:1px solid rgba(255,255,255,0.14);border-radius:16px;background:rgba(255,255,255,0.025);overflow:hidden">
@@ -1013,12 +1102,12 @@ header nav a.mgActive{color:#eaf4ee}
     </div>
   </section>
 
-  <div class="mgEcg" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" fill="none"><path id="mgEcgP2" d="M0 30 H228 L244 30 L253 10 L263 52 L273 21 L281 30 H600" stroke="rgba(255,255,255,0.48)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="mgEcgDot" r="3.6" fill="#ff3b5c" style="filter:drop-shadow(0 0 6px rgba(255,59,92,0.9))"><animateMotion dur="3.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#mgEcgP2"/></animateMotion></circle></svg></div>
+  <div class="mgEcg" aria-hidden="true"><svg viewBox="0 0 600 60" preserveAspectRatio="xMidYMid meet" fill="none"><path id="mgEcgP2" d="M0 30 H228 L244 30 L253 10 L263 52 L273 21 L281 30 H600" stroke="rgba(255,255,255,0.48)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle class="mgEcgDot" r="3.6" fill="#ff5a5f" style="filter:drop-shadow(0 0 6px rgba(255,90,95,0.9))"><animateMotion dur="3.6s" repeatCount="indefinite" calcMode="linear"><mpath href="#mgEcgP2"/></animateMotion></circle></svg></div>
 
   <section id="najti" style="max-width:1180px;margin:0 auto;padding:20px 28px 100px">
     <div class="mgGlowBorder" style="position:relative;overflow:hidden;border:1px solid rgba(52,232,160,0.18);border-radius:26px;padding:64px 36px;text-align:center;background:linear-gradient(180deg,rgba(52,232,160,0.1),rgba(8,26,19,0.4));animation:mgCtaGlow 5s ease-in-out infinite">
       <div style="position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:520px;height:300px;background:radial-gradient(circle,rgba(52,232,160,0.22),transparent 65%);filter:blur(20px);pointer-events:none"></div>
-      <div style="position:absolute;top:-56px;right:12%;width:300px;height:220px;background:radial-gradient(circle,rgba(255,59,92,0.13),transparent 66%);filter:blur(22px);pointer-events:none"></div>
+      <div style="position:absolute;top:-56px;right:12%;width:300px;height:220px;background:radial-gradient(circle,rgba(255,90,95,0.13),transparent 66%);filter:blur(22px);pointer-events:none"></div>
       <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(120,240,200,0.06) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:radial-gradient(circle at 50% 30%,#000,transparent 70%);mask-image:radial-gradient(circle at 50% 30%,#000,transparent 70%);pointer-events:none"></div>
       <div style="position:relative">
         <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;background:rgba(52,232,160,0.12);border:1px solid rgba(52,232,160,0.3);font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:18px"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulseGlow 2s ease-in-out infinite"></span>We’re in touch</div>
@@ -1030,11 +1119,11 @@ header nav a.mgActive{color:#eaf4ee}
         <div style="margin-top:40px">
           <div style="text-transform:uppercase;letter-spacing:0.16em;font-size:12px;font-weight:700;color:#9bb2a7;margin-bottom:14px">The app</div>
           <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px">
-            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 14px;border-radius: 14px;background:#0e2018;flex:1 1 0;min-width:0;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
               <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#bccfc6">Coming to</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">Google Play</span></span>
             </a>
-            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius: 14px;background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
+            <a href="#mgNotifyForm" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 14px;border-radius: 14px;background:#0e2018;flex:1 1 0;min-width:0;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;transition:transform .25s ease,border-color .25s ease" style-hover="transform:translateY(-2px);border-color:rgba(52,232,160,0.5)">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
               <span style="text-align:left;line-height:1.15"><span style="display:block;font-size:11px;color:#bccfc6">Coming to</span><span style="display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif">App Store</span></span>
             </a>
@@ -1100,7 +1189,7 @@ header nav a.mgActive{color:#eaf4ee}
   </footer>
 
 </div>
-<script src="/app.js?v=34"></script>
+<script src="/app.js?v=36"></script>
 <!-- Cloudflare Web Analytics (cookieless) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7e516f0ae85c4d13b9b9871e0d3e69f0"}'></script>
 </body>
