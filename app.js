@@ -348,13 +348,14 @@ class App {
     const cards = [...document.querySelectorAll('[style*="border-radius: 18px"]')].filter(c => c.querySelector('h3'));
     if (!cards.length) return;
     this._sc = true;
-    if (!('IntersectionObserver' in window)) { cards.forEach(c => c.classList.add('mgFocus')); return; }
-    // A card is "open" while it sits inside the central viewport band, and
-    // collapses as it leaves. IntersectionObserver = no per-frame scroll math,
-    // no single-card "snapping" → smooth reveal.
+    if (!('IntersectionObserver' in window)) { cards.forEach(c => c.classList.add('mgSeen')); return; }
+    // Reveal once as each card scrolls into view, then stop watching it.
+    // IntersectionObserver = no per-frame scroll math, no "snapping".
+    // We only add 'mgSeen' (fades the description in via opacity) — the card
+    // itself stays visible, so nothing jumps and a JS hiccup can't hide it.
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('mgFocus'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -38% 0px', threshold: 0.01 });
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('mgSeen'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
     cards.forEach(c => io.observe(c));
   }
   _initPhone() {
@@ -790,8 +791,9 @@ class App {
       hero.addEventListener('pointerleave', () => { wrap.style.transform = ''; });
     }
     const fine = window.matchMedia('(pointer:fine)').matches;
-    // spotlight + 3D tilt on info cards
-    document.querySelectorAll('[style*="border-radius: 18px"]').forEach(card => {
+    // spotlight + 3D tilt on info cards — but NOT the feature grid (padding:28px):
+    // its cursor-following tilt made the text shimmer/shift on hover (David: must be static).
+    document.querySelectorAll('[style*="border-radius: 18px"]:not([style*="padding:28px"])').forEach(card => {
       card.addEventListener('pointermove', (e) => {
         const r = card.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;

@@ -209,7 +209,7 @@ body{background:#06120d !important}
 section{position:relative}
 /* Level 1 — cards: lighter top-lit slab + asymmetric rim + layered cast shadow + inner highlights */
 [style*="border-radius: 18px"],[style*="border-radius:20px"],[style*="border-radius: 20px"]{background:linear-gradient(178deg,rgba(255,255,255,0.074) 0%,rgba(255,255,255,0.026) 56%,rgba(255,255,255,0.012) 82%,rgba(0,0,0,0.05) 100%) !important;border:1px solid rgba(255,255,255,0.10) !important;border-top-color:rgba(255,255,255,0.20) !important;border-bottom-color:rgba(0,0,0,0.34) !important;box-shadow:0 26px 52px -22px rgba(0,0,0,0.82),0 11px 22px -14px rgba(0,0,0,0.60),0 2px 6px -3px rgba(0,0,0,0.58),inset 1px 1px 0 -0.5px rgba(255,255,255,0.14),inset 0 1px 0 rgba(255,255,255,0.10),inset 0 -1px 0 rgba(0,0,0,0.28) !important;transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s cubic-bezier(.2,.7,.3,1)}
-@media (hover:hover){[style*="border-radius: 18px"]:hover,[style*="border-radius:20px"]:hover,[style*="border-radius: 20px"]:hover{transform:translateY(-3px);box-shadow:0 40px 70px -26px rgba(0,0,0,0.88),0 18px 30px -16px rgba(0,0,0,0.64),0 3px 8px -3px rgba(0,0,0,0.62),inset 1px 1px 0 -0.5px rgba(255,255,255,0.16),inset 0 1px 0 rgba(255,255,255,0.12),inset 0 -1px 0 rgba(0,0,0,0.30) !important}}
+@media (hover:hover){[style*="border-radius: 18px"]:hover,[style*="border-radius:20px"]:hover,[style*="border-radius: 20px"]:hover{transform:translateY(-2px);box-shadow:0 30px 54px -24px rgba(0,0,0,0.8),0 13px 24px -14px rgba(0,0,0,0.55),0 2px 6px -3px rgba(0,0,0,0.55),inset 1px 1px 0 -0.5px rgba(255,255,255,0.16),inset 0 1px 0 rgba(255,255,255,0.12),inset 0 -1px 0 rgba(0,0,0,0.30) !important}}
 /* accent-tinted level-1 cards */
 [style*="border-radius: 20px"][style*="rgba(52,232,160"],[style*="border-radius:20px"][style*="rgba(52,232,160"],[style*="border-radius: 18px"][style*="rgba(52,232,160,0.08"]{background:linear-gradient(178deg,rgba(52,232,160,0.10) 0%,rgba(52,232,160,0.030) 58%,rgba(255,255,255,0.010) 82%,rgba(0,0,0,0.045) 100%) !important;border:1px solid rgba(52,232,160,0.24) !important;border-top-color:rgba(120,255,210,0.30) !important;border-bottom-color:rgba(0,0,0,0.34) !important;box-shadow:0 26px 52px -22px rgba(0,0,0,0.82),0 11px 22px -14px rgba(0,0,0,0.58),0 2px 6px -3px rgba(0,0,0,0.55),inset 1px 1px 0 -0.5px rgba(150,255,215,0.16),inset 0 1px 0 rgba(120,255,210,0.14),inset 0 -1px 0 rgba(0,0,0,0.26) !important}
 /* coral-tinted level-1 cards */
@@ -223,8 +223,8 @@ section{position:relative}
 [style*="border-radius:16px"],[style*="border-radius:22px"],[style*="border-radius:26px"]{box-shadow:0 20px 44px -20px rgba(0,0,0,0.78),0 8px 18px -12px rgba(0,0,0,0.55),0 2px 5px -3px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.06),inset 0 -1px 0 rgba(0,0,0,0.24) !important}
 
 /* ===== REVEAL: smooth fade-in, NO height change -> nothing jumps (David's pick) ===== */
-[style*="border-radius: 18px"]>p{max-height:none !important;overflow:visible !important;margin-top:12px !important;opacity:0 !important;transform:translateY(8px) !important;transition:opacity .55s ease,transform .6s cubic-bezier(.22,.61,.36,1) !important}
-[style*="border-radius: 18px"].mgFocus>p,[style*="border-radius: 18px"]:hover>p{opacity:1 !important;transform:none !important}
+[style*="border-radius: 18px"]>p{max-height:none !important;overflow:visible !important;margin-top:12px !important;opacity:1 !important;transform:none !important}
+.mgPre{opacity:0}.mgPre.mgFocus{opacity:1;animation:mgCardIn .6s cubic-bezier(.22,.61,.36,1) both;animation-delay:var(--mgD,0ms)}@keyframes mgCardIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 [style*="border-radius: 18px"]::after{display:none !important}
 [style*="border-radius: 18px"] [style*="border-radius: 13px"]{transition:box-shadow .4s ease,transform .4s ease !important}
 [style*="border-radius: 18px"].mgFocus [style*="border-radius: 13px"],[style*="border-radius: 18px"]:hover [style*="border-radius: 13px"]{transform:none !important}
@@ -292,7 +292,27 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 [style*="border-radius:999px"]{box-shadow:0 5px 14px -7px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.07)}
 /* large rounded panels = phone mockups / frames (float them) */
 [style*="border-radius:32px"],[style*="border-radius:35px"],[style*="border-radius:42px"],[style*="border-radius:46px"]{box-shadow:0 30px 60px -26px rgba(0,0,0,0.82),0 10px 22px -12px rgba(0,0,0,0.52),inset 0 1px 0 rgba(255,255,255,0.06)}
-</style></head>
+/* ===== CALM POP: smoother, quieter hover + reveal on feature/info cards (David: pop-up looked bad) ===== */
+[style*="border-radius: 18px"],[style*="border-radius:20px"],[style*="border-radius: 20px"]{transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s ease !important}
+@media (hover:hover){
+[style*="border-radius: 18px"]:hover,[style*="border-radius:20px"]:hover,[style*="border-radius: 20px"]:hover{transform:translateY(-2px) !important;box-shadow:0 24px 46px -22px rgba(0,0,0,0.72),0 6px 14px -8px rgba(0,0,0,0.5),inset 1px 1px 0 -0.5px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.08),inset 0 -1px 0 rgba(0,0,0,0.28) !important}
+[style*="border-radius: 18px"]:hover::before{opacity:0 !important}
+[style*="border-radius: 18px"]:hover [style*="border-radius: 13px"]{box-shadow:0 10px 20px -8px rgba(0,0,0,0.58),0 2px 5px -2px rgba(0,0,0,0.46),inset 1px 1px 0 -0.5px rgba(255,255,255,0.20),inset 0 1px 0 rgba(255,255,255,0.16),inset 0 -1px 0 rgba(0,0,0,0.30) !important}
+}
+[style*="border-radius: 18px"]>p{transform:translateY(4px) !important;transition:opacity .75s ease,transform .75s cubic-bezier(.22,.61,.36,1) !important}
+[style*="border-radius: 18px"].mgFocus>p,[style*="border-radius: 18px"]:hover>p{transform:none !important}/* ===== NO per-card pop (David: pop-up was broken). Descriptions ALWAYS visible; section-level fade only. ===== */
+[style*="border-radius: 18px"]>p{opacity:1 !important;transform:none !important;transition:none !important;max-height:none !important;overflow:visible !important;margin-top:12px !important}/* ===== NO FONT JITTER: hover = shadow only (no transform -> text doesn't re-rasterize), section fade = opacity only ===== */
+@media (hover:hover){[style*="border-radius: 18px"]:hover,[style*="border-radius:20px"]:hover,[style*="border-radius: 20px"]:hover{transform:none !important;box-shadow:0 26px 50px -22px rgba(0,0,0,0.75),0 8px 16px -8px rgba(0,0,0,0.5),inset 1px 1px 0 -0.5px rgba(255,255,255,0.12),inset 0 1px 0 rgba(255,255,255,0.08),inset 0 -1px 0 rgba(0,0,0,0.28) !important}}
+@keyframes mgReveal{from{opacity:0}to{opacity:1}}/* ===== HARD STOP card font-jitter: no transform/animation on cards at ANY time (rest or hover) ===== */
+[style*="border-radius: 18px"],[style*="border-radius:20px"],[style*="border-radius: 20px"],[style*="border-radius: 18px"]:hover,[style*="border-radius:20px"]:hover,[style*="border-radius: 20px"]:hover{transform:none !important;animation:none !important}/* ===== FINAL feature-card fix: stable icon-top layout, always-visible desc, ZERO movement (kills the toggle+jump) ===== */
+[style*="border-radius: 18px;padding:28px"]{display:block !important;transform:none !important;animation:none !important}
+[style*="border-radius: 18px;padding:28px"]>[style*="border-radius: 13px"]{margin-bottom:16px !important}
+[style*="border-radius: 18px;padding:28px"]>h3{margin:0 0 8px !important}
+[style*="border-radius: 18px;padding:28px"]>p{max-height:none !important;height:auto !important;min-height:0 !important;opacity:1 !important;overflow:visible !important;transform:none !important;transition:none !important;margin:0 !important}
+[style*="border-radius: 18px;padding:28px"]::after{display:none !important}
+@media (hover:hover){[style*="border-radius: 18px;padding:28px"]:hover{transform:none !important}}/* ===== FINAL reveal: OPACITY-ONLY on scroll-into-view. Space always reserved -> zero layout shift. Hover does NOT change it. ===== */
+[style*="border-radius: 18px;padding:28px"]>p{max-height:none !important;height:auto !important;min-height:0 !important;overflow:visible !important;transform:none !important;margin:0 !important;opacity:0 !important;transition:opacity .6s ease !important}
+[style*="border-radius: 18px;padding:28px"].mgFocus>p{opacity:1 !important}/* ===== mgSeen reveal: app.js adds mgSeen (own class, no side-rules) -> ONLY opacity changes, zero layout shift ===== */[style*="border-radius: 18px;padding:28px"]>p{opacity:0 !important;transition:opacity .6s ease !important}[style*="border-radius: 18px;padding:28px"].mgSeen>p{opacity:1 !important}</style></head>
 <body>
 <div id="mgRoot" style="--accent: #34e8a0;position:relative;min-height:100vh;color:#eaf4ee;font-family:Manrope,system-ui,sans-serif;overflow-x:hidden">
 
@@ -1189,7 +1209,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   </footer>
 
 </div>
-<script src="/app.js?v=36"></script>
+<script src="/app.js?v=41"></script>
 <!-- Cloudflare Web Analytics (cookieless) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7e516f0ae85c4d13b9b9871e0d3e69f0"}'></script>
 </body>
