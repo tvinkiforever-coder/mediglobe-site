@@ -156,6 +156,7 @@ header nav a.mgActive{color:#eaf4ee}
   [style*="border-radius: 18px"].mgFocus [style*="border-radius: 13px"]{transform:scale(1.08);box-shadow:0 0 24px rgba(52,232,160,.5)}
 }
 .mgOrbit{position:absolute;inset:0;pointer-events:none;z-index:5}.mgOrbitPill{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:linear-gradient(180deg,rgba(19,40,29,0.94),rgba(9,20,15,0.86));backdrop-filter:blur(11px) saturate(1.35);-webkit-backdrop-filter:blur(11px) saturate(1.35);border:1px solid rgba(255,255,255,0.12);font-size:13.5px;font-weight:600;color:#eaf4ee;white-space:nowrap;letter-spacing:.01em;box-shadow:0 14px 34px rgba(0,0,0,0.46),inset 0 1px 0 rgba(255,255,255,0.08),0 0 24px rgba(52,232,160,0.13)}.mgOrbitPill svg{flex:none}.mgOP1{top:6%;left:2%;animation:floaty 6s ease-in-out infinite}.mgOP2{top:37%;right:0;animation:floatyB 7s ease-in-out infinite}.mgOP3{bottom:7%;left:11%;animation:floaty 8s ease-in-out infinite}@media (max-width:600px){.mgOrbitPill{font-size:11.5px;padding:6px 12px;gap:6px;box-shadow:0 8px 20px rgba(0,0,0,0.42),inset 0 1px 0 rgba(255,255,255,0.07)}.mgOP1{top:3%;left:0}.mgOP2{top:44%;right:0}.mgOP3{bottom:2%;left:4%}}
+@media (max-width:1100px){header nav{display:none !important}#mgBurger{display:flex !important}}
 @media (max-width:760px){
   header nav{display:none !important}
   #mgBurger{display:flex !important}
@@ -164,7 +165,7 @@ header nav a.mgActive{color:#eaf4ee}
 }
 .mgMenuLink{transition:color .2s ease,padding-left .2s ease}
 .mgMenuLink:active{color:var(--accent)}
-#mgMobileMenu.mgOpen{opacity:1}
+#mgMobileMenu.mgOpen{opacity:1 !important}
 #mgMobileMenu.mgOpen #mgMenuPanel{transform:translateX(0) !important}
 #mgLoader{position:fixed;inset:0;z-index:120;display:flex;align-items:center;justify-content:center;background:#05100b;transition:opacity .7s ease}
 #mgLoader.mgGone{opacity:0;pointer-events:none}
@@ -368,11 +369,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
         <span style="position:relative;width:38px;height:38px;flex:none;display:block;border-radius:11px;overflow:hidden;background:radial-gradient(circle at 40% 35%,#0e2c1f,#040f0a);border:1px solid rgba(52,232,160,0.28);box-shadow:0 0 14px rgba(52,232,160,0.14),0 3px 10px rgba(0,0,0,0.35)"><canvas id="mgLogoGlobe" width="76" height="76" aria-hidden="true" style="display:block;width:100%;height:100%"></canvas></span>
         <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em">MediGlobe</span>
       </a>
-      <nav style="display:flex;align-items:center;gap:28px;font-size:15px;color:#c6dad0">
+            <nav style="display:flex;align-items:center;gap:18px;font-size:14.5px;color:#c6dad0">
         <a href="#vozmozhnosti" style="text-decoration:none;color:inherit">Features</a>
+        <a href="#pomosh" style="text-decoration:none;color:inherit">First aid</a>
+        <a href="#kak" style="text-decoration:none;color:inherit">How it works</a>
+        <a href="#strany" style="text-decoration:none;color:inherit">Countries</a>
         <a href="#yazyki" style="text-decoration:none;color:inherit">Languages</a>
-        <a href="#privatnost" style="text-decoration:none;color:inherit">Privacy</a>
-        <a href="#najti" style="text-decoration:none;color:inherit">Get it</a>
+        <a href="#faq" style="text-decoration:none;color:inherit">FAQ</a>
       </nav>
       <a href="/" aria-label="Русская версия" style="display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:#c6dad0;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:0.03em">RU</a>
       <a href="/uk/" style="display:inline-flex;align-items:center;gap:6px;padding:9px 12px;border-radius:11px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:#c6dad0;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:0.03em">UA</a>
@@ -389,9 +392,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
       <button id="mgMenuClose" aria-label="Close" style="position:absolute;top:20px;right:22px;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);color:#eaf4ee;cursor:pointer;display:flex;align-items:center;justify-content:center">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>
       </button>
-      <a href="#vozmozhnosti" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Features</a>
+            <a href="#vozmozhnosti" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Features</a>
+      <a href="#pomosh" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">First aid</a>
       <a href="#kak" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">How it works</a>
-      <a href="#ekrany" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Screens</a>
       <a href="#strany" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Countries</a>
       <a href="#yazyki" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">Languages</a>
       <a href="#faq" class="mgMenuLink" style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#eaf4ee;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06)">FAQ</a>
@@ -664,6 +667,27 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
     </div>
     <script type="application/json" id="faData">[{"label": "CPR", "title": "Cardiac Arrest / CPR", "sub": "30 compressions · 2 breaths · 100–120/min", "danger": null, "steps": [{"ttl": "Check responsiveness", "txt": "Shake shoulders and shout. No response → call 112 immediately.", "color": null}, {"ttl": "30 chest compressions", "txt": "Hands on center of chest. Depth 5–6 cm, rate 100–120/min. Arms straight, elbows locked.", "color": null}, {"ttl": "2 rescue breaths", "txt": "Tilt head back, lift chin. Pinch nose, seal mouth firmly, breathe for 1 second.", "color": null}, {"ttl": "Continue 30:2", "txt": "Until ambulance arrives, AED is available, or signs of life appear.", "color": "ok"}, {"ttl": "Hands-only if you cannot give breaths", "txt": "If you cannot or will not give mouth-to-mouth — push on the chest non-stop at 100–120/min. Continuous compressions beat nothing.", "color": null}, {"ttl": "Do NOT stop or check the pulse for long", "txt": "Do not pause compressions for more than 10 seconds and do not waste time hunting for a pulse. Every pause drops blood flow to the brain. Do not fear cracking ribs — that is normal.", "color": "warn"}]}, {"label": "Anaphylaxis", "title": "Anaphylaxis", "sub": "Throat swelling · Breathing difficulty → 112!", "danger": "Throat swelling + difficulty breathing = anaphylaxis → call 112 immediately!", "steps": [{"ttl": "Epinephrine (EpiPen)", "txt": "Inject into outer thigh through clothing. Hold for 10 seconds.", "color": null}, {"ttl": "Call emergency", "txt": "Even after epinephrine injection — hospital is mandatory!", "color": null}, {"ttl": "Position flat, legs raised", "txt": "Lay flat, legs above heart level. If vomiting — turn on side.", "color": null}, {"ttl": "Antihistamine (additional)", "txt": "Cetirizine or loratadine — additional only, NOT instead of epinephrine!", "color": "ok"}]}, {"label": "Choking", "title": "Choking", "sub": "Back blows · Heimlich maneuver", "danger": null, "steps": [{"ttl": "5 back blows", "txt": "Lean forward. Give 5 firm blows between shoulder blades with heel of hand.", "color": null}, {"ttl": "Heimlich × 5", "txt": "Stand behind. Fist above navel, below chest. Pull sharply inward and upward.", "color": null}, {"ttl": "Alternate until clear", "txt": "5 blows + 5 thrusts — repeat until object is dislodged or person loses consciousness.", "color": null}, {"ttl": "Unconscious → CPR", "txt": "Lower to floor, call 112, check mouth, start CPR.", "color": "ok"}]}, {"label": "Bleeding", "title": "Bleeding", "sub": "Pressure · Tourniquet if arterial", "danger": null, "steps": [{"ttl": "Direct pressure", "txt": "Clean cloth or bandage. Press continuously for 10–15 min. Do not remove the dressing!", "color": null}, {"ttl": "Elevate", "txt": "Above heart level — if no fracture is suspected.", "color": null}, {"ttl": "Tourniquet — arterial only", "txt": "Spurting blood, won't stop — tourniquet 5–7 cm above wound. Write the time!", "color": null}, {"ttl": "112 if heavy bleeding", "txt": "Heavy bleeding, tourniquet, arterial — always call emergency services.", "color": "ok"}, {"ttl": "Do NOT lift the first dressing", "txt": "If it soaks through — do not remove it, add fresh cloth on top and press harder. Lifting the dressing tears the clot and bleeding restarts.", "color": "warn"}, {"ttl": "Do NOT loosen the tourniquet", "txt": "Once on, do not remove or loosen the tourniquet until medics arrive. Note the time — they need to know how long it has been on.", "color": "warn"}, {"ttl": "Watch for shock", "txt": "Lay them down, raise the legs, keep them warm. Pale skin, cold sweat, fast pulse, confusion — signs of blood loss, hurry the ambulance.", "color": "ok"}]}, {"label": "Burns", "title": "Burns", "sub": "Cool water · No ice · No oil", "danger": null, "steps": [{"ttl": "Cool with water 15–20 min", "txt": "Cool running water 15–25°C. Not cold, not ice — causes vascular spasm!", "color": null}, {"ttl": "Remove jewelry", "txt": "Before swelling starts: rings, bracelets, clothing (if not stuck to skin).", "color": null}, {"ttl": "Cover cleanly", "txt": "Sterile dressing or clean cloth. No cotton wool. Do not pop blisters!", "color": null}, {"ttl": "See doctor if", "txt": "Burn > palm of victim · on face/hands/groin · in child · deep (white/charred).", "color": "ok"}]}, {"label": "Snakebite", "title": "Snake Bite", "sub": "Calm · Immobilize · Antivenom", "danger": "Call emergency: spreading swelling · trouble breathing · weakness · bleeding gums · falling blood pressure. Antivenom is urgent.", "steps": [{"ttl": "Stay calm and still", "txt": "Panic and movement spread venom through the body. Sit or lie down, keep the bitten part below heart level.", "color": null}, {"ttl": "Remove rings and tight items", "txt": "Before swelling starts, remove rings, watches, bracelets, tight shoes — later it becomes impossible.", "color": null}, {"ttl": "Immobilize the limb", "txt": "Splint or bandage it as for a fracture so the limb stays still. Mark the edge of the swelling and the time.", "color": null}, {"ttl": "Do NOT do this", "txt": "Do not cut the wound, do not suck out venom, no tourniquet, no ice, no alcohol. Get to a hospital for antivenom fast.", "color": "warn"}]}]</script>
   </section>
+
+  <!-- Travel insurance (affiliate) -->
+  <section id="insurance" style="max-width:780px;margin:0 auto;padding:20px 28px 64px">
+    <div style="position:relative;overflow:hidden;border:1px solid rgba(52,232,160,0.18);border-radius:22px;padding:34px;background:linear-gradient(180deg,rgba(52,232,160,0.06),rgba(255,255,255,0.012))">
+      <div style="display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap">
+        <div style="flex:none;width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        </div>
+        <div style="flex:1;min-width:200px">
+          <div style="text-transform:uppercase;letter-spacing:0.16em;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:12px">Before you go</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-0.02em;margin:0">Travel insurance</h2>
+          <p style="font-size:16px;line-height:1.62;color:#cfe3da;margin:14px 0 0;text-wrap:pretty">Medical care abroad adds up fast: a single doctor's visit or a couple of nights in hospital can run into thousands. Travel insurance covers treatment, emergencies and evacuation while you're away — a bit more peace of mind for when a trip doesn't go to plan.</p>
+          <div style="margin-top:22px">
+            <a href="https://safetywing.com/?referenceID=26566970&utm_source=26566970&utm_medium=Ambassador" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;border-radius:14px;background:var(--accent);color:#06120d;font-family:'Space Grotesk',sans-serif;font-size:15.5px;font-weight:700;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(52,232,160,0.55)">Find a plan<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
+          </div>
+          <div style="margin-top:14px;font-size:12.5px;color:#9bb2a7">Affiliate link</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 
 
@@ -1085,25 +1109,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
     </div>
   </section>
 
-  <!-- Travel insurance (affiliate) -->
-  <section id="insurance" style="max-width:780px;margin:0 auto;padding:20px 28px 64px">
-    <div style="position:relative;overflow:hidden;border:1px solid rgba(52,232,160,0.18);border-radius:22px;padding:34px;background:linear-gradient(180deg,rgba(52,232,160,0.06),rgba(255,255,255,0.012))">
-      <div style="display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap">
-        <div style="flex:none;width:50px;height:50px;border-radius:13px;background:rgba(52,232,160,0.12);display:flex;align-items:center;justify-content:center;color:var(--accent)">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg>
-        </div>
-        <div style="flex:1;min-width:200px">
-          <div style="text-transform:uppercase;letter-spacing:0.16em;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:12px">Before you go</div>
-          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2.6vw,28px);font-weight:700;letter-spacing:-0.02em;margin:0">Travel insurance</h2>
-          <p style="font-size:16px;line-height:1.62;color:#cfe3da;margin:14px 0 0;text-wrap:pretty">Medical care abroad adds up fast: a single doctor's visit or a couple of nights in hospital can run into thousands. Travel insurance covers treatment, emergencies and evacuation while you're away — a bit more peace of mind for when a trip doesn't go to plan.</p>
-          <div style="margin-top:22px">
-            <a href="https://safetywing.com/?referenceID=26566970&utm_source=26566970&utm_medium=Ambassador" target="_blank" rel="noopener sponsored" style="display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;border-radius:14px;background:var(--accent);color:#06120d;font-family:'Space Grotesk',sans-serif;font-size:15.5px;font-weight:700;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(52,232,160,0.55)">Find a plan<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"></path></svg></a>
-          </div>
-          <div style="margin-top:14px;font-size:12.5px;color:#9bb2a7">Affiliate link</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="faq" style="max-width:820px;margin:0 auto;padding:20px 28px 96px">
     <div style="text-align:center;margin:0 auto 44px">
