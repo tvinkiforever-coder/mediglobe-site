@@ -766,6 +766,14 @@ class App {
       topBtn.addEventListener('click', go);
       topBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     }
+    // top nav bar: hidden over the hero, slides down once the "О приложении" block is reached
+    const headEl = document.querySelector('header');
+    const aboutEl = document.getElementById('mgAbout');
+    if (headEl && aboutEl) {
+      const onNav = () => { headEl.classList.toggle('mgNavDown', aboutEl.getBoundingClientRect().top <= 64); };
+      window.addEventListener('scroll', onNav, { passive: true });
+      onNav();
+    }
     // nav scrollspy
     const navLinks = [...document.querySelectorAll('header nav a')];
     const linkFor = (id) => navLinks.find(a => (a.getAttribute('href') || '') === '#' + id);

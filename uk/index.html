@@ -156,7 +156,7 @@ header nav a.mgActive{color:#eaf4ee}
   [style*="border-radius: 18px"].mgFocus [style*="border-radius: 13px"]{transform:scale(1.08);box-shadow:0 0 24px rgba(52,232,160,.5)}
 }
 .mgOrbit{position:absolute;inset:0;pointer-events:none;z-index:5}.mgOrbitPill{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:linear-gradient(180deg,rgba(19,40,29,0.94),rgba(9,20,15,0.86));backdrop-filter:blur(11px) saturate(1.35);-webkit-backdrop-filter:blur(11px) saturate(1.35);border:1px solid rgba(255,255,255,0.12);font-size:13.5px;font-weight:600;color:#eaf4ee;white-space:nowrap;letter-spacing:.01em;box-shadow:0 14px 34px rgba(0,0,0,0.46),inset 0 1px 0 rgba(255,255,255,0.08),0 0 24px rgba(52,232,160,0.13)}.mgOrbitPill svg{flex:none}.mgOP1{top:6%;left:2%;animation:floaty 6s ease-in-out infinite}.mgOP2{top:37%;right:0;animation:floatyB 7s ease-in-out infinite}.mgOP3{bottom:7%;left:11%;animation:floaty 8s ease-in-out infinite}@media (max-width:600px){.mgOrbitPill{font-size:11.5px;padding:6px 12px;gap:6px;box-shadow:0 8px 20px rgba(0,0,0,0.42),inset 0 1px 0 rgba(255,255,255,0.07)}.mgOP1{top:3%;left:0}.mgOP2{top:44%;right:0}.mgOP3{bottom:2%;left:4%}}
-@media (max-width:1100px){header nav{display:none !important}#mgBurger{display:flex !important}}
+#mgRoot>header{position:fixed !important;top:0;left:0;right:0;transform:translateY(-100%);transition:transform .4s cubic-bezier(.2,.7,.3,1);will-change:transform}#mgRoot>header.mgNavDown{transform:translateY(0)}@media (max-width:1100px){header nav{display:none !important}#mgBurger{display:flex !important}}
 @media (max-width:760px){
   header nav{display:none !important}
   #mgBurger{display:flex !important}
@@ -363,7 +363,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
   </div>
 
-  <header style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(6,18,13,0.72);border-bottom:1px solid rgba(255,255,255,0.06)">
+  <header style="z-index:50;backdrop-filter:blur(14px);background:rgba(6,18,13,0.72);border-bottom:1px solid rgba(255,255,255,0.06)">
     <div style="max-width:1180px;margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px">
       <a href="#top" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
         <span style="position:relative;width:38px;height:38px;flex:none;display:block;border-radius:11px;overflow:hidden;background:radial-gradient(circle at 40% 35%,#0e2c1f,#040f0a);border:1px solid rgba(52,232,160,0.28);box-shadow:0 0 14px rgba(52,232,160,0.14),0 3px 10px rgba(0,0,0,0.35)"><canvas id="mgLogoGlobe" width="76" height="76" aria-hidden="true" style="display:block;width:100%;height:100%"></canvas></span>
@@ -590,7 +590,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
     </div>
   </section>
 
-  <section style="max-width:880px;margin:0 auto;padding:96px 28px;text-align:center">
+  <section id="mgAbout" style="max-width:880px;margin:0 auto;padding:96px 28px;text-align:center">
     <div style="text-transform:uppercase;letter-spacing:0.18em;font-size:13px;font-weight:700;color:var(--accent)">Про застосунок</div>
     <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,38px);font-weight:700;letter-spacing:-0.02em;margin:14px 0 0">Навіщо потрібен MediGlobe</h2>
     <p style="font-size:20px;line-height:1.65;color:#c0d3c9;margin:22px 0 0;text-wrap:pretty">MediGlobe створений для тих, хто в дорозі: у чужій країні легко розгубитися біля аптечної полиці з незнайомими назвами. Застосунок збирає препарати 13 країн у єдиний довідник, перекладає та пояснює їх — повністю офлайн, а ваші медичні дані залишаються на пристрої.</p>
@@ -1234,7 +1234,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   </footer>
 
 </div>
-<script src="/app.js?v=41"></script>
+<script src="/app.js?v=42"></script>
 <!-- Cloudflare Web Analytics (cookieless) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "7e516f0ae85c4d13b9b9871e0d3e69f0"}'></script>
 </body>
