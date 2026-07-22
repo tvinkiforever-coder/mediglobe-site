@@ -147,6 +147,7 @@ class App {
         b.type = 'button';
         b.className = 'faTab';
         b.setAttribute('role', 'tab');
+        b.setAttribute('aria-controls', 'faCard');
         b.textContent = data[idx].label;
         b.addEventListener('click', function () { render(idx); });
         tabs.appendChild(b);
@@ -226,9 +227,13 @@ class App {
         const cc = FLAGCC[flagEl.textContent.trim()];
         if (!cc || !para.b[cc]) return;
         card.style.cursor = 'pointer';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', nameEl.textContent);
         const show = () => { bar.innerHTML = flagEl.textContent + ' <b style="color:#eaf4ee">' + nameEl.textContent + '</b>: ' + pLabel + ' \u2014 <b style="color:var(--accent)">' + para.b[cc] + '</b>'; };
         card.addEventListener('pointerenter', show);
         card.addEventListener('click', show);
+        card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(); } });
       });
     }
   }
@@ -248,12 +253,13 @@ class App {
     const closeBtn = document.getElementById('mgMenuClose');
     const backdrop = document.getElementById('mgMenuBackdrop');
     if (menu && burger) {
-      const open = () => { menu.style.display = 'block'; requestAnimationFrame(() => menu.classList.add('mgOpen')); document.body.style.overflow = 'hidden'; };
-      const close = () => { menu.classList.remove('mgOpen'); document.body.style.overflow = ''; setTimeout(() => { menu.style.display = 'none'; }, 350); };
+      const open = () => { menu.style.display = 'block'; requestAnimationFrame(() => menu.classList.add('mgOpen')); document.body.style.overflow = 'hidden'; burger.setAttribute('aria-expanded', 'true'); if (closeBtn) setTimeout(() => closeBtn.focus(), 60); };
+      const close = () => { menu.classList.remove('mgOpen'); document.body.style.overflow = ''; setTimeout(() => { menu.style.display = 'none'; }, 350); burger.setAttribute('aria-expanded', 'false'); burger.focus(); };
       burger.addEventListener('click', open);
       if (closeBtn) closeBtn.addEventListener('click', close);
       if (backdrop) backdrop.addEventListener('click', close);
       menu.querySelectorAll('.mgMenuLink').forEach(a => a.addEventListener('click', close));
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('mgOpen')) close(); });
     }
     // sticky download bar — show after hero, hide near the CTA
     const bar = document.getElementById('mgStickyBar');
@@ -402,7 +408,7 @@ class App {
       'Сильний головний біль другий день': 'Найчастіше це напруження, зневоднення або недосипання. Відпочинок, вода, парацетамол. Якщо біль різкий, з нудотою чи порушенням зору — терміново до лікаря.',
       'Чи можна приймати ібупрофен з аспірином': 'Обидва — НПЗП, поєднувати без призначення лікаря не рекомендується: вищий ризик для шлунка. У застосунку таке поєднання позначається як «потребує обережності».'
     };
-    if (preset && ANS[preset]) return ANS[preset];
+    if (preset) { var _hit = ANS[preset] || ANS[preset.replace(',', '.')]; if (_hit) return _hit; }
     return uk
       ? 'Це демо — повні відповіді доступні в застосунку. Залиште пошту у формі нижче — надішлемо посилання в день релізу, і ви зможете поставити AI-асистенту своє запитання. Памʼятайте: застосунок не замінює консультацію лікаря.'
       : en
