@@ -766,11 +766,20 @@ class App {
       topBtn.addEventListener('click', go);
       topBtn.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
     }
-    // top nav bar: hidden over the hero, slides down once the "О приложении" block is reached
+    // top nav bar: hidden over the hero; below the "О приложении" block it
+    // auto-hides on scroll-down and slides back in on scroll-up (headroom pattern).
     const headEl = document.querySelector('header');
     const aboutEl = document.getElementById('mgAbout');
     if (headEl && aboutEl) {
-      const onNav = () => { headEl.classList.toggle('mgNavDown', aboutEl.getBoundingClientRect().top <= 64); };
+      let lastY = window.scrollY;
+      const onNav = () => {
+        const y = window.scrollY;
+        const past = aboutEl.getBoundingClientRect().top <= 64;
+        if (!past) headEl.classList.remove('mgNavDown');        // hero region -> always hidden
+        else if (y < lastY - 5) headEl.classList.add('mgNavDown');    // scrolling up -> show
+        else if (y > lastY + 5) headEl.classList.remove('mgNavDown'); // scrolling down -> hide
+        lastY = y;
+      };
       window.addEventListener('scroll', onNav, { passive: true });
       onNav();
     }
