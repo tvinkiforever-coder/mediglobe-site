@@ -2,92 +2,6 @@
 'use strict';
 var MG_FIND = [{"n":"Парацетамол","g":"Paracetamol (Acetaminophen)","a":"Ибупрофен|Аспирин|Напроксен","b":{"UA":"Панадол, Парацетамол-Дарниця, Ефералган","ID":"Panadol, Pamol, Tempra","TH":"Sara, Tylenol, Paracetamol GPO","DE":"Paracetamol AL, ben-u-ron","US":"Tylenol, FeverAll","GB":"Paracetamol, Panadol, Calpol","TR":"Parol, Minoset, Calpol","AE":"Panadol, Calpol, Adol","PL":"Apap, Paracetamol, Codipar","IN":"Crocin, Dolo 650, Calpol","FR":"Doliprane, Efferalgan","VN":"Paracetamol DHG, Efferalgan","EG":"Panadol, Adol, Cetal"}},{"n":"Ибупрофен","g":"Ibuprofen","a":"Парацетамол|Напроксен|Диклофенак","b":{"UA":"Нурофен, Ібупрофен-Дарниця","ID":"Ibuprofen Kimia Farma, Profen","TH":"Ibuprofen GPO, Advil","DE":"Ibuprofen AL, Nurofen","US":"Advil, Motrin IB","GB":"Nurofen, Ibuprofen","TR":"Ipren, Advil, Brufen","AE":"Advil, Brufen, Nurofen","PL":"Ibuprom, Nurofen","IN":"Brufen, Combiflam, Ibugesic","FR":"Advil, Nurofen","VN":"Ibuprofen DHG","EG":"Brufen, Algifen"}},{"n":"Аспирин","g":"Acetylsalicylic acid","a":"Ибупрофен|Парацетамол","b":{"UA":"Аспірин Байєр, Аспірин Кардіо","ID":"Aspirin Bayer, Aspilets","TH":"Aspirin GPO, Cardiprin","DE":"Aspirin, ASS","US":"Bayer Aspirin, Ecotrin","GB":"Aspirin, Disprin","TR":"Aspirin, Aspegic","AE":"Aspirin, Cardiprin","PL":"Aspiryna Bayer, Polopiryna","IN":"Aspirin, Ecosprin","FR":"Aspégic, Aspirine","VN":"Aspirin, Aspegic","EG":"Aspirin, Cardiprin"}},{"n":"Напроксен / Налгезин","g":"Naproxen sodium","a":"Ибупрофен|Диклофенак","b":{"UA":"Налгезин, Напроксен","ID":"Naproxen, Xenapro","TH":"Naproxen GPO, Aleve","DE":"Naproxen AL, Dolormin","US":"Aleve, Naprosyn","GB":"Feminax Ultra, Aleve","TR":"Apranax, Naprosyn","AE":"Aleve, Naprosyn","PL":"Apo-Napro, Naproxen","IN":"Naprosyn, Naproxen","FR":"Apranax, Naproxène","VN":"Naproxen","EG":"Apranax, Naproxen"}},{"n":"Лоратадин","g":"Loratadine","a":"Цетиризин|Фексофенадин|Дезлоратадин","b":{"UA":"Кларитин, Лоратадин-Дарниця","ID":"Loratadine, Claritin","TH":"Clarityne, Loratadine GPO","DE":"Loratadin AL, Lisino","US":"Claritin, Alavert","GB":"Clarityn, Boots Allergy","TR":"Claritine, Lorinol","AE":"Claritin, Clarityne","PL":"Claritine, Loratadyna","IN":"Lorfast, Loratadine","FR":"Clarityne, Loratadine","VN":"Loratadine Stada, Claritin","EG":"Claritine, Loratadine"}},{"n":"Цетиризин","g":"Cetirizine hydrochloride","a":"Лоратадин|Фексофенадин","b":{"UA":"Цетрин, Зіртек, Алерза","ID":"Incidal-OD, Cetirizine","TH":"Zyrtec, Cetirizine GPO","DE":"Zyrtec, Cetirizin AL","US":"Zyrtec, Cetirizine","GB":"Zirtek, Piriteze","TR":"Zyrtec, Cetirizin","AE":"Zyrtec, Cetirizine","PL":"Zyrtec, Cetyryzyna","IN":"Zyrtec, Cetzine","FR":"Zyrtec, Cetirizine","VN":"Zyrtec, Cetirizine Stada","EG":"Zyrtec, Cetirizine"}},{"n":"Омепразол","g":"Omeprazole","a":"Пантопразол|Рабепразол|Эзомепразол","b":{"UA":"Омез, Лосек, Гасек","ID":"Omeprazole Dexa, Prosogan","TH":"Losec, Omeprazole GPO","DE":"Omeprazol AL, Antra","US":"Prilosec OTC","GB":"Losec, Omeprazole","TR":"Losec, Omeprazol","AE":"Losec, Omez","PL":"Bioprazol, Helicid","IN":"Omez, Omistat","FR":"Mopral, Zoltum","VN":"Omeprazole Stada","EG":"Losec, Omeprazole"}},{"n":"Пантопразол / Нольпаза","g":"Pantoprazole sodium","a":"Омепразол|Рабепразол|Эзомепразол","b":{"UA":"Нольпаза, Пантопразол","ID":"Pantozol","TH":"Pantozol","DE":"Pantozol, Rifun","US":"Protonix","GB":"Protium","TR":"Pantpas, Pantozol","AE":"Pantozol","PL":"Controloc","IN":"Pantocid, Pan-D","FR":"Inipomp","VN":"Pantoprazole Stada","EG":"Controloc"}},{"n":"Лоперамид","g":"Loperamide hydrochloride","a":"Смекта|Нифуроксазид","b":{"UA":"Імодіум, Лоперамід","ID":"Imodium, Lodia","TH":"Imodium, Loperamide GPO","DE":"Imodium, Lopedium","US":"Imodium AD","GB":"Imodium, Loperamide","TR":"Imodium, Loperamid","AE":"Imodium, Loperamide","PL":"Stoperan, Laremid","IN":"Imodium, Eldoper","FR":"Imodium, Lopéramide","VN":"Imodium, Loperamide DHG","EG":"Imodium, Loperamide"}},{"n":"Смекта","g":"Diosmectite","a":"Полисорб|Энтеросгель|Активированный уголь","b":{"UA":"Смекта, Неосмектин","ID":"Smecta","TH":"Smecta","DE":"Smecta","US":"Smectite (ограниченно)","GB":"Smecta","TR":"Smecta","AE":"Smecta","PL":"Smecta","IN":"Smecta, Diosmectite","FR":"Smecta (оригинал)","VN":"Smecta","EG":"Smecta"}},{"n":"Энтерол","g":"Saccharomyces boulardii","a":"Смекта|Лоперамид|Нифуроксазид","b":{"UA":"Ентерол, Біоентерол","ID":"Enterol, Lacto-B","TH":"Enterol, Florastor","DE":"Perenterol, Enterol","US":"Florastor","GB":"Florastor, Enterol","TR":"Enterol","AE":"Enterol, Florastor","PL":"Enterol, Perenterol","IN":"Econorm, Saccharomyces","FR":"Ultra-levure (оригинал)","VN":"Enterol, Bioflor","EG":"Enterol"}},{"n":"Регидрон","g":"Oral Rehydration Salts","a":"Педиалайт|Смекта","b":{"UA":"Регідрон, Хумана Електроліт","ID":"Oralit, Pedialyte","TH":"ORS, Electrolit","DE":"Oralpädon, Elotrans","US":"Pedialyte, Liquid I.V.","GB":"Dioralyte, Electrolade","TR":"Pedialyte, Rehydran","AE":"Pedialyte, ORS","PL":"Gastrolit, ORS","IN":"Electral, ORS","FR":"GES 45, Adiaril","VN":"Oresol, Hydrite","EG":"Rehydral, ORS"}},{"n":"Маалокс / Алмагель","g":"Aluminium hydroxide + Magnesium hydroxide","a":"Омепразол|Гевискон|Ренни","b":{"UA":"Маалокс, Алмагель","ID":"Maalox, Antasida DOEN","TH":"Maalox, Antacid GPO","DE":"Maalox, Gaviscon","US":"Maalox, Mylanta","GB":"Maalox, Gaviscon","TR":"Maalox, Gelusil","AE":"Maalox, Gelusil","PL":"Maalox, Alugastrin","IN":"Gelusil, Digene","FR":"Maalox (оригинал)","VN":"Maalox, Phosphalugel","EG":"Maalox, Gelusil"}},{"n":"Де-Нол / Пепто-Бисмол","g":"Bismuth subcitrate","a":"Омепразол|Смекта","b":{"UA":"Де-Нол","ID":"De-Nol, Pepto-Bismol","TH":"Pepto-Bismol","DE":"De-Nol","US":"Pepto-Bismol, Kaopectate","GB":"Pepto-Bismol","TR":"Pepto-Bismol","AE":"Pepto-Bismol","PL":"De-Nol, Pepto-Bismol","IN":"Pepto-Bismol","FR":"Pepto-Bismol","VN":"Pepto-Bismol","EG":"Pepto-Bismol"}},{"n":"Но-Шпа / Дротаверин","g":"Drotaverine hydrochloride","a":"Бускопан|Папаверин|Мебеверин","b":{"UA":"Но-Шпа, Дротаверин","ID":"Drotaverine, No-Spa","TH":"No-Spa, Drotaverine","DE":"No-Spa (ограниченно)","US":"Не зарегистрирован","GB":"Buscopan (аналог)","TR":"No-Spa, Drotaver","AE":"No-Spa, Drotaverine","PL":"No-Spa, Drotaweryna","IN":"Drotin, Spasmonil","FR":"Spasfon (аналог)","VN":"No-Spa, Drotaverine DHG","EG":"No-Spa, Drotaverine"}},{"n":"Ксилометазолин / Отривин","g":"Xylometazoline hydrochloride","a":"Нафтизин|Називин|Виброцил","b":{"UA":"Ксилометазолін, Отривін, Длянос","ID":"Otrivin, Rhinofed","TH":"Otrivin, Xylometazoline GPO","DE":"Otrivine, Olynth","US":"Otrivin, Neo-Synephrine","GB":"Otrivine, Sudafed","TR":"Otrivin, Iliadin","AE":"Otrivin, Xymelin","PL":"Otrivin, Xylogel","IN":"Otrivin, Nasivion","FR":"Otrivine, Rhinofluimucil","VN":"Otrivin, Xylometazoline","EG":"Otrivin, Xylometazoline"}},{"n":"Стрепсилс / Фарингосепт","g":"Amylmetacresol + Dichlorobenzyl alcohol","a":"Мирамистин|Хлоргексидин|Тантум Верде","b":{"UA":"Стрепсілс, Фарингосепт, Декатилен","ID":"Strepsils, Dequadin","TH":"Strepsils","DE":"Strepsils, Dolo-Dobendan","US":"Cepacol, Halls","GB":"Strepsils (оригинал)","TR":"Strepsils, Faringosept","AE":"Strepsils","PL":"Strepsils, Falvit","IN":"Strepsils, Cofsils","FR":"Strepsils, Lysopaïne","VN":"Strepsils","EG":"Strepsils"}},{"n":"АЦЦ / Ацетилцистеин","g":"N-Acetylcysteine","a":"Амброксол|Бромгексин","b":{"UA":"АЦЦ, Флуімуцил","ID":"Fluimucil, ACC","TH":"Fluimucil, ACC","DE":"ACC, Fluimucil","US":"Mucomyst, NAC","GB":"Fabrol, NAC","TR":"ACC, Mucosolvan","AE":"ACC, Fluimucil","PL":"ACC, Mucosolvan","IN":"Fluimucil, Mucomix","FR":"Mucomyst, Exomuc","VN":"ACC, Fluimucil","EG":"ACC, Fluimucil"}},{"n":"Амброксол / Лазолван","g":"Ambroxol hydrochloride","a":"Ацетилцистеин|Бромгексин","b":{"UA":"Амброксол, Амбробене, Лазолван","ID":"Mucos, Ambroxol","TH":"Mucosolvan, Ambroxol GPO","DE":"Ambroxol AL, Mucosolvan","US":"Mucosolvan (ограниченно)","GB":"Mucosolvan (ограниченно)","TR":"Mucosolvan, Ambroxol","AE":"Mucosolvan","PL":"Ambroxol, Mucosolvan","IN":"Mucolite, Ambrodil","FR":"Surbronc, Ambroxol","VN":"Mucosolvan, Ambroxol DHG","EG":"Mucosolvan"}},{"n":"Dramamine / Авиа-Море","g":"Dimenhydrinate","a":"Меклизин|Скополамин","b":{"UA":"Авіа-Море, Dramamine","ID":"Antimo, Dramamine","TH":"Dramamine, Bonamine","DE":"Vomex, Dramamine","US":"Dramamine, Bonine","GB":"Joy-Rides, Kwells","TR":"Dramamine","AE":"Dramamine","PL":"Aviomarin, Dramamine","IN":"Avomine, Dramamine","FR":"Mercalm, Nautamine","VN":"Dramamine","EG":"Gravol, Dramamine"}},{"n":"Мелатонин","g":"Melatonin","a":"Доксиламин|Валериана","b":{"UA":"Мелатонін, Меларена","ID":"Melatonin","TH":"Melatonin","DE":"Melatonin, Circadin","US":"Nature Made, Natrol","GB":"Boots Melatonin","TR":"Melatonin","AE":"Melatonin, Nature's Bounty","PL":"Melatonin, Circadin","IN":"Melatonin, Slumber","FR":"Mélatonine, Circadin","VN":"Melatonin","EG":"Melatonin"}},{"n":"Гидрокортизон","g":"Hydrocortisone","a":"Бетаметазон|Мометазон","b":{"UA":"Гідрокортизон, Локоїд","ID":"Hydrocortisone, Desolex","TH":"Hydrocortisone cream","DE":"Hydrocortison AL","US":"Cortizone-10, Cortaid","GB":"HC45, Cortizone","TR":"Hydrocortisone, Alfaderm","AE":"Hydrocortisone, Locoid","PL":"Hydrocortisonum","IN":"Hydrocortisone","FR":"Hydrocortisone, Locoïd","VN":"Hydrocortisone","EG":"Hydrocortisone"}},{"n":"Пантенол / Бепантен","g":"Dexpanthenol","a":"Цинковая мазь|Солкосерил","b":{"UA":"Пантенол, Бепантен","ID":"Bepanthen","TH":"Bepanthen","DE":"Bepanthen, Panthenol","US":"Aquaphor, Panthenol","GB":"Bepanthen","TR":"Bepanthen","AE":"Bepanthen","PL":"Bepanthen, Panthenol","IN":"Bepanthen","FR":"Bepanthen","VN":"Bepanthen","EG":"Bepanthen"}},{"n":"Фенистил гель","g":"Dimethindene maleate 0.1%","a":"Гидрокортизон|Псило-бальзам|Лоратадин","b":{"UA":"Фенистил гель","ID":"Fenistil gel","TH":"Fenistil gel","DE":"Fenistil Gel (оригинал)","US":"Benadryl gel (аналог)","GB":"Anthisan cream (аналог)","TR":"Fenistil jel","AE":"Fenistil gel","PL":"Fenistil żel","IN":"Fenistil, Avil cream","FR":"Phénistil gel","VN":"Fenistil gel","EG":"Fenistil gel"}},{"n":"Клотримазол / Канестен","g":"Clotrimazole","a":"Флуконазол|Миконазол|Тербинафин","b":{"UA":"Клотримазол, Кандид, Канестен","ID":"Canesten, Fungiderm","TH":"Canesten","DE":"Canesten, Clotrimazol","US":"Lotrimin AF, Cruex","GB":"Canesten, Clotrimazole","TR":"Canesten, Lotrifen","AE":"Canesten, Candid","PL":"Canesten","IN":"Canesten, Candid B","FR":"Mycohydralin","VN":"Canesten","EG":"Canesten"}},{"n":"Тербинафин / Ламизил","g":"Terbinafine hydrochloride","a":"Клотримазол|Флуконазол","b":{"UA":"Ламізил, Тербінафін","ID":"Lamisil","TH":"Lamisil","DE":"Lamisil","US":"Lamisil AT","GB":"Lamisil","TR":"Lamisil","AE":"Lamisil","PL":"Lamisil","IN":"Terbicip, Lamisil","FR":"Lamisil","VN":"Lamisil","EG":"Lamisil"}},{"n":"Флуконазол / Дифлюкан","g":"Fluconazole","a":"Клотримазол|Нистатин","b":{"UA":"Флуконазол, Дифлюкан","ID":"Diflucan, Fluconazole","TH":"Diflucan","DE":"Diflucan, Fluconazol","US":"Diflucan, Fluconazole","GB":"Diflucan, Fluconazole","TR":"Diflucan, Flukonazol","AE":"Diflucan","PL":"Diflucan, Flukonazol","IN":"Fluconac, Zocon","FR":"Triflucan","VN":"Diflucan","EG":"Diflucan"}},{"n":"Ацикловир / Зовиракс","g":"Aciclovir","a":"Валацикловир|Фамцикловир","b":{"UA":"Ацикловір, Зовіракс","ID":"Zovirax, Acyclovir","TH":"Zovirax","DE":"Zovirax, Aciclovir AL","US":"Zovirax","GB":"Zovirax, Aciclovir","TR":"Zovirax","AE":"Zovirax","PL":"Zovirax, Heviran","IN":"Zovirax, Acivir","FR":"Zovirax","VN":"Zovirax","EG":"Zovirax"}},{"n":"Бетадин","g":"Povidone-iodine","a":"Мирамистин|Хлоргексидин","b":{"UA":"Бетадин, Йодовідон","ID":"Betadine","TH":"Betadine","DE":"Betaisodona","US":"Betadine","GB":"Betadine, Videne","TR":"Batticon, Betadine","AE":"Betadine","PL":"Betadine","IN":"Betadine, Savlon","FR":"Bétadine","VN":"Betadine","EG":"Betadine"}},{"n":"Хлоргексидин","g":"Chlorhexidine digluconate","a":"Мирамистин|Бетадин","b":{"UA":"Хлоргексидин, Гексикон","ID":"Chlorhexidine, Hibiclens","TH":"Chlorhexidine, Corsodyl","DE":"Chlorhexamed, Corsodyl","US":"Hibiclens, Betasept","GB":"Corsodyl, Hibiscrub","TR":"Corsodyl","AE":"Chlorhexidine, Corsodyl","PL":"Chlorheksydyna, Corsodyl","IN":"Savlon, Dettol","FR":"Chlorhexidine, Corsodyl","VN":"Chlorhexidine","EG":"Corsodyl"}}];
 class App {
-  buildEarth() {
-    const R = 152, CX = 200, CY = 200, D = Math.PI / 180;
-    const lon0 = -20 * D, tilt = 16 * D;
-    const ct = Math.cos(tilt), st = Math.sin(tilt);
-    const project = (lat, lon) => {
-      const la = lat * D, lo = lon * D - lon0;
-      const x = Math.cos(la) * Math.sin(lo);
-      const y = Math.sin(la);
-      const z = Math.cos(la) * Math.cos(lo);
-      const y2 = y * ct - z * st;
-      const z2 = y * st + z * ct;
-      return [CX + x * R, CY - y2 * R, z2];
-    };
-    // Schematic continent outlines as [lon,lat,...] (orthographic land mask)
-    const LAND = [
-      [-168,66,-160,71,-140,70,-120,72,-100,74,-82,74,-60,68,-60,60,-78,52,-64,49,-55,50,-56,44,-67,44,-70,41,-74,40,-76,35,-81,31,-81,25,-90,30,-94,29,-97,26,-98,20,-105,20,-106,23,-110,23,-112,29,-117,32,-122,37,-124,42,-124,48,-130,54,-138,58,-150,59,-160,62,-168,66],
-      [-45,60,-30,60,-20,66,-22,73,-30,80,-45,83,-60,81,-55,72,-52,64,-45,60],
-      [-78,9,-70,12,-60,11,-52,5,-50,0,-44,-3,-35,-6,-35,-12,-39,-18,-48,-25,-54,-34,-58,-39,-65,-46,-69,-52,-75,-52,-74,-45,-72,-37,-71,-25,-70,-15,-76,-6,-81,-4,-80,2,-78,9],
-      [-10,36,-9,44,-4,48,1,49,-2,52,3,52,5,58,8,63,12,66,20,70,30,71,42,67,50,62,60,60,55,52,40,48,32,45,28,46,24,41,20,40,15,40,19,46,13,46,8,44,3,43,-2,40,-10,36],
-      [-17,21,-16,15,-12,8,-8,5,-2,5,5,5,9,4,9,-1,13,-6,12,-16,15,-26,20,-35,26,-34,33,-26,40,-16,41,-4,43,3,51,12,44,12,43,16,37,22,34,28,32,31,25,32,20,32,11,37,10,34,0,35,-6,36,-12,30,-16,28,-17,21],
-      [26,40,35,42,40,40,48,40,50,45,57,52,60,56,68,57,78,55,90,56,100,58,110,57,120,55,128,52,135,55,142,54,145,47,138,43,132,42,128,40,125,38,122,31,121,24,110,21,108,15,104,9,100,4,103,1,97,7,93,18,88,21,82,18,77,8,73,18,68,24,62,25,57,26,52,29,48,30,43,38,35,36,28,37,26,40],
-      [114,-22,122,-18,130,-12,137,-12,143,-11,147,-20,151,-25,153,-31,149,-37,141,-38,136,-35,130,-32,123,-34,116,-35,114,-28,114,-22],
-      [130,31,136,35,140,38,142,42,140,43,136,37,131,33,130,31],
-      [43,-13,50,-16,50,-25,45,-25,43,-18,43,-13],
-      [131,-1,141,-3,148,-6,150,-10,141,-9,133,-4,131,-1],
-      [-6,50,-2,51,-3,58,-8,57,-10,53,-6,50],
-      [167,-45,172,-41,175,-37,178,-38,174,-42,170,-46,167,-45]
-    ];
-    const pip = (lon, lat, p) => {
-      let inside = false;
-      for (let i = 0, j = p.length - 2; i < p.length; j = i, i += 2) {
-        const xi = p[i], yi = p[i + 1], xj = p[j], yj = p[j + 1];
-        if (((yi > lat) !== (yj > lat)) && (lon < (xj - xi) * (lat - yi) / (yj - yi) + xi)) inside = !inside;
-      }
-      return inside;
-    };
-    const isLand = (lon, lat) => { for (const p of LAND) if (pip(lon, lat, p)) return true; return false; };
-
-    const els = [];
-    // graticule
-    const addLine = (pts, op, w, col) => {
-      let d = '', on = false;
-      for (const [lat, lon] of pts) {
-        const [sx, sy, z] = project(lat, lon);
-        if (z > 0.02) { d += (on ? 'L' : 'M') + sx.toFixed(1) + ' ' + sy.toFixed(1) + ' '; on = true; }
-        else on = false;
-      }
-      if (d) els.push(React.createElement('path', { key: 'L' + els.length, d: d.trim(), fill: 'none', stroke: col, strokeOpacity: op, strokeWidth: w, strokeLinecap: 'round' }));
-    };
-    [-60, -30, 0, 30, 60].forEach(lat => {
-      const pts = []; for (let lon = -180; lon <= 180; lon += 3) pts.push([lat, lon]);
-      addLine(pts, lat === 0 ? 0.5 : 0.28, lat === 0 ? 1.3 : 1, '#cdf7ea');
-    });
-    [-150, -120, -90, -60, -30, 0, 30, 60, 90, 120, 150].forEach(lon => {
-      const pts = []; for (let lat = -88; lat <= 88; lat += 3) pts.push([lat, lon]);
-      addLine(pts, 0.3, 1, '#cdf7ea');
-    });
-    // land dots
-    for (let lat = -78; lat <= 72; lat += 3.6) {
-      const step = 3.6 / Math.max(0.26, Math.cos(lat * D));
-      for (let lon = -180; lon < 180; lon += step) {
-        if (!isLand(lon, lat)) continue;
-        const [sx, sy, z] = project(lat, lon);
-        if (z <= 0.05) continue;
-        els.push(React.createElement('circle', {
-          key: 'p' + lat.toFixed(1) + '_' + lon.toFixed(1),
-          cx: sx.toFixed(1), cy: sy.toFixed(1),
-          r: (0.7 + z * 1.7).toFixed(2),
-          fill: '#5fe7aa',
-          opacity: (0.24 + z * 0.6).toFixed(2)
-        }));
-      }
-    }
-    // pulsing location beacons on the visible hemisphere (global coverage)
-    const pins = [[51, 0], [40, -74], [-22, -46], [30, 31], [37, -6]];
-    pins.forEach((c, i) => {
-      const [sx, sy, z] = project(c[0], c[1]);
-      if (z <= 0.2) return;
-      els.push(React.createElement('g', { key: 'pin' + i, transform: 'translate(' + sx.toFixed(1) + ' ' + sy.toFixed(1) + ')' }, [
-        React.createElement('circle', { key: 'r', r: 5, fill: 'none', stroke: '#c3f9de', strokeWidth: 1.4, style: { transformBox: 'fill-box', transformOrigin: 'center', animation: 'mgPing 2.8s ease-out ' + (i * 0.5) + 's infinite' } }),
-        React.createElement('circle', { key: 'h', r: 2.5, fill: '#eafff5' }),
-        React.createElement('circle', { key: 'c', r: 1, fill: '#ffffff' })
-      ]));
-    });
-    return React.createElement('g', {}, els);
-  }
   state = { tileW: 116 };
   _tiles = 12;
   componentDidMount() {
@@ -328,6 +242,7 @@ class App {
       }
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        var _hp = document.getElementById('mgHp'); if (_hp && _hp.value) { form.style.display = 'none'; ok.style.display = 'flex'; return; }
         const email = (emailInput && emailInput.value || '').trim();
         if (!email) return;
         if (errBox) errBox.style.display = 'none';
@@ -871,38 +786,6 @@ class App {
     const tw = L / this._tiles;
     if (this.state.tileW && Math.abs(this.state.tileW - tw) < 0.4) return;
     this.setState({ tileW: tw });
-  }
-  buildRing() {
-    const h = React.createElement;
-    const tw = this.state.tileW || 116;
-    const text = 'MediGlobe \u2022 '.repeat(this._tiles);
-    return h('g', { key: 'ringroot' }, [
-      h('path', { key: 'op', id: 'mgOrbitPath', d: 'M200,164 A184,50 0 0,0 200,264 A184,50 0 0,0 200,164', fill: 'none' }),
-      h('mask', { key: 'rm', id: 'mgRingMask' }, [
-        h('rect', { key: 'a', width: 400, height: 400, fill: '#fff' }),
-        h('circle', { key: 'b', cx: 200, cy: 200, r: 158, fill: '#000' }),
-        h('path', { key: 'c', d: 'M42.6,214 A158,158 0 0,0 357.4,214 Z', fill: '#fff' })
-      ]),
-      h('g', { key: 'rg', mask: 'url(#mgRingMask)' }, [
-        h('ellipse', { key: 'e', cx: 200, cy: 214, rx: 184, ry: 50, fill: 'none', stroke: '#bdf3e4', strokeOpacity: 0.12, strokeWidth: 1 }),
-        h('text', {
-          key: 't', id: 'mgRingText', fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 600,
-          letterSpacing: 2, fill: '#e6fbf1', filter: 'url(#mgGlow)', dominantBaseline: 'middle'
-        }, h('textPath', { href: '#mgOrbitPath', startOffset: -2 * tw }, [
-          text,
-          h('animate', { key: 'an', attributeName: 'startOffset', from: -2 * tw, to: -tw, dur: '7s', repeatCount: 'indefinite', calcMode: 'linear' })
-        ]))
-      ])
-    ]);
-  }
-  renderVals() {
-    if (!this._earth) this._earth = this.buildEarth();
-    return {
-      accent: this.props.accent ?? '#34e8a0',
-      headline: this.props.headline ?? 'Знакомое лекарство — в любой аптеке мира',
-      tagline: this.props.tagline ?? 'Введи название или вещество — узнай его местный аналог: бренды, дозировки, цены. Офлайн, 3250 препаратов, 13 стран, 10 языков.',
-      ring: this.buildRing()
-    };
   }
 }
 

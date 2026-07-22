@@ -5,7 +5,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
   Cross-Origin-Opener-Policy: same-origin
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://mediglobe-waitlist.tvinkiforever.workers.dev https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://mediglobe-waitlist.tvinkiforever.workers.dev https://cloudflareinsights.com; form-action 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
   Cache-Control: public, max-age=0, must-revalidate
 
 /app.js
