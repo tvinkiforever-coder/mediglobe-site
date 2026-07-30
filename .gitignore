@@ -7,3 +7,5 @@ node_modules/
 .env
 .env.*
 .dev.vars
+.website-maker/
+.claude/
