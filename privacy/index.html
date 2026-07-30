@@ -50,8 +50,10 @@
     .warn { color: #ffc107; }
     a { color: #4d8aff; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
-    th, td { font-size: 13px; padding: 10px 12px; text-align: left; border-bottom: 1px solid #1e2336; }
+    /* fixed раскладка обязательна: без неё таблица не сжимается уже своего
+       содержимого и растягивает всю страницу вправо на телефоне */
+    table { width: 100%; border-collapse: collapse; margin-bottom: 16px; table-layout: fixed; }
+    th, td { font-size: 13px; padding: 10px 12px; text-align: left; border-bottom: 1px solid #1e2336; overflow-wrap: break-word; hyphens: auto; }
     th { font-weight: 700; color: #7b86aa; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
     td { color: #c5cae9; }
     footer { text-align: center; padding-top: 40px; border-top: 1px solid #1e2336; font-size: 12px; color: #7b86aa; }
