@@ -16,6 +16,7 @@ class App {
     setTimeout(() => this._initParticles(), 300);
     this._initAiDemo();
     this._initInsurance();
+    this._initCountryGeo();
     this._initPhone();
     setTimeout(() => this._initPhone(), 300);
     this._initScrollCards();
@@ -272,6 +273,16 @@ class App {
     fetch('/api/geo').then(function (r) { return r.json(); }).then(function (d) {
       var cc = (d && d.country) || '';
       if (MG_INS.cis.indexOf(cc) >= 0 && MG_INS.ekta) { cta.setAttribute('href', MG_INS.ekta); }
+    }).catch(function () {});
+  }
+  _initCountryGeo() {
+    // The Russia card in the country grid is hidden by default (no flash of
+    // it for anyone) and only revealed for visitors NOT geo-located in Ukraine.
+    var el = document.querySelector('.mgCountry[data-cc="RU"]');
+    if (!el) return;
+    fetch('/api/geo').then(function (r) { return r.json(); }).then(function (d) {
+      var cc = (d && d.country) || '';
+      if (cc && cc !== 'UA') { el.style.display = 'flex'; }
     }).catch(function () {});
   }
   _initScrollCards() {
