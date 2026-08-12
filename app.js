@@ -107,10 +107,10 @@ class App {
     if (inp && sel && out) {
       const inAppTxt = lang === 'uk' ? '\u0414\u043e\u0437\u0443\u0432\u0430\u043d\u043d\u044f, \u043f\u043e\u043f\u0435\u0440\u0435\u0434\u0436\u0435\u043d\u043d\u044f \u0439 \u0446\u0456\u043d\u0438 \u2014 \u0443 \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443.' : (lang === 'en' ? 'Dosages, warnings and prices \u2014 in the app.' : '\u0414\u043e\u0437\u0438\u0440\u043e\u0432\u043a\u0438, \u043f\u0440\u0435\u0434\u0443\u043f\u0440\u0435\u0436\u0434\u0435\u043d\u0438\u044f \u0438 \u0446\u0435\u043d\u044b \u2014 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438.');
       const missTxt = lang === 'uk'
-        ? '\u0423 \u0434\u0435\u043c\u043e \u043b\u0438\u0448\u0435 30 \u043f\u0440\u0435\u043f\u0430\u0440\u0430\u0442\u0456\u0432 \u2014 \u0443 \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443 \u0457\u0445 3250. <a href="#mgNotifyForm" style="color:var(--accent)">\u0414\u0456\u0437\u043d\u0430\u0442\u0438\u0441\u044f \u043f\u0440\u043e \u0440\u0435\u043b\u0456\u0437 \u2192</a>'
+        ? '\u0423 \u0434\u0435\u043c\u043e \u043b\u0438\u0448\u0435 30 \u043f\u0440\u0435\u043f\u0430\u0440\u0430\u0442\u0456\u0432 \u2014 \u0443 \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043a\u0443 \u0457\u0445 3250. <a href="#najti" style="color:var(--accent)">\u0417\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0438\u0442\u0438 \u0437\u0430\u0441\u0442\u043e\u0441\u0443\u043d\u043e\u043a \u2192</a>'
         : (lang === 'en'
-        ? 'The demo covers only 30 medications \u2014 the app has 3250. <a href="#mgNotifyForm" style="color:var(--accent)">Join the waitlist \u2192</a>'
-        : '\u0412 \u0434\u0435\u043c\u043e \u0442\u043e\u043b\u044c\u043a\u043e 30 \u043f\u0440\u0435\u043f\u0430\u0440\u0430\u0442\u043e\u0432 \u2014 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438 \u0438\u0445 3250. <a href="#mgNotifyForm" style="color:var(--accent)">\u0423\u0437\u043d\u0430\u0442\u044c \u043e \u0440\u0435\u043b\u0438\u0437\u0435 \u2192</a>');
+        ? 'The demo covers only 30 medications \u2014 the app has 3250. <a href="#najti" style="color:var(--accent)">Download the app \u2192</a>'
+        : '\u0412 \u0434\u0435\u043c\u043e \u0442\u043e\u043b\u044c\u043a\u043e 30 \u043f\u0440\u0435\u043f\u0430\u0440\u0430\u0442\u043e\u0432 \u2014 \u0432 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0438 \u0438\u0445 3250. <a href="#najti" style="color:var(--accent)">\u0421\u043a\u0430\u0447\u0430\u0442\u044c \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u2192</a>');
       const render = () => {
         const q = norm(inp.value);
         if (q.length < 2) { out.innerHTML = ''; return; }
@@ -204,67 +204,6 @@ class App {
       });
       document.addEventListener('focusout', () => { bar.dataset.hidden = ''; onScroll(); });
       onScroll();
-    }
-    const form = document.getElementById('mgNotifyForm');
-    const ok = document.getElementById('mgNotifyOk');
-    const errBox = document.getElementById('mgNotifyErr');
-    const btn = document.getElementById('mgNotifyBtn');
-    const emailInput = document.getElementById('mgNotifyEmail');
-    if (form && ok) {
-      const self = this;
-      const pageLang = (document.documentElement.lang || 'ru').slice(0, 2);
-      const sendingTxt = pageLang === 'uk' ? 'Надсилаємо…' : (pageLang === 'en' ? 'Sending…' : 'Отправляем…');
-      const failTxt = pageLang === 'uk' ? 'Не вдалося надіслати. Перевірте інтернет і спробуйте ще раз.' : (pageLang === 'en' ? 'Could not send. Check your connection and try again.' : 'Не удалось отправить. Проверьте интернет и попробуйте ещё раз.');
-      const btnLabel = btn ? btn.textContent : '';
-      document.querySelectorAll('a[href="#mgNotifyForm"]').forEach(a => {
-        a.addEventListener('click', () => { setTimeout(() => { if (emailInput && form.style.display !== 'none') emailInput.focus(); }, 500); });
-      });
-      const cntEl = document.getElementById('mgWaitCount');
-      if (cntEl) {
-        fetch('/api/count').then(r => r.ok ? r.json() : null).then(d => {
-          const n = d && d.count;
-          if (!n || n < 25) return;
-          let word;
-          if (pageLang === 'en') word = n === 1 ? 'traveller is' : 'travellers are';
-          else {
-            const m10 = n % 10, m100 = n % 100;
-            const few = m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14);
-            const one = m10 === 1 && m100 !== 11;
-            word = pageLang === 'uk' ? (one ? 'мандрівник вже чекає' : (few ? 'мандрівники вже чекають' : 'мандрівників вже чекають')) : (one ? 'путешественник уже ждёт' : (few ? 'путешественника уже ждут' : 'путешественников уже ждут'));
-          }
-          cntEl.textContent = pageLang === 'en' ? (n + ' ' + word + ' waiting for the release') : (n + ' ' + word + ' релиз');
-          if (pageLang === 'uk') cntEl.textContent = n + ' ' + word + ' на реліз';
-          cntEl.style.display = 'block';
-          var _hc = document.getElementById('mgWaitCountHeroTxt');
-          if (_hc && _hc.parentElement) { _hc.textContent = cntEl.textContent; _hc.parentElement.style.display = 'inline-flex'; }
-        }).catch(() => {});
-      }
-      if (emailInput && btn) {
-        var _syncBtn = function () { var v = emailInput.checkValidity() && emailInput.value.trim().length > 3; btn.disabled = !v; btn.style.opacity = v ? '1' : '0.55'; btn.style.cursor = v ? 'pointer' : 'not-allowed'; };
-        emailInput.addEventListener('input', _syncBtn); _syncBtn();
-      }
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        var _hp = document.getElementById('mgHp'); if (_hp && _hp.value) { form.style.display = 'none'; ok.style.display = 'flex'; return; }
-        const email = (emailInput && emailInput.value || '').trim();
-        if (!email) return;
-        if (errBox) errBox.style.display = 'none';
-        if (btn) { btn.disabled = true; btn.textContent = sendingTxt; btn.style.opacity = '0.7'; }
-        try {
-          const res = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email: email, lang: pageLang, source: (function () { try { return localStorage.getItem('mg_src') || 'direct'; } catch (e) { return 'direct'; } })() }),
-          });
-          if (!res.ok) { const e429 = new Error('bad status ' + res.status); e429.rate = res.status === 429; throw e429; }
-          form.style.display = 'none'; ok.style.display = 'flex'; ok.classList.add('mgOkIn');
-          self._blip();
-        } catch (err) {
-          if (btn) { btn.disabled = false; btn.textContent = btnLabel; btn.style.opacity = '1'; }
-          const rateTxt = pageLang === 'uk' ? 'Забагато спроб — зачекайте хвилину і спробуйте ще раз.' : (pageLang === 'en' ? 'Too many attempts — wait a minute and try again.' : 'Слишком много попыток — подождите минуту и попробуйте ещё раз.');
-          if (errBox) { errBox.textContent = (err && err.rate) ? rateTxt : failTxt; errBox.style.display = 'block'; }
-        }
-      });
     }
   }
   _initInsurance() {
