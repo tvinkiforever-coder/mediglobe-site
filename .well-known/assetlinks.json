@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mediglobe.app",
+      "sha256_cert_fingerprints": [
+        "CE:33:69:B3:E9:C7:8E:85:9A:0C:21:39:7B:65:05:86:7F:64:8C:A2:94:D8:53:8F:A6:84:69:0D:C4:99:A3:13"
+      ]
+    }
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "2XAT4J4XTZ.com.mediglobe.app",
+        "appIDs": ["2XAT4J4XTZ.com.mediglobe.app"],
+        "paths": ["/drug/*"]
+      }
+    ]
+  }
+}
