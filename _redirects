@@ -1,0 +1,6 @@
+# Drug links shared from the app (https://mediglobe.me/drug/<id>) get the landing page drug/index.html.
+# 200 = rewrite, not a redirect: the address keeps the id (drug.js reads it) and the iOS/Android
+# app links for /drug/* keep matching. The target is /drug/, not /drug/index.html: Pages answers
+# any .../index.html with a 308 to .../, which would drop the id and loop (/drug/ matches /drug/*).
+# Never add a rule that touches /.well-known/* (apple-app-site-association, assetlinks.json).
+/drug/*  /drug/  200

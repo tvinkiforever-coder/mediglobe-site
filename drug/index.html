@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>MediGlobe — medicine card</title>
+<link rel="icon" type="image/png" sizes="any" href="/assets/favicon.png?v=3">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=3">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  body{margin:0;min-height:100vh;background:#05100b;color:#eaf4ee;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:32px 16px;
+    background-image:radial-gradient(circle at 70% 30%,rgba(52,232,160,0.12),transparent 60%)}
+  .wrap{width:100%;max-width:460px}
+  .logo{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;opacity:.9;color:#eaf4ee;text-decoration:none}
+  .logo span{font-family:'Space Grotesk',Manrope,sans-serif;font-weight:700;font-size:18px}
+  h1{font-family:'Space Grotesk',Manrope,sans-serif;font-size:clamp(24px,6.4vw,30px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;margin:0 0 12px;text-wrap:balance}
+  p{color:#9bb3a8;font-size:15.5px;line-height:1.55;margin:0 0 28px;text-wrap:pretty}
+  .stores{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+  .store{display:inline-flex;align-items:center;justify-content:center;gap:9px;flex:1 1 180px;max-width:220px;padding:12px 14px;border-radius:14px;
+    background:#0e2018;border:1px solid rgba(255,255,255,0.14);color:#eaf4ee;text-decoration:none;text-align:left;line-height:1.15;
+    transition:transform .25s ease,border-color .25s ease}
+  .store small{display:block;font-size:11px;color:#bccfc6}
+  .store b{display:block;font-size:17px;font-weight:700;font-family:'Space Grotesk',sans-serif}
+  a.open{display:inline-flex;align-items:center;justify-content:center;margin-top:22px;padding:13px 24px;border-radius:13px;
+    border:1px solid rgba(52,232,160,0.45);color:#34e8a0;font-weight:700;font-size:15px;text-decoration:none}
+  a.home{display:block;margin-top:30px;color:#9bb3a8;font-size:14px;text-decoration:none}
+  a:focus-visible{outline:2px solid #34e8a0;outline-offset:3px;border-radius:8px}
+  @media (hover:hover){.store:hover{transform:translateY(-2px);border-color:rgba(52,232,160,0.5)}a.open:hover{background:rgba(52,232,160,0.08)}a.home:hover{color:#eaf4ee}}
+  @media (prefers-reduced-motion:reduce){.store{transition:none}}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <a class="logo" id="dLogo" href="/en/" aria-label="MediGlobe">
+      <svg width="30" height="30" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <g stroke="#bdf3e4" stroke-width="1" fill="none">
+          <circle cx="20" cy="20" r="15" stroke-opacity="0.55"></circle>
+          <ellipse cx="20" cy="20" rx="15" ry="5.5" stroke-opacity="0.42"></ellipse>
+          <ellipse cx="20" cy="20" rx="6.5" ry="15" stroke-opacity="0.42"></ellipse>
+        </g>
+        <g fill="#2fe78f"><rect x="17.4" y="13" width="5.2" height="14" rx="2.6"></rect><rect x="13" y="17.4" width="14" height="5.2" rx="2.6"></rect></g>
+      </svg>
+      <span>MediGlobe</span>
+    </a>
+    <h1 id="dTitle">This medicine card opens in the MediGlobe app</h1>
+    <p id="dText">Someone shared a medicine card from MediGlobe with you. Install the free app to see the medicine’s local brand names, dosage and warnings — it works offline.</p>
+    <div class="stores">
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.mediglobe.app" rel="noopener noreferrer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.063 1.957C2.71 2.146 2.5 2.518 2.5 3.07v17.86c0 .552.21.924.563 1.113l.103.05L12 12.06v-.12z" fill="#00D2FF"></path><path d="M15.5 15.41 3.166 22.044c.34.18.79.146 1.29-.14l.01-.006 9.69-5.55z" fill="#FF3A44"></path><path d="m15.5 15.41-3.5-3.41L15.5 8.59l3.97 2.275c1.04.595 1.04 1.99 0 2.59z" fill="#FFD500"></path><path d="M3.166 1.956c.5-.286.95-.32 1.29-.14l9.71 5.56L12 12z" fill="#00F076"></path></svg>
+        <span><small id="dPlay">Get it on</small><b>Google Play</b></span>
+      </a>
+      <a class="store" href="https://apps.apple.com/app/id6792453810" rel="noopener noreferrer">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.9c0-2.3 1.8-3.4 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8s-1.7-.8-2.8-.8C7.4 7.8 6 8.6 5.3 9.9c-1.6 2.7-.4 6.7 1.1 8.9.7 1.1 1.6 2.3 2.8 2.2 1.1 0 1.5-.7 2.9-.7s1.7.7 2.9.7c1.2 0 1.9-1.1 2.7-2.2.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4Zm-1.8-6.2c.6-.8 1-1.8.9-2.9-.9.1-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.8 1 .1 2-.5 2.6-1.3Z"></path></svg>
+        <span><small id="dApple">Download on the</small><b>App Store</b></span>
+      </a>
+    </div>
+    <a class="open" id="dOpen" href="/" hidden>Already have MediGlobe? Open the card in the app</a>
+    <a class="home" id="dHome" href="/en/">About MediGlobe →</a>
+  </main>
+  <script src="/drug.js?v=1"></script>
+</body>
+</html>
