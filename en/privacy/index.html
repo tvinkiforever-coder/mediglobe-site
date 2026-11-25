@@ -72,7 +72,7 @@
   </header>
 
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: July 30, 2026 &nbsp;·&nbsp; Effective: June 30, 2026 &nbsp;·&nbsp; <a href="/en/terms/">Terms of Use</a> &nbsp;·&nbsp; <a href="/privacy/">Русский</a></p>
+  <p class="updated">Last updated: November 25, 2026 &nbsp;·&nbsp; Effective: June 30, 2026 &nbsp;·&nbsp; <a href="/en/terms/">Terms of Use</a> &nbsp;·&nbsp; <a href="/privacy/">Русский</a></p>
 
   <div class="card">
     <p>MediGlobe is an <span class="highlight">offline-first</span> reference catalog for travelers.
@@ -96,28 +96,29 @@
   The data operator and privacy contact for the project is MediGlobe
   (<a href="mailto:mediglobe.official@gmail.com">mediglobe.official@gmail.com</a>).
   The operator's legal entity will be named in this policy once it is registered.
-  The app is published on Google Play and available as a standalone Android APK.</p>
+  The app is published on the App Store (iOS) and Google Play (Android), and is also available as a standalone Android APK.</p>
 
   <!-- 2. Data we do NOT collect -->
   <h2>2. Data We Do NOT Collect</h2>
   <p>We do <strong>not</strong> collect, store or transmit:</p>
   <ul>
     <li>Your name, email address, or any account information</li>
-    <li>Your location or GPS coordinates (the map feature uses device location <em>only on your device</em> to center the map; no location data is sent to us)</li>
-    <li>Your medical profile (blood type, chronic conditions, allergies, emergency contact)</li>
+    <li>Your location or GPS coordinates: they are never sent to us. The app uses device location to center the map and to detect the country you are in; to detect the country, the coordinates go to your phone's system geocoding service (Apple on iOS, Google on Android), and when you search for pharmacies, the coordinates of the search area go to OpenStreetMap servers (see section 4)</li>
+    <li>Your medical profile (blood type, chronic conditions, allergies, emergency contact): it is stored only on your device and never reaches our servers. The one exception is the AI symptom chat, see section 3</li>
     <li>Your browsing history within the app</li>
-    <li>In-app usage analytics — the app is not connected to Google Analytics, Firebase Analytics or anything similar (for the mediglobe.me website see section 9)</li>
-    <li>The content of your queries in crash reports: the app sends us a technical error message, a call stack, the version, platform and interface language — never any personal or medical data</li>
-    <li>Payment information (handled entirely by Google Play / RevenueCat)</li>
+    <li>Medical data in analytics: drug names, symptoms and medical-profile data never go to analytics. Google Analytics for Firebase receives only the app's automatic technical events (see section 4; for the mediglobe.me website see section 9)</li>
+    <li>The content of your queries in crash reports: the app sends us a technical error message, a truncated call stack, the version, platform and interface language — never any personal or medical data. Crash reports are kept for 30 days</li>
+    <li>Recordings of your voice: the microphone in search works only while you have switched it on, and MediGlobe does not store the audio. Speech is turned into text by Apple (iOS) or Google (Android) speech recognition, which may process it on their servers (see section 4)</li>
+    <li>Payment information (handled entirely by the App Store / Google Play and RevenueCat)</li>
   </ul>
 
   <!-- 3. Data stored on your device -->
   <h2>3. Data Stored Locally on Your Device</h2>
-  <p>The following data is stored <strong>only on your device</strong> and never leaves it:</p>
+  <p>The following data is stored <strong>only on your device</strong>, not on our servers:</p>
 
   <table>
     <tr><th>Data</th><th>Where stored</th><th>Purpose</th></tr>
-    <tr><td>Blood type, chronic conditions, allergies, emergency contact</td><td>Android Keystore (SecureStore)</td><td>Personal medical reference card</td></tr>
+    <tr><td>Blood type, chronic conditions, allergies, emergency contact</td><td>iOS Keychain / Android Keystore (SecureStore)</td><td>Personal medical reference card</td></tr>
     <tr><td>Favourite drugs, browsing history</td><td>AsyncStorage</td><td>Personalised experience</td></tr>
     <tr><td>App language and theme preference</td><td>AsyncStorage</td><td>User interface settings</td></tr>
     <tr><td>Selected countries (home / current)</td><td>AsyncStorage</td><td>Price and analog display</td></tr>
@@ -126,9 +127,13 @@
 
   <div class="card">
     <p>Sensitive medical fields (blood type, allergies, chronic conditions, emergency contact)
-    are stored in the <span class="highlight">Android Keystore</span> — the same secure hardware-backed
-    storage used by banking apps. This data <strong>cannot be accessed</strong> by other apps
-    and is <strong>never transmitted</strong> over the network.</p>
+    are stored in the <span class="highlight">iOS Keychain / Android Keystore</span> — the secure system
+    storage that banking apps use too. This data <strong>cannot be accessed</strong> by other apps
+    and is <strong>never stored</strong> on our servers.</p>
+    <p style="margin-top:10px">There is one exception: if you accepted the in-app AI consent and use the AI symptom chat,
+    your saved <strong>allergies and chronic conditions</strong> are attached to each symptom request and sent
+    over HTTPS through our Cloudflare proxy to Anthropic, so the AI can take contraindications into account.
+    We do not store them. <strong>Blood type and emergency contact are never sent.</strong></p>
   </div>
 
   <!-- 4. Third-party services -->
@@ -150,7 +155,7 @@
     <tr>
       <td>OpenFDA (U.S. FDA)</td>
       <td>Drug name (text query)</td>
-      <td><a href="https://open.fda.gov/privacy/" target="_blank">open.fda.gov</a></td>
+      <td><a href="https://www.fda.gov/about-fda/about-website/website-policies" target="_blank">fda.gov</a></td>
     </tr>
     <tr>
       <td>PubChem (NIH)</td>
@@ -160,7 +165,7 @@
     <tr>
       <td>ChEMBL (EMBL-EBI)</td>
       <td>Drug name (text query)</td>
-      <td><a href="https://www.ebi.ac.uk/data-protection/privacy-notice/chembl" target="_blank">ebi.ac.uk</a></td>
+      <td><a href="https://chembl.gitbook.io/chembl-interface-documentation/data-protection-privacy-notice-for-chembls-public-website/chembl-website" target="_blank">chembl.gitbook.io</a></td>
     </tr>
     <tr>
       <td>RxNorm (NIH)</td>
@@ -174,56 +179,97 @@
     </tr>
     <tr>
       <td>Overpass API (OpenStreetMap)</td>
-      <td>Coordinates (for pharmacy/hospital search)</td>
+      <td>Coordinates and radius of the search area (pharmacy/hospital search), sent to the public overpass.openstreetmap.fr server and its mirrors</td>
       <td><a href="https://wiki.openstreetmap.org/wiki/Privacy_Policy" target="_blank">openstreetmap.org</a></td>
     </tr>
     <tr>
-      <td>Anthropic Claude API <em>(AI features only)</em></td>
-      <td>Symptom description or drug names typed by user</td>
+      <td>OpenStreetMap <em>(map tiles)</em></td>
+      <td>The map area you are viewing (map tile requests)</td>
+      <td><a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank">osmfoundation.org</a></td>
+    </tr>
+    <tr>
+      <td>Anthropic Claude API <em>(AI features only, via our proxy)</em></td>
+      <td>Symptom descriptions, drug names or package photos you enter or take; in the AI symptom chat, also your saved allergies and chronic conditions (only after you accept the in-app AI consent)</td>
       <td><a href="https://www.anthropic.com/privacy" target="_blank">anthropic.com</a></td>
     </tr>
     <tr>
+      <td>Google Cloud Text-to-Speech <em>(reading AI replies aloud, via our proxy)</em></td>
+      <td>The text of the AI reply you asked to hear</td>
+      <td><a href="https://cloud.google.com/terms/cloud-privacy-notice" target="_blank">cloud.google.com</a></td>
+    </tr>
+    <tr>
+      <td>Apple (iOS) / Google (Android) speech recognition <em>(voice input in search)</em></td>
+      <td>Your voice while the microphone is on; MediGlobe does not store the audio</td>
+      <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com</a> · <a href="https://policies.google.com/privacy" target="_blank">policies.google.com</a></td>
+    </tr>
+    <tr>
+      <td>Drug registries CIMA (Spain), BDPM (France), Israel Ministry of Health, openFDA (USA) and Open Food Facts <em>(barcode lookup, via our proxy)</em></td>
+      <td>Only the barcode digits; the request is sent by our proxy, not by your device</td>
+      <td><a href="https://www.fda.gov/about-fda/about-website/website-policies" target="_blank">fda.gov</a> · <a href="https://world.openfoodfacts.org/privacy" target="_blank">openfoodfacts.org</a></td>
+    </tr>
+    <tr>
+      <td>Google Analytics for Firebase (Google) <em>(app analytics)</em></td>
+      <td>Automatic events (first open, sessions, app updates, screen views), the app-instance ID, device model, OS and app version, coarse location derived from your IP address, and the advertising ID where the system permits it (on iOS only if you allowed tracking). No health data and no drug names</td>
+      <td><a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com</a></td>
+    </tr>
+    <tr>
+      <td>Expo (EAS Update) <em>(checking for app updates)</em></td>
+      <td>App version, platform and a technical installation ID</td>
+      <td><a href="https://expo.dev/privacy" target="_blank">expo.dev</a></td>
+    </tr>
+    <tr>
       <td>RevenueCat <em>(premium subscriptions)</em></td>
-      <td>Anonymous purchase token from Google Play</td>
+      <td>Anonymous ID and purchase token from the App Store / Google Play</td>
       <td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com</a></td>
     </tr>
     <tr>
-      <td>Google Play <em>(payments)</em></td>
+      <td>App Store / StoreKit (Apple) <em>(payments on iOS)</em></td>
+      <td>Payment and device info (managed by Apple)</td>
+      <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td>
+    </tr>
+    <tr>
+      <td>Google Play <em>(payments on Android)</em></td>
       <td>Payment and device info (managed by Google)</td>
       <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com</a></td>
     </tr>
     <tr>
       <td>Google AdMob <em>(ads, free users only)</em></td>
-      <td>Advertising ID, ad-interaction data, and coarse location used to serve and measure ads</td>
+      <td>Device advertising ID (Advertising ID on Android; IDFA on iOS only if you allowed tracking), ad-interaction data, and coarse location used to serve and measure ads</td>
       <td><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/ads</a></td>
     </tr>
     <tr>
       <td>AppsFlyer <em>(ad-campaign attribution)</em></td>
-      <td>Device ID (advertising identifier), install and campaign data, used to measure which ad campaign led to the app install</td>
+      <td>Device ID (advertising identifier; on iOS only if you allowed tracking), install and campaign data, and a few in-app events without any medical data (for example, starting a subscription and its price), used to measure which ad campaign led to the app install</td>
       <td><a href="https://www.appsflyer.com/legal/privacy-policy/" target="_blank">appsflyer.com</a></td>
     </tr>
   </table>
 
-  <p>💠 <strong>Advertising:</strong> the free version shows banner ads via Google AdMob. AdMob uses your device's Advertising ID and ad-interaction data to serve and measure ads, and shares them with Google; it may also use coarse location for ad relevance. A <strong>Premium</strong> subscription removes all ads. You can reset or limit the Advertising ID in Android settings (Settings → Privacy → Ads).</p>
+  <p>💠 <strong>Advertising:</strong> the free version shows banner ads via Google AdMob. AdMob uses your device's Advertising ID and ad-interaction data to serve and measure ads, and shares them with Google; it may also use coarse location for ad relevance. A <strong>Premium</strong> subscription removes all ads. On Android, you can reset or limit the Advertising ID in Settings → Privacy → Ads. On iOS, the app asks for tracking permission (Apple's App Tracking Transparency) before AppsFlyer or AdMob can use the advertising identifier (IDFA); you can change your answer in Settings → Privacy &amp; Security → Tracking.</p>
 
-  <p>💠 <strong>Ad-campaign attribution:</strong> to measure whether our advertising is working, the app uses <strong>AppsFlyer</strong>, which links your device's advertising identifier to the ad campaign that led to your install. On iOS, this only happens if you allow tracking when prompted by Apple's App Tracking Transparency permission — if you decline, AppsFlyer only receives aggregated, non-identifying attribution data. On Android, you can reset or limit the Advertising ID the same way as for AdMob above.</p>
+  <p>💠 <strong>Ad-campaign attribution:</strong> to measure whether our advertising is working, the app uses <strong>AppsFlyer</strong>, which links your device's advertising identifier to the ad campaign that led to your install. On iOS, this only happens if you allow tracking when prompted by Apple's App Tracking Transparency permission — if you decline, AppsFlyer does not receive the advertising identifier, and the install source is determined from Apple's aggregated attribution data (SKAdNetwork). On Android, you can reset or limit the Advertising ID the same way as for AdMob above.</p>
 
   <p class="warn">⚠️ AI Features (symptom chat, drug interactions, abroad analog search, package scanner):
   When you use these features, the text you type or the photo you take is sent to
-  <strong>Anthropic Claude API</strong> via an encrypted proxy. We do not store
+  <strong>Anthropic Claude API</strong> via an encrypted proxy. In the symptom chat, the allergies
+  and chronic conditions saved in your medical profile are attached to each request — only after you
+  have accepted the in-app AI consent. If you ask for a reply to be read aloud, its text goes through
+  the same proxy to <strong>Google Cloud Text-to-Speech</strong>. We do not store
   these queries on our servers. Anthropic may process them per their privacy policy.
   AI features require an active internet connection and are optional — the app works
   fully offline without them.</p>
 
   <!-- 5. AI proxy and security -->
   <h2>5. AI Proxy and Security</h2>
-  <p>AI-powered features route requests through a <strong>Cloudflare Workers proxy</strong> operated by us.
+  <p>AI features, read-aloud, barcode lookups and crash reports go through a <strong>Cloudflare Workers proxy</strong> operated by us.
   This proxy:</p>
   <ul>
     <li>Validates a request token to prevent unauthorized use</li>
     <li>Rate-limits requests to 30 per minute per IP</li>
-    <li>Forwards requests to Anthropic over HTTPS</li>
-    <li>Does <strong>not</strong> log, store, or process request contents</li>
+    <li>Forwards AI requests to Anthropic, and read-aloud text to Google Cloud Text-to-Speech, over HTTPS</li>
+    <li>Does <strong>not</strong> log or store the contents of AI requests or read-aloud text</li>
+    <li>Looks up a scanned barcode in national drug registries (CIMA, BDPM, Israel Ministry of Health, openFDA) and Open Food Facts — they receive only the barcode digits</li>
+    <li>If you agree to "Help others?" after a scan, stores the barcode and the drug name together with a one-way hash of your IP address (the address itself is not stored) for up to 6 months, so the same person cannot confirm the same pairing twice</li>
+    <li>Keeps crash reports for 30 days</li>
     <li>Hides the Claude API key from the app binary (security measure)</li>
   </ul>
 
@@ -240,7 +286,7 @@
   <ul>
     <li><strong>To delete all app data</strong>: Go to Profile → Reset → Reset all data. This clears all stored preferences, history, and medical profile fields.</li>
     <li><strong>To delete the app</strong>: Uninstalling MediGlobe removes all locally stored data from your device.</li>
-    <li><strong>API query history</strong>: We do not store your queries on our servers. Any data retained by third-party APIs (e.g., Anthropic) is subject to their retention policies.</li>
+    <li><strong>API query history</strong>: We do not store your AI queries on our servers; we keep only crash reports (30 days) and the barcode-to-drug pairings you choose to send (see section 5). Any data retained by third-party APIs (e.g., Anthropic) is subject to their retention policies.</li>
   </ul>
 
   <!-- 8. GDPR -->
@@ -248,9 +294,9 @@
   <p>If you are in the European Economic Area (EEA) or the United Kingdom, the GDPR applies to the processing of your data. Because MediGlobe works mostly offline and stores personal data on your device, the scope of processing is minimal.</p>
   <ul>
     <li><strong>Data controller:</strong> the MediGlobe project, contact — <a href="mailto:mediglobe.official@gmail.com">mediglobe.official@gmail.com</a> (legal entity to be named once registered).</li>
-    <li><strong>Legal bases:</strong> network requests to reference APIs and AI features are made to provide the feature you requested. Medical and personal data are processed only locally and are not sent to us.</li>
-    <li><strong>International transfers:</strong> when you use online features, your request text may be processed by services outside the EEA (e.g. Anthropic, USA) under their own data-protection safeguards. If you allow ad-tracking, your advertising identifier is also processed by AppsFlyer (headquartered in Israel, with servers also in the EU/US) under its own data-protection safeguards.</li>
-    <li><strong>Retention:</strong> we do not store your requests on our servers and the proxy does not log them; local data is kept until you delete it.</li>
+    <li><strong>Legal bases:</strong> network requests to reference APIs and AI features are made to provide the feature you requested. Your medical profile is stored on your device and is not sent to our servers; your saved allergies and chronic conditions go to Anthropic only in the AI symptom chat and only on the basis of your explicit consent in the app (Art. 9(2)(a) GDPR).</li>
+    <li><strong>International transfers:</strong> when you use online features, your request text may be processed by services outside the EEA (e.g. Anthropic and Google, USA) under their own data-protection safeguards. If you allow ad-tracking, your advertising identifier is also processed by AppsFlyer (headquartered in Israel, with servers also in the EU/US) under its own data-protection safeguards.</li>
+    <li><strong>Retention:</strong> the proxy does not log or store AI requests; crash reports are kept for 30 days and the barcode-to-drug pairings you choose to send for up to 6 months; local data is kept until you delete it.</li>
     <li><strong>Your rights:</strong> access, rectification, erasure, restriction, portability and objection. As data is stored locally, you exercise these directly in the app (Profile → Reset) or by uninstalling; for other requests, email us above.</li>
     <li><strong>Right to complain:</strong> you may lodge a complaint with your country's data-protection supervisory authority.</li>
     <li><strong>Automated decisions:</strong> we do not make decisions with legal effects automatically. AI answers are for reference and are not a medical decision.</li>
@@ -272,6 +318,7 @@
     <li><strong>International transfers:</strong> Google Ireland Limited, under signed GDPR Data Processing Terms. Data may be processed outside the EEA under Google's standard contractual clauses.</li>
     <li><strong>You can change your mind</strong> at any time: <a href="#" class="mgConsentLink">open consent settings</a>. Clearing site data in your browser works too.</li>
     <li>The newsletter form sends only the email address you type to our own server (a Cloudflare Worker). We do not pass it to advertising networks.</li>
+    <li>To show the right sections (for example, the travel-insurance block), the site asks our server on Cloudflare for the country Cloudflare derives from your IP address. It is not stored.</li>
   </ul>
 
   <!-- 10. Changes -->
