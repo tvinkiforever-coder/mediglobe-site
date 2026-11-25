@@ -207,11 +207,21 @@ class App {
     }
   }
   _initInsurance() {
+    // The #insurance section is hidden by default (no flash for anyone) and shown only once
+    // /api/geo names a country where the offer can be bought. Same rule as the app's
+    // TravelInsuranceCard: SafetyWing will not sell to RU/UA/BY/AE residents, so they get
+    // EKTA once MG_INS.ekta exists and nothing until then. Unknown country or failed call: hidden.
+    var sec = document.getElementById('insurance');
     var cta = document.getElementById('mgInsCta');
-    if (!cta) return;
+    if (!sec || !cta) return;
     fetch('/api/geo').then(function (r) { return r.json(); }).then(function (d) {
       var cc = (d && d.country) || '';
-      if (MG_INS.cis.indexOf(cc) >= 0 && MG_INS.ekta) { cta.setAttribute('href', MG_INS.ekta); }
+      if (!/^[A-Z]{2}$/.test(cc) || cc === 'XX') return; // XX = Cloudflare could not tell; T1 (Tor) fails the regex
+      if (MG_INS.cis.indexOf(cc) >= 0) {
+        if (!MG_INS.ekta) return;
+        cta.setAttribute('href', MG_INS.ekta);
+      }
+      sec.style.display = 'block';
     }).catch(function () {});
   }
   _initCountryGeo() {
