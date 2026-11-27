@@ -44,8 +44,12 @@
       if (l.indexOf('uk') === 0) { code = 'uk'; break; }
       if (l.indexOf('ru') === 0) { code = 'ru'; break; }
       if (l.indexOf('en') === 0) { code = 'en'; break; }
+      // Belarusian/Kazakh/Kyrgyz browsers: Russian is an official language there, the RU page fits.
+      if (/^(be|kk|ky)(-|$)/.test(l)) { code = 'ru'; break; }
     }
-    if (code !== 'uk' && code !== 'en') return; // ru or unknown -> stay silently
+    // German, Turkish, Georgian... visitors got a Russian page with no way out shown (27.11.2026): suggest English.
+    if (!code && langs.join('')) code = 'en';
+    if (code !== 'uk' && code !== 'en') return; // ru -> stay silently
 
     var target = code === 'uk' ? '/uk/' : '/en/';
     var msg = code === 'uk' ? 'Продовжити українською?' : 'Continue in English?';
